@@ -7,8 +7,12 @@
 //
 
 #import "IFLRequest.h"
-
-#import "IFLTagRequest.h"
+#import "IFLCameraLenseRequest.h"
+#import "IFLSingleCommentRequest.h"
+#import "IFLCommentsRequest.h"
+#import "IFLFavoritesRequest.h"
+#import "IFLSingleSubmissionRequest.h"
+#import "IFLSubmissionsDownloadRequest.h"
 
 @implementation IFLRequest
 
@@ -33,6 +37,7 @@ NSString* kIFLRequestSortByComments  = @"comments";
     return @"";
 }
 
+
 #pragma mark - Paramater Handling
 -(NSArray*)requiredParamaters
 {
@@ -44,11 +49,74 @@ NSString* kIFLRequestSortByComments  = @"comments";
     return nil;
 }
 
+
+
 #pragma mark - Intantiation Helpers
-+(instancetype)tagRequestWithId:(NSInteger)tagId completionBlock:(void (^)(NSArray *, NSURLResponse *, NSError *))completion
++(instancetype)cameraBodyRequestWithId:(NSNumber*)cameraId
+                       completionBlock:(IFLRequestCallback)completionBlock
 {
-    IFLTagRequest* req = [[IFLTagRequest alloc]init];
-    req.requestCompletion = completion;
-    return req;
+    return nil;
+}
++(instancetype)cameraLensRequestWithId:(NSNumber*)lenseId
+                       completionBlock:(IFLRequestCallback)completoinBlock
+{
+   return nil;
+}
++(instancetype)singleCommentRequestWithId:(NSNumber*)commentId
+                          completionBlock:(IFLRequestCallback)completoinBlock
+{
+   return nil;
+}
++(instancetype)favoritesRequestWithId:(NSNumber*)userId
+                      completionBlock:(IFLRequestCallback)completoinBlock
+{
+   return nil;
+}
++(instancetype)singleSubmissionRequestWithId:(NSNumber*)submissionId
+                             completionBlock:(IFLRequestCallback)completoinBlock
+{
+   return nil;
+}
++(instancetype)submissionsDownloadRequestWithId:(NSNumber*)submissionId
+                                completionBlock:(IFLRequestCallback)completoinBlock
+{
+    return nil;
+}
++(instancetype)singleTagRequestWithId:(NSNumber*)tagId
+                      completionBlock:(IFLRequestCallback)completoinBlock
+{
+    return nil;
+}
++(instancetype)singleWallpaperRequestWithId:(NSNumber*)wallpaperId
+                            completionBlock:(IFLRequestCallback)completoinBlock
+{
+    return nil;
+}
++(instancetype)WallpaperDownloadRequestWithId:(NSNumber*)wallpaperId
+                                forResolution:(NSString*)resolution
+                               ompletionBlock:(IFLRequestCallback)completoinBlock
+{
+   return nil;
+}
++(instancetype)wallpapersByTimestampRequest:(NSNumber*)timestamp
+                            completionBlock:(IFLRequestCallback)completoinBlock
+{
+  return nil;
+}
++(instancetype)wallpapersRequest:(IFLRequestCallback)completoinBlock
+{
+   return nil;
+}
++(instancetype)tagsRequest:(IFLRequestCallback)completoinBlock
+{
+   return nil;
+}
++(instancetype)commentsRequest:(IFLRequestCallback)completoinBlock
+{
+   return nil;
+}
++(instancetype)submissionsRequest:(IFLRequestCallback)completoinBlock
+{
+   return nil;
 }
 @end
