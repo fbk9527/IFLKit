@@ -14,6 +14,10 @@
 #import "IFLSingleSubmissionRequest.h"
 #import "IFLSubmissionsDownloadRequest.h"
 
+@interface IFLRequest ()
+@property(strong,nonatomic) NSMutableArray* operationDependencies;
+@end
+
 @implementation IFLRequest
 
 NSString* kIFLRequestSortByDate      = @"date";
@@ -23,100 +27,87 @@ NSString* kIFLRequestSortByDownloads = @"downloads";
 NSString* kIFLRequestSortByComments  = @"comments";
 
 
-
-
--(void)processWithBaseUrl:(NSURL *)baseUrl withHTTPHeaders:(NSDictionary *)dict
+#pragma mark - Generate URL Request
+-(NSURL*)generateRequestUrlFromBase:(NSURL*)base
 {
-    if ([[NSThread currentThread]isMainThread]) {
-        NSLog(@"WARNING!!! Just because you 'can' do something does not mean you should. All AFLRequest should be handled through the IFLClient which processes them on a background thread.");
+    // Programming Error
+    // Throw exception
+    if (!base)
+        return nil;
+    
+    
+    NSURLComponents* comp = [[NSURLComponents alloc]initWithURL:base resolvingAgainstBaseURL:YES];
+    
+    // Throw exception. Only support secure connections
+    if (![[comp scheme]isEqualToString:@"https"])
+        return nil;
+
+    
+    // Handle path construction
+    NSString* path = [comp path];
+    if ([path characterAtIndex:(([path length])-1)] == '/')
+        path = [path substringWithRange:NSMakeRange(0, [path length]-1)];
+    
+    path = [path stringByAppendingPathComponent:[self command]];
+    for (NSString* var in self.requiredParamaters)
+    {
+        id value = [self valueForKey:var];
+        path = [path stringByAppendingPathComponent:[value description]];
     }
+    comp.path = path;
+    
+    
+    // Handle Query String
+    NSMutableArray* queryItems = [NSMutableArray new];
+    for (NSString* var in self.optionalParamaters)
+    {
+        id value = [self valueForKey:var];
+        if (value)
+            [queryItems addObject:[NSURLQueryItem queryItemWithName:var value:value]];
+    }
+    if (queryItems.count > 0)
+        comp.queryItems = queryItems;
+    
+    
+    return comp.URL;
 }
+
+
+
+
+#pragma mark - Abstract Methods
 
 -(NSString*)command
 {
-    return @"";
+    return nil; // None for generic superclass
 }
 
-
-#pragma mark - Paramater Handling
 -(NSArray*)requiredParamaters
 {
-    return nil;
+    return nil; // None for generic superclass
 }
 
 -(NSArray*)optionalParamaters
 {
-    return nil;
+    return nil; // None for generic superclass
 }
 
+-(void)processWithBaseUrl:(NSURL *)baseUrl
+          withHTTPHeaders:(NSDictionary *)dict
+{
+    /// Place holders
+    /// All subclass should call this method
+    /// IFLRequest should be enclosed in an NSOperation & processed in a backgrond NSOperationQueue
+    DLog(MAIN_THREAD_WARNING([[NSThread currentThread]isMainThread]));
+}
 
-
-#pragma mark - Intantiation Helpers
-+(instancetype)cameraBodyRequestWithId:(NSNumber*)cameraId
-                       completionBlock:(IFLRequestCallback)completionBlock
+-(void)processWithBaseUrl:(NSURL *)baseUrl
+          withHTTPHeaders:(NSDictionary *)dict
+      enclosedInOperation:(NSOperation *)operation
 {
-    return nil;
-}
-+(instancetype)cameraLensRequestWithId:(NSNumber*)lenseId
-                       completionBlock:(IFLRequestCallback)completoinBlock
-{
-   return nil;
-}
-+(instancetype)singleCommentRequestWithId:(NSNumber*)commentId
-                          completionBlock:(IFLRequestCallback)completoinBlock
-{
-   return nil;
-}
-+(instancetype)favoritesRequestWithId:(NSNumber*)userId
-                      completionBlock:(IFLRequestCallback)completoinBlock
-{
-   return nil;
-}
-+(instancetype)singleSubmissionRequestWithId:(NSNumber*)submissionId
-                             completionBlock:(IFLRequestCallback)completoinBlock
-{
-   return nil;
-}
-+(instancetype)submissionsDownloadRequestWithId:(NSNumber*)submissionId
-                                completionBlock:(IFLRequestCallback)completoinBlock
-{
-    return nil;
-}
-+(instancetype)singleTagRequestWithId:(NSNumber*)tagId
-                      completionBlock:(IFLRequestCallback)completoinBlock
-{
-    return nil;
-}
-+(instancetype)singleWallpaperRequestWithId:(NSNumber*)wallpaperId
-                            completionBlock:(IFLRequestCallback)completoinBlock
-{
-    return nil;
-}
-+(instancetype)WallpaperDownloadRequestWithId:(NSNumber*)wallpaperId
-                                forResolution:(NSString*)resolution
-                               ompletionBlock:(IFLRequestCallback)completoinBlock
-{
-   return nil;
-}
-+(instancetype)wallpapersByTimestampRequest:(NSNumber*)timestamp
-                            completionBlock:(IFLRequestCallback)completoinBlock
-{
-  return nil;
-}
-+(instancetype)wallpapersRequest:(IFLRequestCallback)completoinBlock
-{
-   return nil;
-}
-+(instancetype)tagsRequest:(IFLRequestCallback)completoinBlock
-{
-   return nil;
-}
-+(instancetype)commentsRequest:(IFLRequestCallback)completoinBlock
-{
-   return nil;
-}
-+(instancetype)submissionsRequest:(IFLRequestCallback)completoinBlock
-{
-   return nil;
+    /// Place holders
+    /// All subclass should call this method
+    /// IFLRequest should be enclosed in an NSOperation & processed in a backgrond NSOperationQueue
+   DLog(MAIN_THREAD_WARNING([[NSThread currentThread]isMainThread]));
 }
 @end

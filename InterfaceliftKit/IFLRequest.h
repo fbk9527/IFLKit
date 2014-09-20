@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+#ifdef DEBUG
+#define MAIN_THREAD_WARNING(X) (X ? @"IFLRequest should not be called on the main thread!" : @"")
+#define DLog(X) NSLog(X)
+#else
+#define MAIN_THREAD_WARNING(X) ((void)0)
+#define DLog(X) ((void)0)
+#endif
+
 @interface IFLRequest : NSObject
 
 typedef NS_ENUM(NSInteger, IFLRequestTagType){
@@ -39,7 +47,8 @@ typedef void (^IFLRequestCallback)(NSArray* obj, NSURLResponse* resp, NSError* e
 @property(strong,nonatomic) NSNumber* tag_id;
 @property(strong,nonatomic) NSString* direction;
 @property(strong,nonatomic) NSNumber* timestamp;
-@property(copy,nonatomic) IFLRequestCallback callback;
+@property(copy,nonatomic) IFLRequestCallback successCallBack;
+@property(copy,nonatomic) IFLRequestCallback failureCallBack;
 
 extern NSString* kIFLRequestSortByDate;
 extern NSString* kIFLRequestSortById;
@@ -47,6 +56,8 @@ extern NSString* kIFLRequestSortByFavorites;
 extern NSString* kIFLRequestSortByDownloads;
 extern NSString* kIFLRequestSortByComments;
 
+
+@property(strong,nonatomic) NSArray* requiredParamaters;
 
 
 // Parent performs nothing
@@ -63,20 +74,9 @@ extern NSString* kIFLRequestSortByComments;
 -(NSArray*)requiredParamaters;
 -(NSArray*)optionalParamaters;
 
+// The command
+-(NSString*)command;
 
-#pragma mark - Convenience Methods
-+(instancetype)cameraBodyRequestWithId:(NSNumber*)cameraId completionBlock:(IFLRequestCallback)completoinBlock;
-+(instancetype)cameraLensRequestWithId:(NSNumber*)lenseId completionBlock:(IFLRequestCallback)completionBlock;
-+(instancetype)singleCommentRequestWithId:(NSNumber*)commentId completionBlock:(IFLRequestCallback)completoinBlock;
-+(instancetype)favoritesRequestWithId:(NSNumber*)userId completionBlock:(IFLRequestCallback)completoinBlock;
-+(instancetype)singleSubmissionRequestWithId:(NSNumber*)submissionId completionBlock:(IFLRequestCallback)completoinBlock;
-+(instancetype)submissionsDownloadRequestWithId:(NSNumber*)submissionId completionBlock:(IFLRequestCallback)completoinBlock;
-+(instancetype)singleTagRequestWithId:(NSNumber*)tagId completionBlock:(IFLRequestCallback)completoinBlock;
-+(instancetype)singleWallpaperRequestWithId:(NSNumber*)wallpaperId completionBlock:(IFLRequestCallback)completoinBlock;
-+(instancetype)WallpaperDownloadRequestWithId:(NSNumber*)wallpaperId forResolution:(NSString*)resolution ompletionBlock:(IFLRequestCallback)completoinBlock;
-+(instancetype)wallpapersByTimestampRequest:(NSNumber*)timestamp completionBlock:(IFLRequestCallback)completoinBlock;
-+(instancetype)wallpapersRequest:(IFLRequestCallback)completoinBlock;
-+(instancetype)tagsRequest:(IFLRequestCallback)completoinBlock;
-+(instancetype)commentsRequest:(IFLRequestCallback)completoinBlock;
-+(instancetype)submissionsRequest:(IFLRequestCallback)completoinBlock;
+// Command specific
+-(NSURL*)generateRequestUrlFromBase:(NSURL*)base;
 @end
