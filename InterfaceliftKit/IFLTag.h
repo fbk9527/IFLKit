@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface IFLTag : NSObject
-
+@property(strong,nonatomic) NSNumber* iflId;
+@property(strong,nonatomic) NSString* tag_name;
+@property(strong,nonatomic) NSString* type;
+@property(strong,nonatomic) NSArray* related_searches;
 @end

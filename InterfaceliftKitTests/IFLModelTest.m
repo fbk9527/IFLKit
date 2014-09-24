@@ -6,8 +6,9 @@
 //  Copyright (c) 2014 Frederick Kelch. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "IFLModel.h"
 
 @interface IFLModelTest : XCTestCase
 
@@ -15,26 +16,30 @@
 
 @implementation IFLModelTest
 
-- (void)setUp {
+- (void)setUp
+{
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+- (void)tearDown
+{
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+-(void)testNonNullReturn
+{
+    XCTAssert([IFLModel renamedKeys], @"Instance method %s should never return null!",__PRETTY_FUNCTION__);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+-(void)testKnownRenamedObjects
+{
+    NSString* idRenameKey = @"id";
+    NSString* idRenameVal = @"iflId";
+    
+    NSDictionary* renamedKy = [IFLModel renamedKeys];
+    
+    XCTAssert([renamedKy objectForKeyedSubscript:idRenameKey], @"Renamed Dictionary should have value for key: %@",idRenameKey);
+    XCTAssert([[renamedKy objectForKeyedSubscript:idRenameKey]isEqualToString:idRenameVal], @"Renamed Dictonary should have value %@ for key %@",idRenameKey, idRenameVal);
 }
 
 @end

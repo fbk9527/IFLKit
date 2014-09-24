@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "IFLSingleTagRequest.h"
 
 @interface IFLSingleTagRequestTest : XCTestCase
-
+@property(strong,nonatomic) NSURL* baseUrl;
 @end
 
 @implementation IFLSingleTagRequestTest
@@ -18,6 +19,7 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.baseUrl = [[NSURL alloc]initWithString:@"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1"];
 }
 
 - (void)tearDown {
@@ -25,16 +27,18 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+-(void)testValidContruction
+{
+    NSNumber* tagId = @538;
+    NSString* valid = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/tag/538";
+    
+    IFLSingleTagRequest* tagRequest = [[IFLSingleTagRequest alloc]init];
+    tagRequest.iflId = tagId;
+    NSURL* url = [tagRequest generateRequestUrlFromBase:self.baseUrl];
+    
+    // Testing
+    NSString* urlString = [url absoluteString];
+    XCTAssert([valid isEqualToString:urlString], @"\n\nExpected: %@ \n\n Received %@\n\n",valid,urlString);
 }
 
 @end

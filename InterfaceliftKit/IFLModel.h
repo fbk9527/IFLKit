@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface IFLModel : NSObject
-
+-(void)populateFromJSONObject:(NSDictionary*)dict;
++(NSDictionary*)renamedKeys;
 @end

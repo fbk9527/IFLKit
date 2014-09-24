@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IFLModel.h"
 
-@interface IFLCamera : NSObject
-
+@interface IFLCamera : IFLModel
+@property(nonatomic,strong)NSNumber* iflId;
+@property(nonatomic,strong)NSString* brand;
+@property(nonatomic,strong)NSString* model;
+@property(nonatomic,strong)NSString* mount;
+@property(nonatomic,strong)NSString* format;
+@property(nonatomic,strong)NSString* date_introduced;
+@property(nonatomic,strong)NSString* url_amazon;
 @end

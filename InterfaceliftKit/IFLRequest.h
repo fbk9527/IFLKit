@@ -16,8 +16,6 @@
 #define DLog(X) ((void)0)
 #endif
 
-@interface IFLRequest : NSObject
-
 typedef NS_ENUM(NSInteger, IFLRequestTagType){
     IFLRequestTagTypeColor,
     IFLRequestTagTypeScene,
@@ -28,11 +26,76 @@ typedef NS_ENUM(NSInteger, IFLRequestTagType){
     IFLRequestTagTypeMedium
 };
 
-typedef void (^IFLRequestCallback)(NSArray* obj, NSURLResponse* resp, NSError* error);
+typedef NS_OPTIONS(NSUInteger, IFLURLOption)
+{
+    IFLURLOptionTreatRequiredAsOptional = 1 << 0
+};
 
-// Completion block
+typedef void (^IFLCallBack)(id obj, NSURLResponse* resp, NSError* error);
 
 
+
+/** The @code IFLRequest @endcode class is an abstract class you subclass to encapsulate code and data associated with a request.
+    Subclass should override the following methods
+ */
+@interface IFLRequest : NSOperation
+
+/** Constructs the request URL used to sends commands to the IFL REST API.
+ @pre The parameter <b>baseUrl</b> should be set.
+ */
+-(NSURL*)buildCommandWithOptions:(IFLURLOption)options error:(NSError**)error;
+
+
+/** Provides a list of the required parameters. Required and Optional parameters are used to construct the requesting URL.
+ @warning This is an abstract method. Subclass should override this and <b>not</b> call super.
+ */
+-(NSArray*)requiredParameters;
+
+
+/** Provides a list of the required parameters. Required and Optional parameters are used to construct the requesting URL.
+ @warning This is an abstract method. Subclass should override this and <b>not</b> call super.
+ */
+-(NSArray*)optionalParameters;
+
+
+/** The command string. Each IFLRequest has a unique command string which is used to construct the requesting URL
+ @warning This is an abstract method. Subclasses should override this and <b>not</b> call super.
+ */
+-(NSString*)command;
+
+/** The main operation to be performed.
+ @warning Subclasses that override the @code main @endcode method should <b>not</b> call the superclass implementation.
+ This method is fully implemented to construct the request URL and process the request.
+ */
+-(void)main;
+
+/** A base url conforms the Interfacelift command format.
+ @code
+ https://
+ @endcode
+ The base URL should always end with the API version number.
+*/
+@property(strong,nonatomic) NSString* baseUrl;
+
+
+
+/** The completion blocked that is called if the request was successfull.
+ @warning Be mindful of retain cycles if your enclosing queue is strong referenced!
+ */
+@property(copy,nonatomic) IFLCallBack successBlock;
+
+
+
+/** The completion blocked that is called if the request was failed.
+ @warning Be mindful of retain cycles if your enclosing queue is strong referenced!
+ */
+@property(copy,nonatomic) IFLCallBack failureBlock;
+
+extern NSString* kIFLRequestSortByDate;
+extern NSString* kIFLRequestSortById;
+extern NSString* kIFLRequestSortByFavorites;
+extern NSString* kIFLRequestSortByDownloads;
+extern NSString* kIFLRequestSortByComments;
 @property(strong,nonatomic) NSArray* sort_by;
 @property(strong,nonatomic) NSNumber* iflId;
 @property(strong,nonatomic) NSNumber* limit;
@@ -47,36 +110,4 @@ typedef void (^IFLRequestCallback)(NSArray* obj, NSURLResponse* resp, NSError* e
 @property(strong,nonatomic) NSNumber* tag_id;
 @property(strong,nonatomic) NSString* direction;
 @property(strong,nonatomic) NSNumber* timestamp;
-@property(copy,nonatomic) IFLRequestCallback successCallBack;
-@property(copy,nonatomic) IFLRequestCallback failureCallBack;
-
-extern NSString* kIFLRequestSortByDate;
-extern NSString* kIFLRequestSortById;
-extern NSString* kIFLRequestSortByFavorites;
-extern NSString* kIFLRequestSortByDownloads;
-extern NSString* kIFLRequestSortByComments;
-
-
-@property(strong,nonatomic) NSArray* requiredParamaters;
-
-
-// Parent performs nothing
--(void)processWithBaseUrl:(NSURL*)baseUrl
-          withHTTPHeaders:(NSDictionary*)dict;
-
--(void)processWithBaseUrl:(NSURL *)baseUrl
-          withHTTPHeaders:(NSDictionary *)dict
-      enclosedInOperation:(NSOperation*)operation;
-
-
-
-// Required & Optional
--(NSArray*)requiredParamaters;
--(NSArray*)optionalParamaters;
-
-// The command
--(NSString*)command;
-
-// Command specific
--(NSURL*)generateRequestUrlFromBase:(NSURL*)base;
 @end

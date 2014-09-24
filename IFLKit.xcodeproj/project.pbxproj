@@ -7,6 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B61A91D319CF2ADB002201FB /* IFLModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B64F028419CDCB6200FE6755 /* IFLModel.h */; };
+		B61A91D419CF2ADB002201FB /* IFLCamera.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B67CDD9719CD50B20038CEF2 /* IFLCamera.h */; };
+		B61A91D519CF2ADB002201FB /* IFLLens.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B64F028D19CE631500FE6755 /* IFLLens.h */; };
+		B61A91D619CF2ADB002201FB /* IFLComment.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B64F029019CE651D00FE6755 /* IFLComment.h */; };
+		B61A91D719CF2ADB002201FB /* IFLWallpaper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B64F029619CE675F00FE6755 /* IFLWallpaper.h */; };
+		B61A91D819CF2ADB002201FB /* IFLSubmissionDownload.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B64F029919CE6D5A00FE6755 /* IFLSubmissionDownload.h */; };
+		B61A91D919CF2ADB002201FB /* IFLWallpaperDownload.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B64F029C19CE6FB700FE6755 /* IFLWallpaperDownload.h */; };
+		B61A91DA19CF2ADB002201FB /* IFLUser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B64F029F19CE700D00FE6755 /* IFLUser.h */; };
+		B61A91DB19CF2ADB002201FB /* IFLTag.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B64F02A219CE746500FE6755 /* IFLTag.h */; };
+		B61A91DC19CF2ADB002201FB /* IFLRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B2469819CA821100020CD6 /* IFLRequest.h */; };
+		B61A91DD19CF2ADB002201FB /* IFCameraBodyRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246A219CBCA6600020CD6 /* IFCameraBodyRequest.h */; };
+		B61A91DE19CF2ADB002201FB /* IFLCameraLenseRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246A519CBCA7C00020CD6 /* IFLCameraLenseRequest.h */; };
+		B61A91DF19CF2ADB002201FB /* IFLSingleCommentRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246A819CBCA8D00020CD6 /* IFLSingleCommentRequest.h */; };
+		B61A91E019CF2ADB002201FB /* IFLCommentsRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246AB19CBCAA300020CD6 /* IFLCommentsRequest.h */; };
+		B61A91E119CF2ADB002201FB /* IFLFavoritesRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246AE19CBCAB900020CD6 /* IFLFavoritesRequest.h */; };
+		B61A91E219CF2ADB002201FB /* IFLSingleSubmissionRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246B119CBCAC900020CD6 /* IFLSingleSubmissionRequest.h */; };
+		B61A91E319CF2ADB002201FB /* IFLSubmissionsRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246B419CBCAD700020CD6 /* IFLSubmissionsRequest.h */; };
+		B61A91E419CF2ADB002201FB /* IFLSubmissionsDownloadRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246B719CBCAE700020CD6 /* IFLSubmissionsDownloadRequest.h */; };
+		B61A91E519CF2ADB002201FB /* IFLTagsRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246BA19CBCAF800020CD6 /* IFLTagsRequest.h */; };
+		B61A91E619CF2ADB002201FB /* IFLSingleTagRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246BD19CBCB0B00020CD6 /* IFLSingleTagRequest.h */; };
+		B61A91E719CF2ADB002201FB /* IFLSingleWallpaperRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246C019CBCB1C00020CD6 /* IFLSingleWallpaperRequest.h */; };
+		B61A91E819CF2ADB002201FB /* IFLWallpaperDownloadRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246C319CBCB2A00020CD6 /* IFLWallpaperDownloadRequest.h */; };
+		B61A91E919CF2ADB002201FB /* IFLWallpapersRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246C619CBCB3900020CD6 /* IFLWallpapersRequest.h */; };
+		B61A91EA19CF2ADB002201FB /* IFLWallpaperByTimestampRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246C919CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.h */; };
+		B61A91EB19CF2ADB002201FB /* IFLClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B2469F19CA9C2600020CD6 /* IFLClient.h */; };
 		B64F028619CDCB6200FE6755 /* IFLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F028519CDCB6200FE6755 /* IFLModel.m */; };
 		B64F028A19CDCE6200FE6755 /* IFLCameraModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F028919CDCE6200FE6755 /* IFLCameraModelTest.m */; };
 		B64F028C19CDD24400FE6755 /* IFLModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F028B19CDD24400FE6755 /* IFLModelTest.m */; };
@@ -20,12 +45,10 @@
 		B67CDD9619CD42E90038CEF2 /* IFLSingleTagRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B67CDD9519CD42E90038CEF2 /* IFLSingleTagRequestTest.m */; };
 		B67CDD9919CD50B20038CEF2 /* IFLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B67CDD9819CD50B20038CEF2 /* IFLCamera.m */; };
 		B6B2467219CA81B600020CD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2467119CA81B600020CD6 /* Foundation.framework */; };
-		B6B2467719CA81B600020CD6 /* InterfaceliftKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B2467619CA81B600020CD6 /* InterfaceliftKit.h */; };
-		B6B2467919CA81B600020CD6 /* InterfaceliftKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B2467819CA81B600020CD6 /* InterfaceliftKit.m */; };
 		B6B2468019CA81B600020CD6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2467F19CA81B600020CD6 /* XCTest.framework */; };
 		B6B2468119CA81B600020CD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2467119CA81B600020CD6 /* Foundation.framework */; };
 		B6B2468319CA81B600020CD6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2468219CA81B600020CD6 /* UIKit.framework */; };
-		B6B2468619CA81B600020CD6 /* libInterfaceliftKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2466E19CA81B600020CD6 /* libInterfaceliftKit.a */; };
+		B6B2468619CA81B600020CD6 /* libIFLKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2466E19CA81B600020CD6 /* libIFLKit.a */; };
 		B6B2468C19CA81B600020CD6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6B2468A19CA81B600020CD6 /* InfoPlist.strings */; };
 		B6B2469A19CA821100020CD6 /* IFLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B2469919CA821100020CD6 /* IFLRequest.m */; };
 		B6B246A119CA9C2600020CD6 /* IFLClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246A019CA9C2600020CD6 /* IFLClient.m */; };
@@ -62,7 +85,31 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				B6B2467719CA81B600020CD6 /* InterfaceliftKit.h in CopyFiles */,
+				B61A91D319CF2ADB002201FB /* IFLModel.h in CopyFiles */,
+				B61A91D419CF2ADB002201FB /* IFLCamera.h in CopyFiles */,
+				B61A91D519CF2ADB002201FB /* IFLLens.h in CopyFiles */,
+				B61A91D619CF2ADB002201FB /* IFLComment.h in CopyFiles */,
+				B61A91D719CF2ADB002201FB /* IFLWallpaper.h in CopyFiles */,
+				B61A91D819CF2ADB002201FB /* IFLSubmissionDownload.h in CopyFiles */,
+				B61A91D919CF2ADB002201FB /* IFLWallpaperDownload.h in CopyFiles */,
+				B61A91DA19CF2ADB002201FB /* IFLUser.h in CopyFiles */,
+				B61A91DB19CF2ADB002201FB /* IFLTag.h in CopyFiles */,
+				B61A91DC19CF2ADB002201FB /* IFLRequest.h in CopyFiles */,
+				B61A91DD19CF2ADB002201FB /* IFCameraBodyRequest.h in CopyFiles */,
+				B61A91DE19CF2ADB002201FB /* IFLCameraLenseRequest.h in CopyFiles */,
+				B61A91DF19CF2ADB002201FB /* IFLSingleCommentRequest.h in CopyFiles */,
+				B61A91E019CF2ADB002201FB /* IFLCommentsRequest.h in CopyFiles */,
+				B61A91E119CF2ADB002201FB /* IFLFavoritesRequest.h in CopyFiles */,
+				B61A91E219CF2ADB002201FB /* IFLSingleSubmissionRequest.h in CopyFiles */,
+				B61A91E319CF2ADB002201FB /* IFLSubmissionsRequest.h in CopyFiles */,
+				B61A91E419CF2ADB002201FB /* IFLSubmissionsDownloadRequest.h in CopyFiles */,
+				B61A91E519CF2ADB002201FB /* IFLTagsRequest.h in CopyFiles */,
+				B61A91E619CF2ADB002201FB /* IFLSingleTagRequest.h in CopyFiles */,
+				B61A91E719CF2ADB002201FB /* IFLSingleWallpaperRequest.h in CopyFiles */,
+				B61A91E819CF2ADB002201FB /* IFLWallpaperDownloadRequest.h in CopyFiles */,
+				B61A91E919CF2ADB002201FB /* IFLWallpapersRequest.h in CopyFiles */,
+				B61A91EA19CF2ADB002201FB /* IFLWallpaperByTimestampRequest.h in CopyFiles */,
+				B61A91EB19CF2ADB002201FB /* IFLClient.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,15 +137,13 @@
 		B67CDD9519CD42E90038CEF2 /* IFLSingleTagRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLSingleTagRequestTest.m; sourceTree = "<group>"; };
 		B67CDD9719CD50B20038CEF2 /* IFLCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLCamera.h; sourceTree = "<group>"; };
 		B67CDD9819CD50B20038CEF2 /* IFLCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLCamera.m; sourceTree = "<group>"; };
-		B6B2466E19CA81B600020CD6 /* libInterfaceliftKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libInterfaceliftKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6B2466E19CA81B600020CD6 /* libIFLKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIFLKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B2467119CA81B600020CD6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		B6B2467519CA81B600020CD6 /* InterfaceliftKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InterfaceliftKit-Prefix.pch"; sourceTree = "<group>"; };
-		B6B2467619CA81B600020CD6 /* InterfaceliftKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceliftKit.h; sourceTree = "<group>"; };
-		B6B2467819CA81B600020CD6 /* InterfaceliftKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceliftKit.m; sourceTree = "<group>"; };
-		B6B2467E19CA81B600020CD6 /* InterfaceliftKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterfaceliftKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6B2467519CA81B600020CD6 /* IFLKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IFLKit-Prefix.pch"; sourceTree = "<group>"; };
+		B6B2467E19CA81B600020CD6 /* IFLKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IFLKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B2467F19CA81B600020CD6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B6B2468219CA81B600020CD6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		B6B2468919CA81B600020CD6 /* InterfaceliftKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InterfaceliftKitTests-Info.plist"; sourceTree = "<group>"; };
+		B6B2468919CA81B600020CD6 /* IFLKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IFLKitTests-Info.plist"; sourceTree = "<group>"; };
 		B6B2468B19CA81B600020CD6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B6B2469819CA821100020CD6 /* IFLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLRequest.h; sourceTree = "<group>"; };
 		B6B2469919CA821100020CD6 /* IFLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLRequest.m; sourceTree = "<group>"; };
@@ -150,7 +195,7 @@
 				B6B2468019CA81B600020CD6 /* XCTest.framework in Frameworks */,
 				B6B2468319CA81B600020CD6 /* UIKit.framework in Frameworks */,
 				B6B2468119CA81B600020CD6 /* Foundation.framework in Frameworks */,
-				B6B2468619CA81B600020CD6 /* libInterfaceliftKit.a in Frameworks */,
+				B6B2468619CA81B600020CD6 /* libIFLKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,8 +222,8 @@
 		B6B2466519CA81B600020CD6 = {
 			isa = PBXGroup;
 			children = (
-				B6B2467319CA81B600020CD6 /* InterfaceliftKit */,
-				B6B2468719CA81B600020CD6 /* InterfaceliftKitTests */,
+				B6B2467319CA81B600020CD6 /* IFLKit */,
+				B6B2468719CA81B600020CD6 /* IFLKitTest */,
 				B6B2467019CA81B600020CD6 /* Frameworks */,
 				B6B2466F19CA81B600020CD6 /* Products */,
 			);
@@ -187,8 +232,8 @@
 		B6B2466F19CA81B600020CD6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B6B2466E19CA81B600020CD6 /* libInterfaceliftKit.a */,
-				B6B2467E19CA81B600020CD6 /* InterfaceliftKitTests.xctest */,
+				B6B2466E19CA81B600020CD6 /* libIFLKit.a */,
+				B6B2467E19CA81B600020CD6 /* IFLKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,42 +248,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B6B2467319CA81B600020CD6 /* InterfaceliftKit */ = {
+		B6B2467319CA81B600020CD6 /* IFLKit */ = {
 			isa = PBXGroup;
 			children = (
 				B6B2469B19CA837000020CD6 /* Model */,
 				B6B2469719CA81F500020CD6 /* Request */,
-				B6B2467619CA81B600020CD6 /* InterfaceliftKit.h */,
-				B6B2467819CA81B600020CD6 /* InterfaceliftKit.m */,
 				B6B2469F19CA9C2600020CD6 /* IFLClient.h */,
 				B6B246A019CA9C2600020CD6 /* IFLClient.m */,
 				B6B2467419CA81B600020CD6 /* Supporting Files */,
 			);
+			name = IFLKit;
 			path = InterfaceliftKit;
 			sourceTree = "<group>";
 		};
 		B6B2467419CA81B600020CD6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B6B2467519CA81B600020CD6 /* InterfaceliftKit-Prefix.pch */,
+				B6B2467519CA81B600020CD6 /* IFLKit-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B6B2468719CA81B600020CD6 /* InterfaceliftKitTests */ = {
+		B6B2468719CA81B600020CD6 /* IFLKitTest */ = {
 			isa = PBXGroup;
 			children = (
 				B64F028819CDCE3F00FE6755 /* RequestTest */,
 				B64F028719CDCE3100FE6755 /* ModelTest */,
 				B6B2468819CA81B600020CD6 /* Supporting Files */,
 			);
+			name = IFLKitTest;
 			path = InterfaceliftKitTests;
 			sourceTree = "<group>";
 		};
 		B6B2468819CA81B600020CD6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B6B2468919CA81B600020CD6 /* InterfaceliftKitTests-Info.plist */,
+				B6B2468919CA81B600020CD6 /* IFLKitTests-Info.plist */,
 				B6B2468A19CA81B600020CD6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -309,9 +354,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B6B2466D19CA81B600020CD6 /* InterfaceliftKit */ = {
+		B6B2466D19CA81B600020CD6 /* IFLKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B6B2469119CA81B600020CD6 /* Build configuration list for PBXNativeTarget "InterfaceliftKit" */;
+			buildConfigurationList = B6B2469119CA81B600020CD6 /* Build configuration list for PBXNativeTarget "IFLKit" */;
 			buildPhases = (
 				B6B2466A19CA81B600020CD6 /* Sources */,
 				B6B2466B19CA81B600020CD6 /* Frameworks */,
@@ -321,14 +366,14 @@
 			);
 			dependencies = (
 			);
-			name = InterfaceliftKit;
+			name = IFLKit;
 			productName = InterfaceliftKit;
-			productReference = B6B2466E19CA81B600020CD6 /* libInterfaceliftKit.a */;
+			productReference = B6B2466E19CA81B600020CD6 /* libIFLKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		B6B2467D19CA81B600020CD6 /* InterfaceliftKitTests */ = {
+		B6B2467D19CA81B600020CD6 /* IFLKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B6B2469419CA81B600020CD6 /* Build configuration list for PBXNativeTarget "InterfaceliftKitTests" */;
+			buildConfigurationList = B6B2469419CA81B600020CD6 /* Build configuration list for PBXNativeTarget "IFLKitTests" */;
 			buildPhases = (
 				B6B2467A19CA81B600020CD6 /* Sources */,
 				B6B2467B19CA81B600020CD6 /* Frameworks */,
@@ -339,9 +384,9 @@
 			dependencies = (
 				B6B2468519CA81B600020CD6 /* PBXTargetDependency */,
 			);
-			name = InterfaceliftKitTests;
+			name = IFLKitTests;
 			productName = InterfaceliftKitTests;
-			productReference = B6B2467E19CA81B600020CD6 /* InterfaceliftKitTests.xctest */;
+			productReference = B6B2467E19CA81B600020CD6 /* IFLKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -353,7 +398,7 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Frederick Kelch";
 			};
-			buildConfigurationList = B6B2466919CA81B600020CD6 /* Build configuration list for PBXProject "InterfaceliftKit" */;
+			buildConfigurationList = B6B2466919CA81B600020CD6 /* Build configuration list for PBXProject "IFLKit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -365,8 +410,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B6B2466D19CA81B600020CD6 /* InterfaceliftKit */,
-				B6B2467D19CA81B600020CD6 /* InterfaceliftKitTests */,
+				B6B2466D19CA81B600020CD6 /* IFLKit */,
+				B6B2467D19CA81B600020CD6 /* IFLKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -402,7 +447,6 @@
 				B6B246CB19CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.m in Sources */,
 				B6B246B919CBCAE700020CD6 /* IFLSubmissionsDownloadRequest.m in Sources */,
 				B6B246A119CA9C2600020CD6 /* IFLClient.m in Sources */,
-				B6B2467919CA81B600020CD6 /* InterfaceliftKit.m in Sources */,
 				B64F028F19CE631500FE6755 /* IFLLens.m in Sources */,
 				B6B246C219CBCB1C00020CD6 /* IFLSingleWallpaperRequest.m in Sources */,
 				B64F02A119CE700D00FE6755 /* IFLUser.m in Sources */,
@@ -431,7 +475,7 @@
 /* Begin PBXTargetDependency section */
 		B6B2468519CA81B600020CD6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B6B2466D19CA81B600020CD6 /* InterfaceliftKit */;
+			target = B6B2466D19CA81B600020CD6 /* IFLKit */;
 			targetProxy = B6B2468419CA81B600020CD6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -522,9 +566,9 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DSTROOT = /tmp/InterfaceliftKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "InterfaceliftKit/InterfaceliftKit-Prefix.pch";
+				GCC_PREFIX_HEADER = "InterfaceliftKit/IFLKit-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = IFLKit;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -535,9 +579,9 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DSTROOT = /tmp/InterfaceliftKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "InterfaceliftKit/InterfaceliftKit-Prefix.pch";
+				GCC_PREFIX_HEADER = "InterfaceliftKit/IFLKit-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = IFLKit;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -556,8 +600,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "InterfaceliftKitTests/InterfaceliftKitTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "InterfaceliftKitTests/IFLKitTests-Info.plist";
+				PRODUCT_NAME = IFLKitTests;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -572,8 +616,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InterfaceliftKit/InterfaceliftKit-Prefix.pch";
-				INFOPLIST_FILE = "InterfaceliftKitTests/InterfaceliftKitTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "InterfaceliftKitTests/IFLKitTests-Info.plist";
+				PRODUCT_NAME = IFLKitTests;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -581,7 +625,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B6B2466919CA81B600020CD6 /* Build configuration list for PBXProject "InterfaceliftKit" */ = {
+		B6B2466919CA81B600020CD6 /* Build configuration list for PBXProject "IFLKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B6B2468F19CA81B600020CD6 /* Debug */,
@@ -590,7 +634,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B6B2469119CA81B600020CD6 /* Build configuration list for PBXNativeTarget "InterfaceliftKit" */ = {
+		B6B2469119CA81B600020CD6 /* Build configuration list for PBXNativeTarget "IFLKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B6B2469219CA81B600020CD6 /* Debug */,
@@ -599,7 +643,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B6B2469419CA81B600020CD6 /* Build configuration list for PBXNativeTarget "InterfaceliftKitTests" */ = {
+		B6B2469419CA81B600020CD6 /* Build configuration list for PBXNativeTarget "IFLKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B6B2469519CA81B600020CD6 /* Debug */,

@@ -10,4 +10,10 @@
 
 @interface IFLSingleTagRequest : IFLRequest
 
+-(id)init;
+-(id)initWithId:(NSNumber*)iflId;
+
+-(NSArray*)requiredParameters;
+-(NSArray*)optionalParameters;
+-(NSString*)command;
 @end

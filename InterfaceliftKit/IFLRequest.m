@@ -28,15 +28,16 @@ NSString* kIFLRequestSortByComments  = @"comments";
 
 
 #pragma mark - Generate URL Request
--(NSURL*)generateRequestUrlFromBase:(NSURL*)base
+-(NSURL*)buildCommandWithOptions:(IFLURLOption)options error:(NSError**)error
 {
     // Programming Error
     // Throw exception
-    if (!base)
+    if (!self.baseUrl)
         return nil;
     
     
-    NSURLComponents* comp = [[NSURLComponents alloc]initWithURL:base resolvingAgainstBaseURL:YES];
+    NSURLComponents* comp = [[NSURLComponents alloc]initWithURL:[NSURL URLWithString:self.baseUrl]
+                                        resolvingAgainstBaseURL:YES];
     
     // Throw exception. Only support secure connections
     if (![[comp scheme]isEqualToString:@"https"])
@@ -45,21 +46,42 @@ NSString* kIFLRequestSortByComments  = @"comments";
     
     // Handle path construction
     NSString* path = [comp path];
+    
+    // Handle Query String
+    NSMutableArray* queryItems = [NSMutableArray new];
+    
     if ([path characterAtIndex:(([path length])-1)] == '/')
         path = [path substringWithRange:NSMakeRange(0, [path length]-1)];
     
     path = [path stringByAppendingPathComponent:[self command]];
-    for (NSString* var in self.requiredParamaters)
+    for (NSString* var in self.requiredParameters)
     {
         id value = [self valueForKey:var];
-        path = [path stringByAppendingPathComponent:[value description]];
+        
+        // This is a programming error
+        // The programmer didn't provide the required parameter
+        if (!value)
+        {
+            NSException* exception = [NSException exceptionWithName:@"Missing Required Parameter"
+                                                             reason:[NSString stringWithFormat:@"Missing: %@",var]
+                                                           userInfo:nil];
+            @throw exception;
+        }
+        
+        if (options & IFLURLOptionTreatRequiredAsOptional)
+        {
+            [queryItems addObject:[NSURLQueryItem queryItemWithName:var value:value]];
+        }
+        else
+        {
+            path = [path stringByAppendingPathComponent:[value description]];
+        }
     }
     comp.path = path;
     
     
-    // Handle Query String
-    NSMutableArray* queryItems = [NSMutableArray new];
-    for (NSString* var in self.optionalParamaters)
+    
+    for (NSString* var in self.optionalParameters)
     {
         id value = [self valueForKey:var];
         if (value)
@@ -76,18 +98,17 @@ NSString* kIFLRequestSortByComments  = @"comments";
 
 
 #pragma mark - Abstract Methods
-
 -(NSString*)command
 {
     return nil; // None for generic superclass
 }
 
--(NSArray*)requiredParamaters
+-(NSArray*)requiredParameters
 {
     return nil; // None for generic superclass
 }
 
--(NSArray*)optionalParamaters
+-(NSArray*)optionalParameters
 {
     return nil; // None for generic superclass
 }
@@ -97,7 +118,7 @@ NSString* kIFLRequestSortByComments  = @"comments";
 {
     /// Place holders
     /// All subclass should call this method
-    /// IFLRequest should be enclosed in an NSOperation & processed in a backgrond NSOperationQueue
+    /// IFLRequest should be enclosed in an NSOperation & processed in a backgrond thread
     DLog(MAIN_THREAD_WARNING([[NSThread currentThread]isMainThread]));
 }
 
@@ -107,7 +128,7 @@ NSString* kIFLRequestSortByComments  = @"comments";
 {
     /// Place holders
     /// All subclass should call this method
-    /// IFLRequest should be enclosed in an NSOperation & processed in a backgrond NSOperationQueue
+    /// IFLRequest should be enclosed in an NSOperation & processed in a backgrond thread
    DLog(MAIN_THREAD_WARNING([[NSThread currentThread]isMainThread]));
 }
 @end
