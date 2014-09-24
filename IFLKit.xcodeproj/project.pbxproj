@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B64F028619CDCB6200FE6755 /* IFLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F028519CDCB6200FE6755 /* IFLModel.m */; };
+		B64F028A19CDCE6200FE6755 /* IFLCameraModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F028919CDCE6200FE6755 /* IFLCameraModelTest.m */; };
+		B64F028C19CDD24400FE6755 /* IFLModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F028B19CDD24400FE6755 /* IFLModelTest.m */; };
+		B64F028F19CE631500FE6755 /* IFLLens.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F028E19CE631500FE6755 /* IFLLens.m */; };
+		B64F029219CE651D00FE6755 /* IFLComment.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F029119CE651D00FE6755 /* IFLComment.m */; };
+		B64F029819CE675F00FE6755 /* IFLWallpaper.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F029719CE675F00FE6755 /* IFLWallpaper.m */; };
+		B64F029B19CE6D5A00FE6755 /* IFLSubmissionDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F029A19CE6D5A00FE6755 /* IFLSubmissionDownload.m */; };
+		B64F029E19CE6FB700FE6755 /* IFLWallpaperDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F029D19CE6FB700FE6755 /* IFLWallpaperDownload.m */; };
+		B64F02A119CE700D00FE6755 /* IFLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F02A019CE700D00FE6755 /* IFLUser.m */; };
+		B64F02A419CE746500FE6755 /* IFLTag.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F02A319CE746500FE6755 /* IFLTag.m */; };
+		B67CDD9619CD42E90038CEF2 /* IFLSingleTagRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B67CDD9519CD42E90038CEF2 /* IFLSingleTagRequestTest.m */; };
+		B67CDD9919CD50B20038CEF2 /* IFLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B67CDD9819CD50B20038CEF2 /* IFLCamera.m */; };
+		B6B2467219CA81B600020CD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2467119CA81B600020CD6 /* Foundation.framework */; };
+		B6B2467719CA81B600020CD6 /* InterfaceliftKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B2467619CA81B600020CD6 /* InterfaceliftKit.h */; };
+		B6B2467919CA81B600020CD6 /* InterfaceliftKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B2467819CA81B600020CD6 /* InterfaceliftKit.m */; };
+		B6B2468019CA81B600020CD6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2467F19CA81B600020CD6 /* XCTest.framework */; };
+		B6B2468119CA81B600020CD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2467119CA81B600020CD6 /* Foundation.framework */; };
+		B6B2468319CA81B600020CD6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2468219CA81B600020CD6 /* UIKit.framework */; };
+		B6B2468619CA81B600020CD6 /* libInterfaceliftKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2466E19CA81B600020CD6 /* libInterfaceliftKit.a */; };
+		B6B2468C19CA81B600020CD6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6B2468A19CA81B600020CD6 /* InfoPlist.strings */; };
+		B6B2469A19CA821100020CD6 /* IFLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B2469919CA821100020CD6 /* IFLRequest.m */; };
+		B6B246A119CA9C2600020CD6 /* IFLClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246A019CA9C2600020CD6 /* IFLClient.m */; };
+		B6B246A419CBCA6600020CD6 /* IFCameraBodyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246A319CBCA6600020CD6 /* IFCameraBodyRequest.m */; };
+		B6B246A719CBCA7C00020CD6 /* IFLCameraLenseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246A619CBCA7C00020CD6 /* IFLCameraLenseRequest.m */; };
+		B6B246AA19CBCA8D00020CD6 /* IFLSingleCommentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246A919CBCA8D00020CD6 /* IFLSingleCommentRequest.m */; };
+		B6B246AD19CBCAA300020CD6 /* IFLCommentsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246AC19CBCAA300020CD6 /* IFLCommentsRequest.m */; };
+		B6B246B019CBCAB900020CD6 /* IFLFavoritesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246AF19CBCAB900020CD6 /* IFLFavoritesRequest.m */; };
+		B6B246B319CBCAC900020CD6 /* IFLSingleSubmissionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246B219CBCAC900020CD6 /* IFLSingleSubmissionRequest.m */; };
+		B6B246B619CBCAD700020CD6 /* IFLSubmissionsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246B519CBCAD700020CD6 /* IFLSubmissionsRequest.m */; };
+		B6B246B919CBCAE700020CD6 /* IFLSubmissionsDownloadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246B819CBCAE700020CD6 /* IFLSubmissionsDownloadRequest.m */; };
+		B6B246BC19CBCAF800020CD6 /* IFLTagsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246BB19CBCAF800020CD6 /* IFLTagsRequest.m */; };
+		B6B246BF19CBCB0B00020CD6 /* IFLSingleTagRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246BE19CBCB0B00020CD6 /* IFLSingleTagRequest.m */; };
+		B6B246C219CBCB1C00020CD6 /* IFLSingleWallpaperRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246C119CBCB1C00020CD6 /* IFLSingleWallpaperRequest.m */; };
+		B6B246C519CBCB2A00020CD6 /* IFLWallpaperDownloadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246C419CBCB2A00020CD6 /* IFLWallpaperDownloadRequest.m */; };
+		B6B246C819CBCB3900020CD6 /* IFLWallpapersRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246C719CBCB3900020CD6 /* IFLWallpapersRequest.m */; };
+		B6B246CB19CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246CA19CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B6B2468419CA81B600020CD6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6B2466619CA81B600020CD6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6B2466D19CA81B600020CD6;
+			remoteInfo = InterfaceliftKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B6B2466C19CA81B600020CD6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				B6B2467719CA81B600020CD6 /* InterfaceliftKit.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B64F028419CDCB6200FE6755 /* IFLModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLModel.h; sourceTree = "<group>"; };
+		B64F028519CDCB6200FE6755 /* IFLModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLModel.m; sourceTree = "<group>"; };
+		B64F028919CDCE6200FE6755 /* IFLCameraModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLCameraModelTest.m; sourceTree = "<group>"; };
+		B64F028B19CDD24400FE6755 /* IFLModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLModelTest.m; sourceTree = "<group>"; };
+		B64F028D19CE631500FE6755 /* IFLLens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLLens.h; sourceTree = "<group>"; };
+		B64F028E19CE631500FE6755 /* IFLLens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLLens.m; sourceTree = "<group>"; };
+		B64F029019CE651D00FE6755 /* IFLComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLComment.h; sourceTree = "<group>"; };
+		B64F029119CE651D00FE6755 /* IFLComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLComment.m; sourceTree = "<group>"; };
+		B64F029619CE675F00FE6755 /* IFLWallpaper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFLWallpaper.h; path = ../IFLWallpaper.h; sourceTree = "<group>"; };
+		B64F029719CE675F00FE6755 /* IFLWallpaper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFLWallpaper.m; path = ../IFLWallpaper.m; sourceTree = "<group>"; };
+		B64F029919CE6D5A00FE6755 /* IFLSubmissionDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLSubmissionDownload.h; sourceTree = "<group>"; };
+		B64F029A19CE6D5A00FE6755 /* IFLSubmissionDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLSubmissionDownload.m; sourceTree = "<group>"; };
+		B64F029C19CE6FB700FE6755 /* IFLWallpaperDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLWallpaperDownload.h; sourceTree = "<group>"; };
+		B64F029D19CE6FB700FE6755 /* IFLWallpaperDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLWallpaperDownload.m; sourceTree = "<group>"; };
+		B64F029F19CE700D00FE6755 /* IFLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLUser.h; sourceTree = "<group>"; };
+		B64F02A019CE700D00FE6755 /* IFLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLUser.m; sourceTree = "<group>"; };
+		B64F02A219CE746500FE6755 /* IFLTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLTag.h; sourceTree = "<group>"; };
+		B64F02A319CE746500FE6755 /* IFLTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLTag.m; sourceTree = "<group>"; };
+		B67CDD9519CD42E90038CEF2 /* IFLSingleTagRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLSingleTagRequestTest.m; sourceTree = "<group>"; };
+		B67CDD9719CD50B20038CEF2 /* IFLCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLCamera.h; sourceTree = "<group>"; };
+		B67CDD9819CD50B20038CEF2 /* IFLCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLCamera.m; sourceTree = "<group>"; };
+		B6B2466E19CA81B600020CD6 /* libInterfaceliftKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libInterfaceliftKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6B2467119CA81B600020CD6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B6B2467519CA81B600020CD6 /* InterfaceliftKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InterfaceliftKit-Prefix.pch"; sourceTree = "<group>"; };
+		B6B2467619CA81B600020CD6 /* InterfaceliftKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceliftKit.h; sourceTree = "<group>"; };
+		B6B2467819CA81B600020CD6 /* InterfaceliftKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceliftKit.m; sourceTree = "<group>"; };
+		B6B2467E19CA81B600020CD6 /* InterfaceliftKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterfaceliftKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6B2467F19CA81B600020CD6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B6B2468219CA81B600020CD6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B6B2468919CA81B600020CD6 /* InterfaceliftKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InterfaceliftKitTests-Info.plist"; sourceTree = "<group>"; };
+		B6B2468B19CA81B600020CD6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B6B2469819CA821100020CD6 /* IFLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLRequest.h; sourceTree = "<group>"; };
+		B6B2469919CA821100020CD6 /* IFLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLRequest.m; sourceTree = "<group>"; };
+		B6B2469F19CA9C2600020CD6 /* IFLClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLClient.h; sourceTree = "<group>"; };
+		B6B246A019CA9C2600020CD6 /* IFLClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLClient.m; sourceTree = "<group>"; };
+		B6B246A219CBCA6600020CD6 /* IFCameraBodyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFCameraBodyRequest.h; sourceTree = "<group>"; };
+		B6B246A319CBCA6600020CD6 /* IFCameraBodyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFCameraBodyRequest.m; sourceTree = "<group>"; };
+		B6B246A519CBCA7C00020CD6 /* IFLCameraLenseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLCameraLenseRequest.h; sourceTree = "<group>"; };
+		B6B246A619CBCA7C00020CD6 /* IFLCameraLenseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLCameraLenseRequest.m; sourceTree = "<group>"; };
+		B6B246A819CBCA8D00020CD6 /* IFLSingleCommentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLSingleCommentRequest.h; sourceTree = "<group>"; };
+		B6B246A919CBCA8D00020CD6 /* IFLSingleCommentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLSingleCommentRequest.m; sourceTree = "<group>"; };
+		B6B246AB19CBCAA300020CD6 /* IFLCommentsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLCommentsRequest.h; sourceTree = "<group>"; };
+		B6B246AC19CBCAA300020CD6 /* IFLCommentsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLCommentsRequest.m; sourceTree = "<group>"; };
+		B6B246AE19CBCAB900020CD6 /* IFLFavoritesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLFavoritesRequest.h; sourceTree = "<group>"; };
+		B6B246AF19CBCAB900020CD6 /* IFLFavoritesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLFavoritesRequest.m; sourceTree = "<group>"; };
+		B6B246B119CBCAC900020CD6 /* IFLSingleSubmissionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLSingleSubmissionRequest.h; sourceTree = "<group>"; };
+		B6B246B219CBCAC900020CD6 /* IFLSingleSubmissionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLSingleSubmissionRequest.m; sourceTree = "<group>"; };
+		B6B246B419CBCAD700020CD6 /* IFLSubmissionsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLSubmissionsRequest.h; sourceTree = "<group>"; };
+		B6B246B519CBCAD700020CD6 /* IFLSubmissionsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLSubmissionsRequest.m; sourceTree = "<group>"; };
+		B6B246B719CBCAE700020CD6 /* IFLSubmissionsDownloadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLSubmissionsDownloadRequest.h; sourceTree = "<group>"; };
+		B6B246B819CBCAE700020CD6 /* IFLSubmissionsDownloadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLSubmissionsDownloadRequest.m; sourceTree = "<group>"; };
+		B6B246BA19CBCAF800020CD6 /* IFLTagsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLTagsRequest.h; sourceTree = "<group>"; };
+		B6B246BB19CBCAF800020CD6 /* IFLTagsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLTagsRequest.m; sourceTree = "<group>"; };
+		B6B246BD19CBCB0B00020CD6 /* IFLSingleTagRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLSingleTagRequest.h; sourceTree = "<group>"; };
+		B6B246BE19CBCB0B00020CD6 /* IFLSingleTagRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLSingleTagRequest.m; sourceTree = "<group>"; };
+		B6B246C019CBCB1C00020CD6 /* IFLSingleWallpaperRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLSingleWallpaperRequest.h; sourceTree = "<group>"; };
+		B6B246C119CBCB1C00020CD6 /* IFLSingleWallpaperRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLSingleWallpaperRequest.m; sourceTree = "<group>"; };
+		B6B246C319CBCB2A00020CD6 /* IFLWallpaperDownloadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLWallpaperDownloadRequest.h; sourceTree = "<group>"; };
+		B6B246C419CBCB2A00020CD6 /* IFLWallpaperDownloadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLWallpaperDownloadRequest.m; sourceTree = "<group>"; };
+		B6B246C619CBCB3900020CD6 /* IFLWallpapersRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLWallpapersRequest.h; sourceTree = "<group>"; };
+		B6B246C719CBCB3900020CD6 /* IFLWallpapersRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLWallpapersRequest.m; sourceTree = "<group>"; };
+		B6B246C919CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLWallpaperByTimestampRequest.h; sourceTree = "<group>"; };
+		B6B246CA19CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLWallpaperByTimestampRequest.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6B2466B19CA81B600020CD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6B2467219CA81B600020CD6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6B2467B19CA81B600020CD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6B2468019CA81B600020CD6 /* XCTest.framework in Frameworks */,
+				B6B2468319CA81B600020CD6 /* UIKit.framework in Frameworks */,
+				B6B2468119CA81B600020CD6 /* Foundation.framework in Frameworks */,
+				B6B2468619CA81B600020CD6 /* libInterfaceliftKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B64F028719CDCE3100FE6755 /* ModelTest */ = {
+			isa = PBXGroup;
+			children = (
+				B64F028919CDCE6200FE6755 /* IFLCameraModelTest.m */,
+				B64F028B19CDD24400FE6755 /* IFLModelTest.m */,
+			);
+			name = ModelTest;
+			sourceTree = "<group>";
+		};
+		B64F028819CDCE3F00FE6755 /* RequestTest */ = {
+			isa = PBXGroup;
+			children = (
+				B67CDD9519CD42E90038CEF2 /* IFLSingleTagRequestTest.m */,
+			);
+			name = RequestTest;
+			sourceTree = "<group>";
+		};
+		B6B2466519CA81B600020CD6 = {
+			isa = PBXGroup;
+			children = (
+				B6B2467319CA81B600020CD6 /* InterfaceliftKit */,
+				B6B2468719CA81B600020CD6 /* InterfaceliftKitTests */,
+				B6B2467019CA81B600020CD6 /* Frameworks */,
+				B6B2466F19CA81B600020CD6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B6B2466F19CA81B600020CD6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6B2466E19CA81B600020CD6 /* libInterfaceliftKit.a */,
+				B6B2467E19CA81B600020CD6 /* InterfaceliftKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6B2467019CA81B600020CD6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6B2467119CA81B600020CD6 /* Foundation.framework */,
+				B6B2467F19CA81B600020CD6 /* XCTest.framework */,
+				B6B2468219CA81B600020CD6 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6B2467319CA81B600020CD6 /* InterfaceliftKit */ = {
+			isa = PBXGroup;
+			children = (
+				B6B2469B19CA837000020CD6 /* Model */,
+				B6B2469719CA81F500020CD6 /* Request */,
+				B6B2467619CA81B600020CD6 /* InterfaceliftKit.h */,
+				B6B2467819CA81B600020CD6 /* InterfaceliftKit.m */,
+				B6B2469F19CA9C2600020CD6 /* IFLClient.h */,
+				B6B246A019CA9C2600020CD6 /* IFLClient.m */,
+				B6B2467419CA81B600020CD6 /* Supporting Files */,
+			);
+			path = InterfaceliftKit;
+			sourceTree = "<group>";
+		};
+		B6B2467419CA81B600020CD6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6B2467519CA81B600020CD6 /* InterfaceliftKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B6B2468719CA81B600020CD6 /* InterfaceliftKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				B64F028819CDCE3F00FE6755 /* RequestTest */,
+				B64F028719CDCE3100FE6755 /* ModelTest */,
+				B6B2468819CA81B600020CD6 /* Supporting Files */,
+			);
+			path = InterfaceliftKitTests;
+			sourceTree = "<group>";
+		};
+		B6B2468819CA81B600020CD6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6B2468919CA81B600020CD6 /* InterfaceliftKitTests-Info.plist */,
+				B6B2468A19CA81B600020CD6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B6B2469719CA81F500020CD6 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				B6B2469819CA821100020CD6 /* IFLRequest.h */,
+				B6B2469919CA821100020CD6 /* IFLRequest.m */,
+				B6B246A219CBCA6600020CD6 /* IFCameraBodyRequest.h */,
+				B6B246A319CBCA6600020CD6 /* IFCameraBodyRequest.m */,
+				B6B246A519CBCA7C00020CD6 /* IFLCameraLenseRequest.h */,
+				B6B246A619CBCA7C00020CD6 /* IFLCameraLenseRequest.m */,
+				B6B246A819CBCA8D00020CD6 /* IFLSingleCommentRequest.h */,
+				B6B246A919CBCA8D00020CD6 /* IFLSingleCommentRequest.m */,
+				B6B246AB19CBCAA300020CD6 /* IFLCommentsRequest.h */,
+				B6B246AC19CBCAA300020CD6 /* IFLCommentsRequest.m */,
+				B6B246AE19CBCAB900020CD6 /* IFLFavoritesRequest.h */,
+				B6B246AF19CBCAB900020CD6 /* IFLFavoritesRequest.m */,
+				B6B246B119CBCAC900020CD6 /* IFLSingleSubmissionRequest.h */,
+				B6B246B219CBCAC900020CD6 /* IFLSingleSubmissionRequest.m */,
+				B6B246B419CBCAD700020CD6 /* IFLSubmissionsRequest.h */,
+				B6B246B519CBCAD700020CD6 /* IFLSubmissionsRequest.m */,
+				B6B246B719CBCAE700020CD6 /* IFLSubmissionsDownloadRequest.h */,
+				B6B246B819CBCAE700020CD6 /* IFLSubmissionsDownloadRequest.m */,
+				B6B246BA19CBCAF800020CD6 /* IFLTagsRequest.h */,
+				B6B246BB19CBCAF800020CD6 /* IFLTagsRequest.m */,
+				B6B246BD19CBCB0B00020CD6 /* IFLSingleTagRequest.h */,
+				B6B246BE19CBCB0B00020CD6 /* IFLSingleTagRequest.m */,
+				B6B246C019CBCB1C00020CD6 /* IFLSingleWallpaperRequest.h */,
+				B6B246C119CBCB1C00020CD6 /* IFLSingleWallpaperRequest.m */,
+				B6B246C319CBCB2A00020CD6 /* IFLWallpaperDownloadRequest.h */,
+				B6B246C419CBCB2A00020CD6 /* IFLWallpaperDownloadRequest.m */,
+				B6B246C619CBCB3900020CD6 /* IFLWallpapersRequest.h */,
+				B6B246C719CBCB3900020CD6 /* IFLWallpapersRequest.m */,
+				B6B246C919CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.h */,
+				B6B246CA19CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.m */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		B6B2469B19CA837000020CD6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B64F028419CDCB6200FE6755 /* IFLModel.h */,
+				B64F028519CDCB6200FE6755 /* IFLModel.m */,
+				B67CDD9719CD50B20038CEF2 /* IFLCamera.h */,
+				B67CDD9819CD50B20038CEF2 /* IFLCamera.m */,
+				B64F028D19CE631500FE6755 /* IFLLens.h */,
+				B64F028E19CE631500FE6755 /* IFLLens.m */,
+				B64F029019CE651D00FE6755 /* IFLComment.h */,
+				B64F029119CE651D00FE6755 /* IFLComment.m */,
+				B64F029619CE675F00FE6755 /* IFLWallpaper.h */,
+				B64F029719CE675F00FE6755 /* IFLWallpaper.m */,
+				B64F029919CE6D5A00FE6755 /* IFLSubmissionDownload.h */,
+				B64F029A19CE6D5A00FE6755 /* IFLSubmissionDownload.m */,
+				B64F029C19CE6FB700FE6755 /* IFLWallpaperDownload.h */,
+				B64F029D19CE6FB700FE6755 /* IFLWallpaperDownload.m */,
+				B64F029F19CE700D00FE6755 /* IFLUser.h */,
+				B64F02A019CE700D00FE6755 /* IFLUser.m */,
+				B64F02A219CE746500FE6755 /* IFLTag.h */,
+				B64F02A319CE746500FE6755 /* IFLTag.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B6B2466D19CA81B600020CD6 /* InterfaceliftKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6B2469119CA81B600020CD6 /* Build configuration list for PBXNativeTarget "InterfaceliftKit" */;
+			buildPhases = (
+				B6B2466A19CA81B600020CD6 /* Sources */,
+				B6B2466B19CA81B600020CD6 /* Frameworks */,
+				B6B2466C19CA81B600020CD6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InterfaceliftKit;
+			productName = InterfaceliftKit;
+			productReference = B6B2466E19CA81B600020CD6 /* libInterfaceliftKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B6B2467D19CA81B600020CD6 /* InterfaceliftKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6B2469419CA81B600020CD6 /* Build configuration list for PBXNativeTarget "InterfaceliftKitTests" */;
+			buildPhases = (
+				B6B2467A19CA81B600020CD6 /* Sources */,
+				B6B2467B19CA81B600020CD6 /* Frameworks */,
+				B6B2467C19CA81B600020CD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6B2468519CA81B600020CD6 /* PBXTargetDependency */,
+			);
+			name = InterfaceliftKitTests;
+			productName = InterfaceliftKitTests;
+			productReference = B6B2467E19CA81B600020CD6 /* InterfaceliftKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6B2466619CA81B600020CD6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Frederick Kelch";
+			};
+			buildConfigurationList = B6B2466919CA81B600020CD6 /* Build configuration list for PBXProject "InterfaceliftKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B6B2466519CA81B600020CD6;
+			productRefGroup = B6B2466F19CA81B600020CD6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6B2466D19CA81B600020CD6 /* InterfaceliftKit */,
+				B6B2467D19CA81B600020CD6 /* InterfaceliftKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B6B2467C19CA81B600020CD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6B2468C19CA81B600020CD6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6B2466A19CA81B600020CD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6B246C819CBCB3900020CD6 /* IFLWallpapersRequest.m in Sources */,
+				B6B246B019CBCAB900020CD6 /* IFLFavoritesRequest.m in Sources */,
+				B67CDD9919CD50B20038CEF2 /* IFLCamera.m in Sources */,
+				B6B246C519CBCB2A00020CD6 /* IFLWallpaperDownloadRequest.m in Sources */,
+				B64F02A419CE746500FE6755 /* IFLTag.m in Sources */,
+				B64F029E19CE6FB700FE6755 /* IFLWallpaperDownload.m in Sources */,
+				B6B246B619CBCAD700020CD6 /* IFLSubmissionsRequest.m in Sources */,
+				B64F028619CDCB6200FE6755 /* IFLModel.m in Sources */,
+				B64F029819CE675F00FE6755 /* IFLWallpaper.m in Sources */,
+				B6B246B319CBCAC900020CD6 /* IFLSingleSubmissionRequest.m in Sources */,
+				B6B246A419CBCA6600020CD6 /* IFCameraBodyRequest.m in Sources */,
+				B6B246AD19CBCAA300020CD6 /* IFLCommentsRequest.m in Sources */,
+				B6B246CB19CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.m in Sources */,
+				B6B246B919CBCAE700020CD6 /* IFLSubmissionsDownloadRequest.m in Sources */,
+				B6B246A119CA9C2600020CD6 /* IFLClient.m in Sources */,
+				B6B2467919CA81B600020CD6 /* InterfaceliftKit.m in Sources */,
+				B64F028F19CE631500FE6755 /* IFLLens.m in Sources */,
+				B6B246C219CBCB1C00020CD6 /* IFLSingleWallpaperRequest.m in Sources */,
+				B64F02A119CE700D00FE6755 /* IFLUser.m in Sources */,
+				B6B246BF19CBCB0B00020CD6 /* IFLSingleTagRequest.m in Sources */,
+				B64F029B19CE6D5A00FE6755 /* IFLSubmissionDownload.m in Sources */,
+				B64F029219CE651D00FE6755 /* IFLComment.m in Sources */,
+				B6B246A719CBCA7C00020CD6 /* IFLCameraLenseRequest.m in Sources */,
+				B6B246BC19CBCAF800020CD6 /* IFLTagsRequest.m in Sources */,
+				B6B2469A19CA821100020CD6 /* IFLRequest.m in Sources */,
+				B6B246AA19CBCA8D00020CD6 /* IFLSingleCommentRequest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6B2467A19CA81B600020CD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B64F028C19CDD24400FE6755 /* IFLModelTest.m in Sources */,
+				B64F028A19CDCE6200FE6755 /* IFLCameraModelTest.m in Sources */,
+				B67CDD9619CD42E90038CEF2 /* IFLSingleTagRequestTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B6B2468519CA81B600020CD6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6B2466D19CA81B600020CD6 /* InterfaceliftKit */;
+			targetProxy = B6B2468419CA81B600020CD6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B6B2468A19CA81B600020CD6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6B2468B19CA81B600020CD6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B6B2468F19CA81B600020CD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B6B2469019CA81B600020CD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B6B2469219CA81B600020CD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DSTROOT = /tmp/InterfaceliftKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InterfaceliftKit/InterfaceliftKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B6B2469319CA81B600020CD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DSTROOT = /tmp/InterfaceliftKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InterfaceliftKit/InterfaceliftKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B6B2469519CA81B600020CD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InterfaceliftKit/InterfaceliftKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "InterfaceliftKitTests/InterfaceliftKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		B6B2469619CA81B600020CD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InterfaceliftKit/InterfaceliftKit-Prefix.pch";
+				INFOPLIST_FILE = "InterfaceliftKitTests/InterfaceliftKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B6B2466919CA81B600020CD6 /* Build configuration list for PBXProject "InterfaceliftKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6B2468F19CA81B600020CD6 /* Debug */,
+				B6B2469019CA81B600020CD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6B2469119CA81B600020CD6 /* Build configuration list for PBXNativeTarget "InterfaceliftKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6B2469219CA81B600020CD6 /* Debug */,
+				B6B2469319CA81B600020CD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6B2469419CA81B600020CD6 /* Build configuration list for PBXNativeTarget "InterfaceliftKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6B2469519CA81B600020CD6 /* Debug */,
+				B6B2469619CA81B600020CD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B6B2466619CA81B600020CD6 /* Project object */;
+}
