@@ -1,5 +1,5 @@
 //
-//  IFLSingleTagRequestTest.m
+//  IFLSubmissionsRequestTest.m
 //  IFLKit
 //
 //  Created by Freddy kelch on 9/24/14.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface IFLSingleTagRequestTest : XCTestCase
+@interface IFLSubmissionsRequestTest : XCTestCase
 
 @end
 
-@implementation IFLSingleTagRequestTest
+@implementation IFLSubmissionsRequestTest
 
 - (void)setUp {
     [super setUp];

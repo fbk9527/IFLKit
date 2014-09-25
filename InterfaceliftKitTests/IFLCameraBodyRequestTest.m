@@ -1,5 +1,5 @@
 //
-//  IFLSingleTagRequestTest.m
+//  IFLCameraBodyRequestTest.m
 //  IFLKit
 //
 //  Created by Freddy kelch on 9/24/14.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface IFLSingleTagRequestTest : XCTestCase
+@interface IFLCameraBodyRequestTest : XCTestCase
 
 @end
 
-@implementation IFLSingleTagRequestTest
+@implementation IFLCameraBodyRequestTest
 
 - (void)setUp {
     [super setUp];

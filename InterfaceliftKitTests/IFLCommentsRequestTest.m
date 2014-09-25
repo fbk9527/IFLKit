@@ -1,5 +1,5 @@
 //
-//  IFLSingleTagRequestTest.m
+//  IFLCommentsRequestTest.m
 //  IFLKit
 //
 //  Created by Freddy kelch on 9/24/14.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface IFLSingleTagRequestTest : XCTestCase
+@interface IFLCommentsRequestTest : XCTestCase
 
 @end
 
-@implementation IFLSingleTagRequestTest
+@implementation IFLCommentsRequestTest
 
 - (void)setUp {
     [super setUp];
