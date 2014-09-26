@@ -8,33 +8,31 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "IFLCameraBodyRequest.h"
 
 @interface IFLCameraBodyRequestTest : XCTestCase
-
+@property(strong,nonatomic) NSString* base_url;
+@property(strong,nonatomic) NSNumber* iflId;
 @end
 
 @implementation IFLCameraBodyRequestTest
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.base_url =@"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/";
+    self.iflId = @1;
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+-(void)testCommandRequestURL_OnlyRequired
+{
+    NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/camera/1/";
+    IFLCameraBodyRequest* req = [[IFLCameraBodyRequest alloc]initWithId:self.iflId];
+    req.baseUrl = self.base_url;
+    NSURL* url = [req generateRequestURL];
+    XCTAssert([expecting isEqualToString:[url description]],@"The URL is incorrectly formatted! %@",[url description]);
 }
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
-
 @end
