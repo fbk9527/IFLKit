@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B609773D19D3A255003F8264 /* IFLClientTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609773C19D3A255003F8264 /* IFLClientTest.m */; };
+		B609773F19D3A3C7003F8264 /* testing_key.txt in Resources */ = {isa = PBXBuildFile; fileRef = B609773E19D3A3C7003F8264 /* testing_key.txt */; };
+		B609774119D3AED6003F8264 /* IFLRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609774019D3AED6003F8264 /* IFLRequestTest.m */; };
+		B609774319D3AEE2003F8264 /* IFLCameraBodyRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609774219D3AEE2003F8264 /* IFLCameraBodyRequestTest.m */; };
+		B609774519D3AEF3003F8264 /* FILCameraLensRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609774419D3AEF3003F8264 /* FILCameraLensRequestTest.m */; };
+		B609774719D3AF22003F8264 /* FILSingleCommentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609774619D3AF22003F8264 /* FILSingleCommentRequest.m */; };
+		B609774919D3AF34003F8264 /* IFLCommentsRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609774819D3AF34003F8264 /* IFLCommentsRequestTest.m */; };
+		B609774B19D3AF44003F8264 /* IFLFavoritesRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609774A19D3AF44003F8264 /* IFLFavoritesRequestTest.m */; };
+		B609774D19D3AF50003F8264 /* IFLSingleSubmissionRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609774C19D3AF50003F8264 /* IFLSingleSubmissionRequestTest.m */; };
+		B609774F19D3AF5D003F8264 /* IFLSubmissionsRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609774E19D3AF5D003F8264 /* IFLSubmissionsRequestTest.m */; };
+		B609775119D3AF83003F8264 /* IFLSubmissionsDownloadRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609775019D3AF83003F8264 /* IFLSubmissionsDownloadRequestTest.m */; };
+		B609775319D3AF8E003F8264 /* IFLTagsRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609775219D3AF8E003F8264 /* IFLTagsRequestTest.m */; };
+		B609775519D3AF9A003F8264 /* IFLSingleTagRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609775419D3AF9A003F8264 /* IFLSingleTagRequestTest.m */; };
+		B609775719D3AFA5003F8264 /* IFLSingleWallpaperRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609775619D3AFA5003F8264 /* IFLSingleWallpaperRequestTest.m */; };
+		B609775919D3AFBD003F8264 /* IFLWallpaperDownloadRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609775819D3AFBD003F8264 /* IFLWallpaperDownloadRequestTest.m */; };
+		B609775B19D3AFC9003F8264 /* IFLWallpaperByTimestampRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609775A19D3AFC9003F8264 /* IFLWallpaperByTimestampRequestTest.m */; };
 		B61A91D319CF2ADB002201FB /* IFLModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B64F028419CDCB6200FE6755 /* IFLModel.h */; };
 		B61A91D419CF2ADB002201FB /* IFLCamera.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B67CDD9719CD50B20038CEF2 /* IFLCamera.h */; };
 		B61A91D519CF2ADB002201FB /* IFLLens.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B64F028D19CE631500FE6755 /* IFLLens.h */; };
@@ -18,7 +34,7 @@
 		B61A91DB19CF2ADB002201FB /* IFLTag.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B64F02A219CE746500FE6755 /* IFLTag.h */; };
 		B61A91DC19CF2ADB002201FB /* IFLRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B2469819CA821100020CD6 /* IFLRequest.h */; };
 		B61A91DD19CF2ADB002201FB /* IFCameraBodyRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246A219CBCA6600020CD6 /* IFCameraBodyRequest.h */; };
-		B61A91DE19CF2ADB002201FB /* IFLCameraLenseRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246A519CBCA7C00020CD6 /* IFLCameraLenseRequest.h */; };
+		B61A91DE19CF2ADB002201FB /* IFLCameraLensRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246A519CBCA7C00020CD6 /* IFLCameraLensRequest.h */; };
 		B61A91DF19CF2ADB002201FB /* IFLSingleCommentRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246A819CBCA8D00020CD6 /* IFLSingleCommentRequest.h */; };
 		B61A91E019CF2ADB002201FB /* IFLCommentsRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246AB19CBCAA300020CD6 /* IFLCommentsRequest.h */; };
 		B61A91E119CF2ADB002201FB /* IFLFavoritesRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6B246AE19CBCAB900020CD6 /* IFLFavoritesRequest.h */; };
@@ -42,7 +58,6 @@
 		B64F029E19CE6FB700FE6755 /* IFLWallpaperDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F029D19CE6FB700FE6755 /* IFLWallpaperDownload.m */; };
 		B64F02A119CE700D00FE6755 /* IFLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F02A019CE700D00FE6755 /* IFLUser.m */; };
 		B64F02A419CE746500FE6755 /* IFLTag.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F02A319CE746500FE6755 /* IFLTag.m */; };
-		B67CDD9619CD42E90038CEF2 /* IFLSingleTagRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B67CDD9519CD42E90038CEF2 /* IFLSingleTagRequestTest.m */; };
 		B67CDD9919CD50B20038CEF2 /* IFLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B67CDD9819CD50B20038CEF2 /* IFLCamera.m */; };
 		B6B2467219CA81B600020CD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2467119CA81B600020CD6 /* Foundation.framework */; };
 		B6B2468019CA81B600020CD6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2467F19CA81B600020CD6 /* XCTest.framework */; };
@@ -53,7 +68,7 @@
 		B6B2469A19CA821100020CD6 /* IFLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B2469919CA821100020CD6 /* IFLRequest.m */; };
 		B6B246A119CA9C2600020CD6 /* IFLClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246A019CA9C2600020CD6 /* IFLClient.m */; };
 		B6B246A419CBCA6600020CD6 /* IFCameraBodyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246A319CBCA6600020CD6 /* IFCameraBodyRequest.m */; };
-		B6B246A719CBCA7C00020CD6 /* IFLCameraLenseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246A619CBCA7C00020CD6 /* IFLCameraLenseRequest.m */; };
+		B6B246A719CBCA7C00020CD6 /* IFLCameraLensRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246A619CBCA7C00020CD6 /* IFLCameraLensRequest.m */; };
 		B6B246AA19CBCA8D00020CD6 /* IFLSingleCommentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246A919CBCA8D00020CD6 /* IFLSingleCommentRequest.m */; };
 		B6B246AD19CBCAA300020CD6 /* IFLCommentsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246AC19CBCAA300020CD6 /* IFLCommentsRequest.m */; };
 		B6B246B019CBCAB900020CD6 /* IFLFavoritesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246AF19CBCAB900020CD6 /* IFLFavoritesRequest.m */; };
@@ -96,7 +111,7 @@
 				B61A91DB19CF2ADB002201FB /* IFLTag.h in CopyFiles */,
 				B61A91DC19CF2ADB002201FB /* IFLRequest.h in CopyFiles */,
 				B61A91DD19CF2ADB002201FB /* IFCameraBodyRequest.h in CopyFiles */,
-				B61A91DE19CF2ADB002201FB /* IFLCameraLenseRequest.h in CopyFiles */,
+				B61A91DE19CF2ADB002201FB /* IFLCameraLensRequest.h in CopyFiles */,
 				B61A91DF19CF2ADB002201FB /* IFLSingleCommentRequest.h in CopyFiles */,
 				B61A91E019CF2ADB002201FB /* IFLCommentsRequest.h in CopyFiles */,
 				B61A91E119CF2ADB002201FB /* IFLFavoritesRequest.h in CopyFiles */,
@@ -116,6 +131,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B609773C19D3A255003F8264 /* IFLClientTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLClientTest.m; sourceTree = "<group>"; };
+		B609773E19D3A3C7003F8264 /* testing_key.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testing_key.txt; sourceTree = "<group>"; };
+		B609774019D3AED6003F8264 /* IFLRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLRequestTest.m; sourceTree = "<group>"; };
+		B609774219D3AEE2003F8264 /* IFLCameraBodyRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLCameraBodyRequestTest.m; sourceTree = "<group>"; };
+		B609774419D3AEF3003F8264 /* FILCameraLensRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FILCameraLensRequestTest.m; sourceTree = "<group>"; };
+		B609774619D3AF22003F8264 /* FILSingleCommentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FILSingleCommentRequest.m; sourceTree = "<group>"; };
+		B609774819D3AF34003F8264 /* IFLCommentsRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLCommentsRequestTest.m; sourceTree = "<group>"; };
+		B609774A19D3AF44003F8264 /* IFLFavoritesRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLFavoritesRequestTest.m; sourceTree = "<group>"; };
+		B609774C19D3AF50003F8264 /* IFLSingleSubmissionRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLSingleSubmissionRequestTest.m; sourceTree = "<group>"; };
+		B609774E19D3AF5D003F8264 /* IFLSubmissionsRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLSubmissionsRequestTest.m; sourceTree = "<group>"; };
+		B609775019D3AF83003F8264 /* IFLSubmissionsDownloadRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLSubmissionsDownloadRequestTest.m; sourceTree = "<group>"; };
+		B609775219D3AF8E003F8264 /* IFLTagsRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLTagsRequestTest.m; sourceTree = "<group>"; };
+		B609775419D3AF9A003F8264 /* IFLSingleTagRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLSingleTagRequestTest.m; sourceTree = "<group>"; };
+		B609775619D3AFA5003F8264 /* IFLSingleWallpaperRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLSingleWallpaperRequestTest.m; sourceTree = "<group>"; };
+		B609775819D3AFBD003F8264 /* IFLWallpaperDownloadRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLWallpaperDownloadRequestTest.m; sourceTree = "<group>"; };
+		B609775A19D3AFC9003F8264 /* IFLWallpaperByTimestampRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLWallpaperByTimestampRequestTest.m; sourceTree = "<group>"; };
 		B64F028419CDCB6200FE6755 /* IFLModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLModel.h; sourceTree = "<group>"; };
 		B64F028519CDCB6200FE6755 /* IFLModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLModel.m; sourceTree = "<group>"; };
 		B64F028919CDCE6200FE6755 /* IFLCameraModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLCameraModelTest.m; sourceTree = "<group>"; };
@@ -134,7 +165,6 @@
 		B64F02A019CE700D00FE6755 /* IFLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLUser.m; sourceTree = "<group>"; };
 		B64F02A219CE746500FE6755 /* IFLTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLTag.h; sourceTree = "<group>"; };
 		B64F02A319CE746500FE6755 /* IFLTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLTag.m; sourceTree = "<group>"; };
-		B67CDD9519CD42E90038CEF2 /* IFLSingleTagRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLSingleTagRequestTest.m; sourceTree = "<group>"; };
 		B67CDD9719CD50B20038CEF2 /* IFLCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLCamera.h; sourceTree = "<group>"; };
 		B67CDD9819CD50B20038CEF2 /* IFLCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLCamera.m; sourceTree = "<group>"; };
 		B6B2466E19CA81B600020CD6 /* libIFLKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIFLKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,8 +181,8 @@
 		B6B246A019CA9C2600020CD6 /* IFLClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLClient.m; sourceTree = "<group>"; };
 		B6B246A219CBCA6600020CD6 /* IFCameraBodyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFCameraBodyRequest.h; sourceTree = "<group>"; };
 		B6B246A319CBCA6600020CD6 /* IFCameraBodyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFCameraBodyRequest.m; sourceTree = "<group>"; };
-		B6B246A519CBCA7C00020CD6 /* IFLCameraLenseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLCameraLenseRequest.h; sourceTree = "<group>"; };
-		B6B246A619CBCA7C00020CD6 /* IFLCameraLenseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLCameraLenseRequest.m; sourceTree = "<group>"; };
+		B6B246A519CBCA7C00020CD6 /* IFLCameraLensRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLCameraLensRequest.h; sourceTree = "<group>"; };
+		B6B246A619CBCA7C00020CD6 /* IFLCameraLensRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLCameraLensRequest.m; sourceTree = "<group>"; };
 		B6B246A819CBCA8D00020CD6 /* IFLSingleCommentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLSingleCommentRequest.h; sourceTree = "<group>"; };
 		B6B246A919CBCA8D00020CD6 /* IFLSingleCommentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLSingleCommentRequest.m; sourceTree = "<group>"; };
 		B6B246AB19CBCAA300020CD6 /* IFLCommentsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLCommentsRequest.h; sourceTree = "<group>"; };
@@ -202,6 +232,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B609773B19D3A234003F8264 /* ClientTest */ = {
+			isa = PBXGroup;
+			children = (
+				B609773C19D3A255003F8264 /* IFLClientTest.m */,
+			);
+			name = ClientTest;
+			sourceTree = "<group>";
+		};
 		B64F028719CDCE3100FE6755 /* ModelTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,7 +252,20 @@
 		B64F028819CDCE3F00FE6755 /* RequestTest */ = {
 			isa = PBXGroup;
 			children = (
-				B67CDD9519CD42E90038CEF2 /* IFLSingleTagRequestTest.m */,
+				B609774019D3AED6003F8264 /* IFLRequestTest.m */,
+				B609774219D3AEE2003F8264 /* IFLCameraBodyRequestTest.m */,
+				B609774419D3AEF3003F8264 /* FILCameraLensRequestTest.m */,
+				B609774619D3AF22003F8264 /* FILSingleCommentRequest.m */,
+				B609774819D3AF34003F8264 /* IFLCommentsRequestTest.m */,
+				B609774A19D3AF44003F8264 /* IFLFavoritesRequestTest.m */,
+				B609774C19D3AF50003F8264 /* IFLSingleSubmissionRequestTest.m */,
+				B609774E19D3AF5D003F8264 /* IFLSubmissionsRequestTest.m */,
+				B609775019D3AF83003F8264 /* IFLSubmissionsDownloadRequestTest.m */,
+				B609775219D3AF8E003F8264 /* IFLTagsRequestTest.m */,
+				B609775419D3AF9A003F8264 /* IFLSingleTagRequestTest.m */,
+				B609775619D3AFA5003F8264 /* IFLSingleWallpaperRequestTest.m */,
+				B609775819D3AFBD003F8264 /* IFLWallpaperDownloadRequestTest.m */,
+				B609775A19D3AFC9003F8264 /* IFLWallpaperByTimestampRequestTest.m */,
 			);
 			name = RequestTest;
 			sourceTree = "<group>";
@@ -222,6 +273,7 @@
 		B6B2466519CA81B600020CD6 = {
 			isa = PBXGroup;
 			children = (
+				B609773E19D3A3C7003F8264 /* testing_key.txt */,
 				B6B2467319CA81B600020CD6 /* IFLKit */,
 				B6B2468719CA81B600020CD6 /* IFLKitTest */,
 				B6B2467019CA81B600020CD6 /* Frameworks */,
@@ -272,6 +324,7 @@
 		B6B2468719CA81B600020CD6 /* IFLKitTest */ = {
 			isa = PBXGroup;
 			children = (
+				B609773B19D3A234003F8264 /* ClientTest */,
 				B64F028819CDCE3F00FE6755 /* RequestTest */,
 				B64F028719CDCE3100FE6755 /* ModelTest */,
 				B6B2468819CA81B600020CD6 /* Supporting Files */,
@@ -296,8 +349,8 @@
 				B6B2469919CA821100020CD6 /* IFLRequest.m */,
 				B6B246A219CBCA6600020CD6 /* IFCameraBodyRequest.h */,
 				B6B246A319CBCA6600020CD6 /* IFCameraBodyRequest.m */,
-				B6B246A519CBCA7C00020CD6 /* IFLCameraLenseRequest.h */,
-				B6B246A619CBCA7C00020CD6 /* IFLCameraLenseRequest.m */,
+				B6B246A519CBCA7C00020CD6 /* IFLCameraLensRequest.h */,
+				B6B246A619CBCA7C00020CD6 /* IFLCameraLensRequest.m */,
 				B6B246A819CBCA8D00020CD6 /* IFLSingleCommentRequest.h */,
 				B6B246A919CBCA8D00020CD6 /* IFLSingleCommentRequest.m */,
 				B6B246AB19CBCAA300020CD6 /* IFLCommentsRequest.h */,
@@ -422,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6B2468C19CA81B600020CD6 /* InfoPlist.strings in Resources */,
+				B609773F19D3A3C7003F8264 /* testing_key.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +507,7 @@
 				B6B246BF19CBCB0B00020CD6 /* IFLSingleTagRequest.m in Sources */,
 				B64F029B19CE6D5A00FE6755 /* IFLSubmissionDownload.m in Sources */,
 				B64F029219CE651D00FE6755 /* IFLComment.m in Sources */,
-				B6B246A719CBCA7C00020CD6 /* IFLCameraLenseRequest.m in Sources */,
+				B6B246A719CBCA7C00020CD6 /* IFLCameraLensRequest.m in Sources */,
 				B6B246BC19CBCAF800020CD6 /* IFLTagsRequest.m in Sources */,
 				B6B2469A19CA821100020CD6 /* IFLRequest.m in Sources */,
 				B6B246AA19CBCA8D00020CD6 /* IFLSingleCommentRequest.m in Sources */,
@@ -464,9 +518,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B609775919D3AFBD003F8264 /* IFLWallpaperDownloadRequestTest.m in Sources */,
+				B609774D19D3AF50003F8264 /* IFLSingleSubmissionRequestTest.m in Sources */,
+				B609775119D3AF83003F8264 /* IFLSubmissionsDownloadRequestTest.m in Sources */,
+				B609773D19D3A255003F8264 /* IFLClientTest.m in Sources */,
+				B609774F19D3AF5D003F8264 /* IFLSubmissionsRequestTest.m in Sources */,
+				B609775519D3AF9A003F8264 /* IFLSingleTagRequestTest.m in Sources */,
 				B64F028C19CDD24400FE6755 /* IFLModelTest.m in Sources */,
+				B609775719D3AFA5003F8264 /* IFLSingleWallpaperRequestTest.m in Sources */,
+				B609775B19D3AFC9003F8264 /* IFLWallpaperByTimestampRequestTest.m in Sources */,
+				B609774519D3AEF3003F8264 /* FILCameraLensRequestTest.m in Sources */,
+				B609774719D3AF22003F8264 /* FILSingleCommentRequest.m in Sources */,
 				B64F028A19CDCE6200FE6755 /* IFLCameraModelTest.m in Sources */,
-				B67CDD9619CD42E90038CEF2 /* IFLSingleTagRequestTest.m in Sources */,
+				B609774919D3AF34003F8264 /* IFLCommentsRequestTest.m in Sources */,
+				B609774319D3AEE2003F8264 /* IFLCameraBodyRequestTest.m in Sources */,
+				B609774119D3AED6003F8264 /* IFLRequestTest.m in Sources */,
+				B609774B19D3AF44003F8264 /* IFLFavoritesRequestTest.m in Sources */,
+				B609775319D3AF8E003F8264 /* IFLTagsRequestTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,7 +663,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "InterfaceliftKit/InterfaceliftKit-Prefix.pch";
+				GCC_PREFIX_HEADER = "InterfaceliftKit/IFLKit-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -615,7 +683,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "InterfaceliftKit/InterfaceliftKit-Prefix.pch";
+				GCC_PREFIX_HEADER = "InterfaceliftKit/IFLKit-Prefix.pch";
 				INFOPLIST_FILE = "InterfaceliftKitTests/IFLKitTests-Info.plist";
 				PRODUCT_NAME = IFLKitTests;
 				WRAPPER_EXTENSION = xctest;

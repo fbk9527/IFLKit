@@ -7,12 +7,13 @@
 //
 
 #import "IFLRequest.h"
-#import "IFLCameraLenseRequest.h"
+#import "IFLCameraLensRequest.h"
 #import "IFLSingleCommentRequest.h"
 #import "IFLCommentsRequest.h"
 #import "IFLFavoritesRequest.h"
 #import "IFLSingleSubmissionRequest.h"
 #import "IFLSubmissionsDownloadRequest.h"
+#import "NSArray+DGParameterizeArray.h"
 
 @interface IFLRequest ()
 @property(strong,nonatomic) NSMutableArray* operationDependencies;
@@ -28,14 +29,9 @@ NSString* kIFLRequestSortByComments  = @"comments";
 
 
 #pragma mark - Generate URL Request
--(NSURL*)buildCommandWithOptions:(IFLURLOption)options error:(NSError**)error
+-(NSURL*)generateRequestURL
 {
-    // Programming Error
-    // Throw exception
-    if (!self.baseUrl)
-        return nil;
-    
-    
+
     NSURLComponents* comp = [[NSURLComponents alloc]initWithURL:[NSURL URLWithString:self.baseUrl]
                                         resolvingAgainstBaseURL:YES];
     
@@ -46,8 +42,6 @@ NSString* kIFLRequestSortByComments  = @"comments";
     
     // Handle path construction
     NSString* path = [comp path];
-    
-    // Handle Query String
     NSMutableArray* queryItems = [NSMutableArray new];
     
     if ([path characterAtIndex:(([path length])-1)] == '/')
@@ -57,6 +51,12 @@ NSString* kIFLRequestSortByComments  = @"comments";
     for (NSString* var in self.requiredParameters)
     {
         id value = [self valueForKey:var];
+        
+        // Special case for resolution
+        if ([var isEqualToString:@"resolution"] && [value isKindOfClass:[NSString class]])
+            value = [[NSString alloc]initWithFormat:@"'%@'",value];
+        
+    
         
         // This is a programming error
         // The programmer didn't provide the required parameter
@@ -68,14 +68,20 @@ NSString* kIFLRequestSortByComments  = @"comments";
             @throw exception;
         }
         
-        if (options & IFLURLOptionTreatRequiredAsOptional)
+        if (self.options & IFLURLOptionTreatRequiredAsOptional)
         {
-            [queryItems addObject:[NSURLQueryItem queryItemWithName:var value:value]];
+            [queryItems addObject:[NSURLQueryItem queryItemWithName:var value:[value description]]];
         }
         else
         {
             path = [path stringByAppendingPathComponent:[value description]];
         }
+    }
+    
+    // Make sure the last required param ends with a forward slash
+    if ( path && path.length > 0 && [path characterAtIndex:path.length-1] != '/')
+    {
+        path = [[NSString alloc]initWithFormat:@"%@/",path];
     }
     comp.path = path;
     
@@ -85,11 +91,12 @@ NSString* kIFLRequestSortByComments  = @"comments";
     {
         id value = [self valueForKey:var];
         if (value)
-            [queryItems addObject:[NSURLQueryItem queryItemWithName:var value:value]];
+            [queryItems addObject:[NSURLQueryItem queryItemWithName:var value:[value description]]];
     }
+    
+    
     if (queryItems.count > 0)
         comp.queryItems = queryItems;
-    
     
     return comp.URL;
 }
@@ -113,22 +120,41 @@ NSString* kIFLRequestSortByComments  = @"comments";
     return nil; // None for generic superclass
 }
 
--(void)processWithBaseUrl:(NSURL *)baseUrl
-          withHTTPHeaders:(NSDictionary *)dict
+-(NSArray*)multiValueParameters
 {
-    /// Place holders
-    /// All subclass should call this method
-    /// IFLRequest should be enclosed in an NSOperation & processed in a backgrond thread
-    DLog(MAIN_THREAD_WARNING([[NSThread currentThread]isMainThread]));
+    return @[@"sort_by"];
 }
-
--(void)processWithBaseUrl:(NSURL *)baseUrl
-          withHTTPHeaders:(NSDictionary *)dict
-      enclosedInOperation:(NSOperation *)operation
+#pragma mark - NSOperation Overloaded Methods
+-(void)main
 {
-    /// Place holders
-    /// All subclass should call this method
-    /// IFLRequest should be enclosed in an NSOperation & processed in a backgrond thread
-   DLog(MAIN_THREAD_WARNING([[NSThread currentThread]isMainThread]));
+    // Construct requested URL
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc]initWithURL:[self generateRequestURL]];
+    
+    // Add Authentication Headers
+    for (NSString* httpHeaderKey in self.HTTPHeaders.allKeys)
+    {
+        [request addValue:self.HTTPHeaders[httpHeaderKey] forHTTPHeaderField:httpHeaderKey];
+    }
+    
+    // OBJects for callback
+    NSError* error = nil;
+    NSHTTPURLResponse* response = nil;
+    NSData* data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    if (!error && request && response.statusCode == 200)
+    {
+        id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        if (self.successBlock)
+        {
+            self.successBlock(json,response,error);
+        }
+    }
+    else
+    {
+        if (self.failureBlock)
+        {
+            self.failureBlock(nil,response,error);
+        }
+    }
 }
 @end

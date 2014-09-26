@@ -10,4 +10,6 @@
 
 @interface IFLWallpaperDownloadRequest : IFLRequest
 
+-(id)init;
+-(id)initWithWallpaperId:(NSNumber*)wallpaperId withResolution:(NSString*)resolution;
 @end

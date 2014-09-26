@@ -9,5 +9,6 @@
 #import "IFLRequest.h"
 
 @interface IFLTagsRequest : IFLRequest
-
+-(id)init;
+-(id)initWithSearchString:(NSString*)search forType:(NSString*)type;
 @end

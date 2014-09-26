@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B6B2466D19CA81B600020CD6"
-               BuildableName = "libInterfaceliftKit.a"
-               BlueprintName = "InterfaceliftKit"
-               ReferencedContainer = "container:InterfaceliftKit.xcodeproj">
+               BuildableName = "libIFLKit.a"
+               BlueprintName = "IFLKit"
+               ReferencedContainer = "container:IFLKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B6B2467D19CA81B600020CD6"
-               BuildableName = "InterfaceliftKitTests.xctest"
-               BlueprintName = "InterfaceliftKitTests"
-               ReferencedContainer = "container:InterfaceliftKit.xcodeproj">
+               BuildableName = "IFLKitTests.xctest"
+               BlueprintName = "IFLKitTests"
+               ReferencedContainer = "container:IFLKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -49,6 +49,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B6B2466D19CA81B600020CD6"
+            BuildableName = "libIFLKit.a"
+            BlueprintName = "IFLKit"
+            ReferencedContainer = "container:IFLKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

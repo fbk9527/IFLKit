@@ -8,8 +8,9 @@
 
 #import "IFLClient.h"
 
+IFLClient* sharedClient = nil;
+
 @interface IFLClient ()
-@property(strong,nonatomic) NSDictionary* headers;
 @end
 
 @implementation IFLClient
@@ -29,7 +30,8 @@
     self = [super init];
     if (self)
     {
-        _headers = @{ @"X-Mashape-Key" : privateKey };
+        if(privateKey)
+            _HTTPAuthenticationHeader = @{ @"X-Mashape-Key" : privateKey };
     }
     return self;
 }
@@ -66,11 +68,5 @@
 +(IFLClient*)sharedClient
 {
     return sharedClient;
-}
-
-#pragma mark - Cleanup
--(void)dealloc
-{
-    [self.operationQueue cancelAllOperations];
 }
 @end

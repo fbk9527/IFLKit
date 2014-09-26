@@ -10,4 +10,6 @@
 
 @interface IFLWallpaperByTimestampRequest : IFLRequest
 
+-(id)init;
+-(id)initWithTimestamp:(NSNumber*)timestamp;
 @end

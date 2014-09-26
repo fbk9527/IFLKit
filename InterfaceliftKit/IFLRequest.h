@@ -43,13 +43,18 @@ typedef void (^IFLCallBack)(id obj, NSURLResponse* resp, NSError* error);
 /** Constructs the request URL used to sends commands to the IFL REST API.
  @pre The parameter <b>baseUrl</b> should be set.
  */
--(NSURL*)buildCommandWithOptions:(IFLURLOption)options error:(NSError**)error;
+-(NSURL*)generateRequestURL;
 
 
 /** Provides a list of the required parameters. Required and Optional parameters are used to construct the requesting URL.
  @warning This is an abstract method. Subclass should override this and <b>not</b> call super.
  */
 -(NSArray*)requiredParameters;
+
+
+/** Provides a list of parameters that have multiple values.
+ */
+-(NSArray*)multiValueParameters;
 
 
 /** Provides a list of the required parameters. Required and Optional parameters are used to construct the requesting URL.
@@ -63,11 +68,13 @@ typedef void (^IFLCallBack)(id obj, NSURLResponse* resp, NSError* error);
  */
 -(NSString*)command;
 
+
 /** The main operation to be performed.
  @warning Subclasses that override the @code main @endcode method should <b>not</b> call the superclass implementation.
  This method is fully implemented to construct the request URL and process the request.
  */
 -(void)main;
+
 
 /** A base url conforms the Interfacelift command format.
  @code
@@ -91,12 +98,20 @@ typedef void (^IFLCallBack)(id obj, NSURLResponse* resp, NSError* error);
  */
 @property(copy,nonatomic) IFLCallBack failureBlock;
 
+
+/** Control the construction of the request URL.
+ */
+@property(assign,nonatomic) IFLURLOption options;
+
+
+@property(strong,nonatomic) NSDictionary* HTTPHeaders;
+
 extern NSString* kIFLRequestSortByDate;
 extern NSString* kIFLRequestSortById;
 extern NSString* kIFLRequestSortByFavorites;
 extern NSString* kIFLRequestSortByDownloads;
 extern NSString* kIFLRequestSortByComments;
-@property(strong,nonatomic) NSArray* sort_by;
+@property(strong,nonatomic) NSString* sort_by;
 @property(strong,nonatomic) NSNumber* iflId;
 @property(strong,nonatomic) NSNumber* limit;
 @property(strong,nonatomic) NSString* sort_order;

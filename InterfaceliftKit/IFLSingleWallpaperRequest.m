@@ -10,4 +10,39 @@
 
 @implementation IFLSingleWallpaperRequest
 
+#pragma mark Initalization
+-(id)init
+{
+    self = [super init];
+    if (self)
+    {
+    }
+    return self;
+}
+
+-(id)initWithId:(NSNumber *)iflId
+{
+    self = [super init];
+    if (self)
+    {
+        super.iflId = iflId;
+    }
+    return self;
+}
+
+#pragma mark Abstract Methods
+-(NSArray*)requiredParameters
+{
+    return @[@"iflId"];
+}
+
+-(NSArray*)optionalParameters
+{
+    return nil;
+}
+
+-(NSString*)command
+{
+    return @"wallpaper";
+}
 @end

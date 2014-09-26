@@ -48,6 +48,12 @@
  Handles concurent operations.
 */
 @property(strong,nonatomic) NSOperationQueue* operationQueue;
+
+
+
+/**
+ */
+@property(strong,nonatomic,readonly) NSDictionary* HTTPAuthenticationHeader;
 @end
 
 

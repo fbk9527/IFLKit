@@ -2,39 +2,38 @@
 //  IFLSingleWallpaperRequestTest.m
 //  IFLKit
 //
-//  Created by Freddy kelch on 9/24/14.
+//  Created by Freddy kelch on 9/26/14.
 //  Copyright (c) 2014 Frederick Kelch. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "IFLSingleWallpaperRequest.h"
 
 @interface IFLSingleWallpaperRequestTest : XCTestCase
-
+@property(strong,nonatomic) NSNumber* iflId;
+@property(strong,nonatomic) NSString* base_url;
 @end
 
 @implementation IFLSingleWallpaperRequestTest
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.iflId = @3029;
+    self.base_url = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/";
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+-(void)testCommandRequestURL_OnlyRequired
+{
+    NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/wallpaper/3029/";
+    IFLSingleWallpaperRequest* req = [[IFLSingleWallpaperRequest alloc]initWithId:self.iflId];
+    req.baseUrl = self.base_url;
+    NSURL* url = [req generateRequestURL];
+    XCTAssert([expecting isEqualToString:[url description]],@"The URL is incorrectly formatted! %@",[url description]);
 }
 
 @end

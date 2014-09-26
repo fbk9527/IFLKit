@@ -1,13 +1,13 @@
 //
-//  IFLCameraLenseRequest.h
+//  IFLCameraLenseRequest.m
 //  InterfaceliftKit
 //
 //  Created by Freddy kelch on 9/18/14.
 //  Copyright (c) 2014 Frederick Kelch. All rights reserved.
 //
 
-#import "IFLRequest.h"
+#import "IFLCameraLensRequest.h"
 
-@interface IFLCameraLenseRequest : IFLRequest
+@implementation IFLCameraLensRequest
 
 @end

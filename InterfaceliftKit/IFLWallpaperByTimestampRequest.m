@@ -10,49 +10,27 @@
 
 @implementation IFLWallpaperByTimestampRequest
 
-
-#pragma mark - Comman Execution
--(void)processWithBaseUrl:(NSURL*)baseUrl withHTTPHeaders:(NSDictionary*)dict
+#pragma mark - Initalization
+-(id)init
 {
-    [self processWithBaseUrl:baseUrl withHTTPHeaders:dict enclosedInOperation:nil];
+    self = [super init];
+    if (self)
+    {
+        super.options = IFLURLOptionTreatRequiredAsOptional;
+    }
+    return self;
 }
 
--(void)processWithBaseUrl:(NSURL *)baseUrl withHTTPHeaders:(NSDictionary *)dict enclosedInOperation:(NSOperation*)operation
+-(id)initWithTimestamp:(NSNumber *)timestamp
 {
-    // Thread sanity check
-    [super processWithBaseUrl:baseUrl withHTTPHeaders:dict enclosedInOperation:operation];
-    
-    // Construct request
-    NSURL* reqUrl = [super generateRequestUrlFromBase:baseUrl withOptions:IFLURLOptionTreatRequiredAsOptional];
-    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:reqUrl];
-    for (NSString* key in dict.allKeys)
+    self = [super init];
+    if (self)
     {
-        [request addValue:dict[key] forHTTPHeaderField:key];
+        super.timestamp = timestamp;
+        super.options = IFLURLOptionTreatRequiredAsOptional;
     }
-    
-    // Process Request
-    NSError* respError = nil;
-    NSURLResponse* response = nil;
-    NSData* payLoad = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&respError];
-    
-    if(payLoad && !respError)
-    {
-        if (self.successBlock)
-        {
-            id json = [NSJSONSerialization JSONObjectWithData:payLoad options:0 error:nil];
-            self.successBlock(json,response,respError);
-        }
-    }
-    else
-    {
-        if (self.failureBlock)
-        {
-            self.failureBlock(payLoad, response, respError);
-        }
-    }
+    return self;
 }
-
-
 
 #pragma mark - Mark Command Construction
 -(NSArray*)requiredParameters

@@ -10,4 +10,19 @@
 
 @implementation IFLWallpapersRequest
 
+#pragma mark - Abstract Method Implementation
+-(NSArray*)requiredParameters
+{
+    return nil;
+}
+
+-(NSArray*)optionalParameters
+{
+    return @[@"limit", @"resolution", @"sort_by", @"sort_order", @"start", @"tag_id"];
+}
+
+-(NSString*)command
+{
+    return @"wallpapers";
+}
 @end

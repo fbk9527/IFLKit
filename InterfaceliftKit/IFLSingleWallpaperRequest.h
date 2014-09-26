@@ -9,5 +9,6 @@
 #import "IFLRequest.h"
 
 @interface IFLSingleWallpaperRequest : IFLRequest
-
+-(id)init;
+-(id)initWithId:(NSNumber*)iflId;
 @end

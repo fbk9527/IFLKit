@@ -10,4 +10,30 @@
 
 @implementation IFLTagsRequest
 
+#pragma mark - Initalize
+-(id)init
+{
+    self = [super init];
+    if(self)
+    {
+        
+    }
+    return self;
+}
+
+#pragma mark - Abstract Methods
+-(NSArray*)requiredParameters
+{
+    return nil;
+}
+
+-(NSArray*)optionalParameters
+{
+    return @[@"search", @"type"];
+}
+
+-(NSString*)command
+{
+    return @"tags";
+}
 @end
