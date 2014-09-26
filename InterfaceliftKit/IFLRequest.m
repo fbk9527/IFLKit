@@ -79,10 +79,9 @@ NSString* kIFLRequestSortByComments  = @"comments";
     }
     
     // Make sure the last required param ends with a forward slash
-    if ( path && path.length > 0 && [path characterAtIndex:path.length-1] != '/')
-    {
+    if (path && path.length > 0 && [path characterAtIndex:path.length-1] != '/')
         path = [[NSString alloc]initWithFormat:@"%@/",path];
-    }
+    
     comp.path = path;
     
     
@@ -120,10 +119,6 @@ NSString* kIFLRequestSortByComments  = @"comments";
     return nil; // None for generic superclass
 }
 
--(NSArray*)multiValueParameters
-{
-    return @[@"sort_by"];
-}
 #pragma mark - NSOperation Overloaded Methods
 -(void)main
 {

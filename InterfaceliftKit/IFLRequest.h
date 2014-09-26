@@ -52,11 +52,6 @@ typedef void (^IFLCallBack)(id obj, NSURLResponse* resp, NSError* error);
 -(NSArray*)requiredParameters;
 
 
-/** Provides a list of parameters that have multiple values.
- */
--(NSArray*)multiValueParameters;
-
-
 /** Provides a list of the required parameters. Required and Optional parameters are used to construct the requesting URL.
  @warning This is an abstract method. Subclass should override this and <b>not</b> call super.
  */
@@ -71,7 +66,7 @@ typedef void (^IFLCallBack)(id obj, NSURLResponse* resp, NSError* error);
 
 /** The main operation to be performed.
  @warning Subclasses that override the @code main @endcode method should <b>not</b> call the superclass implementation.
- This method is fully implemented to construct the request URL and process the request.
+ This method is fully implemented to construct the request URL and process the request on the calling thread.
  */
 -(void)main;
 

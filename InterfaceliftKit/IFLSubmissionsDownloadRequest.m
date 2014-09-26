@@ -10,4 +10,40 @@
 
 @implementation IFLSubmissionsDownloadRequest
 
+#pragma mark - Initalizatoin
+-(id)init
+{
+    self = [super init];
+    if (self)
+    {
+        
+    }
+    return self;
+}
+
+-(id)initWithSubmissionId:(NSNumber *)submissionId
+{
+    self = [super init];
+    if (self)
+    {
+        super.submission_id = submissionId;
+    }
+    return self;
+}
+
+#pragma mark - Abstract Methods
+-(NSArray*)requiredParameters
+{
+    return @[@"submission_id"];
+}
+
+-(NSArray*)optionalParameters
+{
+    return nil;
+}
+
+-(NSString*)command
+{
+    return @"submission_download";
+}
 @end

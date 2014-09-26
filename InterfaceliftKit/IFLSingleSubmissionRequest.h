@@ -9,5 +9,6 @@
 #import "IFLRequest.h"
 
 @interface IFLSingleSubmissionRequest : IFLRequest
-
+-(id)init;
+-(id)initWithId:(NSNumber*)iflId;
 @end

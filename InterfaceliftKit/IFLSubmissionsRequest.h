@@ -9,5 +9,5 @@
 #import "IFLRequest.h"
 
 @interface IFLSubmissionsRequest : IFLRequest
-
+-(id)init;
 @end

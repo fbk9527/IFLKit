@@ -9,5 +9,5 @@
 #import "IFLRequest.h"
 
 @interface IFLCameraLensRequest : IFLRequest
-
+-(id)initWithId:(NSNumber*)iflId;
 @end

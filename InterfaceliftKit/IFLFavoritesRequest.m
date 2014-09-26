@@ -9,5 +9,39 @@
 #import "IFLFavoritesRequest.h"
 
 @implementation IFLFavoritesRequest
+#pragma mark - Initalization
+-(id)init
+{
+    self = [super init];
+    if(self)
+    {
+    }
+    return self;
+}
 
+-(id)initWithUserId:(NSNumber *)user_id
+{
+    self = [super init];
+    if (self)
+    {
+        super.user_id = user_id;
+    }
+    return self;
+}
+
+#pragma mark - Abstract Methods
+-(NSArray*)requiredParameters
+{
+    return @[@"user_id"];
+}
+
+-(NSArray*)optionalParameters
+{
+    return @[@"limit", @"resolution", @"sort_by", @"sort_order", @"start"];
+}
+
+-(NSString*)command
+{
+    return @"favorites";
+}
 @end

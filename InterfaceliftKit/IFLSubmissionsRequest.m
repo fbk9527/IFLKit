@@ -10,4 +10,29 @@
 
 @implementation IFLSubmissionsRequest
 
+#pragma mark - Initalization
+-(id)init
+{
+    self = [super init];
+    if (self)
+    {  
+    }
+    return self;
+}
+
+#pragma mark - Abstract Methods
+-(NSArray*)requiredParameters
+{
+    return nil; // None
+}
+
+-(NSArray*)optionalParameters
+{
+    return @[@"limit",@"start",@"user_id"];
+}
+
+-(NSString*)command
+{
+    return @"submissions";
+}
 @end

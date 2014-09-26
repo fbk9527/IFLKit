@@ -9,5 +9,6 @@
 #import "IFLRequest.h"
 
 @interface IFLFavoritesRequest : IFLRequest
-
+-(id)init;
+-(id)initWithUserId:(NSNumber*)user_id;
 @end

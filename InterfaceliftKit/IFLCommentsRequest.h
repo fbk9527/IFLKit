@@ -9,5 +9,5 @@
 #import "IFLRequest.h"
 
 @interface IFLCommentsRequest : IFLRequest
-
+-(id)init;
 @end

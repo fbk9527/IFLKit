@@ -9,5 +9,5 @@
 #import "IFLRequest.h"
 
 @interface IFCameraBodyRequest : IFLRequest
-
+-(id)initWithId:(NSNumber*)iflId;
 @end
