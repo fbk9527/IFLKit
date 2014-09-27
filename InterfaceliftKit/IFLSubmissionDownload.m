@@ -9,5 +9,17 @@
 #import "IFLSubmissionDownload.h"
 
 @implementation IFLSubmissionDownload
-
+-(NSArray*)jsonKeys
+{
+    return @[@"submission_id",
+             @"filename",
+             @"timestamp_current",
+             @"timestamp_expires",
+             @"download_size_in_bytes",
+             @"resolution",
+             @"width",
+             @"height",
+             @"mime_type",
+             @"download_url"];
+}
 @end

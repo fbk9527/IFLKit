@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IFLModel.h"
 
-@interface IFLSubmissionDownload : NSObject
+@interface IFLSubmissionDownload : IFLModel
 @property(strong,nonatomic) NSNumber* submission_id;
 @property(strong,nonatomic) NSString* filename;
 @property(strong,nonatomic) NSNumber* timestamp_current;

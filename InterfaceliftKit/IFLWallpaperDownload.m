@@ -9,5 +9,16 @@
 #import "IFLWallpaperDownload.h"
 
 @implementation IFLWallpaperDownload
-
+-(NSArray*)jsonKeys
+{
+    return @[@"wallpaper_id",
+             @"filename",
+             @"resolution",
+             @"width",
+             @"height",
+             @"timestamp_current",
+             @"timestamp_expires",
+             @"download_size_in_bytes",
+             @"download_url"];
+}
 @end

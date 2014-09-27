@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IFLModel.h"
 
-@interface IFLUser : NSObject
+@interface IFLUser : IFLModel
 @property(strong,nonatomic) NSNumber* iflId;
 @property(strong,nonatomic) NSString* username;
 @property(strong,nonatomic) NSString* twitter;

@@ -10,5 +10,14 @@
 
 @implementation IFLCamera
 
-
+-(NSArray*)jsonKeys
+{
+    return @[@"id",
+             @"brand",
+             @"model",
+             @"mount",
+             @"format",
+             @"date_introduced",
+             @"url_amazon"];
+}
 @end

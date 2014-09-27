@@ -10,5 +10,6 @@
 
 @interface IFLModel : NSObject
 -(void)populateFromJSONObject:(NSDictionary*)dict;
+-(NSArray*)jsonKeys;
 +(NSDictionary*)renamedKeys;
 @end

@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IFLModel.h"
 
-@interface IFLComment : NSObject
+@interface IFLComment : IFLModel
 @property(strong,nonatomic) NSNumber* iflId;
 @property(strong,nonatomic) NSNumber* wallpaper_id;
 @property(strong,nonatomic) NSString* comment_text;

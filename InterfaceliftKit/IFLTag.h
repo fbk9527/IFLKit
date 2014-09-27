@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IFLModel.h"
 
-@interface IFLTag : NSObject
+@interface IFLTag : IFLModel
 @property(strong,nonatomic) NSNumber* iflId;
 @property(strong,nonatomic) NSString* tag_name;
 @property(strong,nonatomic) NSString* type;

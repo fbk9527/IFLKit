@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IFLModel.h"
 
-@interface IFLWallpaperDownload : NSObject
+@interface IFLWallpaperDownload : IFLModel
 @property(strong,nonatomic) NSNumber* wallpaper_id;
 @property(strong,nonatomic) NSString* filename;
 @property(strong,nonatomic) NSString* resolution;

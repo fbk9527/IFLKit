@@ -15,7 +15,7 @@
 
 -(void)populateFromJSONObject:(NSDictionary *)dict
 {
-    NSArray* jsonKeys = dict.allKeys;
+    NSArray* jsonKeys = [self jsonKeys];
     NSDictionary* renamed = [IFLModel renamedKeys];
     
     for (NSString* key in jsonKeys)
@@ -33,7 +33,6 @@
 }
 
 #pragma mark - Renamed keys
-
 +(NSDictionary*)renamedKeys
 {
     static NSDictionary* renamedKeys = nil;
@@ -48,5 +47,33 @@
                         };
     });
     return renamedKeys;
+}
+
+#pragma mark - Abstract Methods
+-(NSArray*)jsonKeys
+{
+    return nil;
+}
+
+#pragma mark - Description
+-(NSString*)description
+{
+    NSArray* array = [self jsonKeys];
+    NSString* descString = [super description];
+    NSDictionary* renamed = [IFLModel renamedKeys];
+    
+    for (NSString* key in array)
+    {
+        NSString* renamedKey = renamed[key];
+        if(renamedKey)
+        {
+            descString = [descString stringByAppendingFormat:@"Key: %@\t Value:%@\t",renamedKey,[self valueForKey:renamedKey]];
+        }
+        else
+        {
+           descString = [descString stringByAppendingFormat:@"Key: %@\t Value:%@\t",key,[self valueForKey:key]];
+        }
+    }
+    return descString;
 }
 @end
