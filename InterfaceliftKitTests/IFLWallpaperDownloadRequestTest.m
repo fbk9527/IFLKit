@@ -32,10 +32,9 @@
 }
 
 #pragma mark - happy path
-#pragma mark - Happy Path
 -(void)testCommandRequestURL_OnlyRequired
 {
-    NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/wallpaper_download/3001/'1920x1080'/";
+    NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/wallpaper_download/3001/1920x1080/";
     IFLWallpaperDownloadRequest* req = [[IFLWallpaperDownloadRequest alloc]initWithWallpaperId:self.wallpaper_id withResolution:self.resolution];
     req.baseUrl = self.base_url;
     NSURL* url = [req generateRequestURL];
