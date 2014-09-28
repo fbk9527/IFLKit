@@ -53,8 +53,8 @@ NSString* kIFLRequestSortByComments  = @"comments";
         id value = [self valueForKey:var];
         
         // Special case for resolution
-        if ([var isEqualToString:@"resolution"] && [value isKindOfClass:[NSString class]])
-            value = [[NSString alloc]initWithFormat:@"'%@'",value];
+        //if ([var isEqualToString:@"resolution"] && [value isKindOfClass:[NSString class]])
+        //    value = [[NSString alloc]initWithFormat:@"'%@'",value];
         
     
         
