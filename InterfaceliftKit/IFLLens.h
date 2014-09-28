@@ -12,6 +12,7 @@
 @interface IFLLens : IFLModel
 @property(strong,nonatomic) NSNumber* iflId;
 @property(strong,nonatomic) NSString* brand;
+@property(strong,nonatomic) NSString* model;
 @property(strong,nonatomic) NSString* mount;
 @property(strong,nonatomic) NSString* max_format_size;
 @property(strong,nonatomic) NSNumber* focal_length;
