@@ -1,0 +1,17 @@
+{
+    "id": 621,
+    "brand": "Carl Zeiss",
+    "model": "Distagon T* 2,8\/15 ZF.2",
+    "mount": "Nikon F-mount",
+    "max_format_size": "FX",
+    "focal_length": 15,
+    "focal_length_tele": null,
+    "max_aperture": 2.8,
+    "max_aperture_tele": null,
+    "max_magnification": null,
+    "min_focus": null,
+    "filter_thread": 95,
+    "reach": "Ultra-Wide Angle",
+    "date_introduced": "2012-03-16",
+    "url_amazon": null
+}
