@@ -1,27 +1,28 @@
 //
-//  IFLCameraModelTest.m
+//  IFLWallpaperDownloadModelTest.m
 //  IFLKit
 //
-//  Created by Freddy kelch on 9/26/14.
+//  Created by Freddy kelch on 9/27/14.
 //  Copyright (c) 2014 Frederick Kelch. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "IFLCamera.h"
+#import "IFLWallpaperDownload.h"
 
-@interface IFLCameraModelTest : XCTestCase
+@interface IFLWallpaperDownloadModelTest : XCTestCase
 @property(strong,nonatomic) NSData* JSONData;
 @end
 
-@implementation IFLCameraModelTest
+@implementation IFLWallpaperDownloadModelTest
+
 
 - (void)setUp
 {
     [super setUp];
     
     NSBundle* mainBundle = [NSBundle bundleForClass:[self class]];
-    NSString* jsonPath   = [mainBundle pathForResource:@"camera_body" ofType:@"json"];
+    NSString* jsonPath   = [mainBundle pathForResource:@"wallpaper_download" ofType:@"json"];
     self.JSONData = [[NSData alloc]initWithContentsOfFile:jsonPath];
 }
 
@@ -35,19 +36,19 @@
     XCTAssert(self.JSONData);
     
     NSDictionary* dict = [NSJSONSerialization JSONObjectWithData:self.JSONData options:0 error:nil];
-    IFLCamera* camera = [[IFLCamera alloc]init];
-    [camera populateFromJSONObject:dict];
-
+    IFLWallpaperDownload* lens = [[IFLWallpaperDownload alloc]init];
+    [lens populateFromJSONObject:dict];
+    
     
     NSDictionary* renamedKeys = [IFLModel renamedKeys];
-    NSEnumerator* enumerator = [[camera jsonKeys]objectEnumerator];
+    NSEnumerator* enumerator = [[lens jsonKeys]objectEnumerator];
     for (NSString* key in enumerator)
     {
         NSString* rKey = renamedKeys[key];
         if(!rKey)
             rKey = key;
         
-        id cvalue = [camera valueForKey:rKey];
+        id cvalue = [lens valueForKey:rKey];
         id jvalue = [dict valueForKey:key];
         
         BOOL result = YES;
@@ -64,7 +65,7 @@
             result = result && [cvalue isEqualToArray:jvalue];
         }
         XCTAssert(result, @"Value Mismatch!! %@ vs. %@",[cvalue description], [jvalue description]);
-            
     }
+    
 }
 @end
