@@ -22,7 +22,7 @@
 
 /** The base API URL.
  */
--(NSURL*)baseURL;
+-(NSString*)baseURL;
 
 
 /** Register the current instance as the shared client. Doing so will reduce the need of passing
@@ -43,6 +43,8 @@
  */
 +(IFLClient*)sharedClient;
 
+
++(NSString*)nativeResolution;
 
 /* 
  Handles concurent operations.

@@ -28,7 +28,7 @@
 
 -(NSArray*)optionalParameters
 {
-    return @[@"limit",@"sort_order",@"start",@"user_id",@"wallpaper_id"];
+    return @[@"limit",@"sort_order",@"iflstart",@"user_id",@"wallpaper_id"];
 }
 
 -(NSString*)command

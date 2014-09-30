@@ -28,7 +28,7 @@
 
 -(NSArray*)optionalParameters
 {
-    return @[@"limit",@"start",@"user_id"];
+    return @[@"limit",@"iflstart",@"user_id"];
 }
 
 -(NSString*)command

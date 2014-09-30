@@ -31,7 +31,7 @@ typedef NS_OPTIONS(NSUInteger, IFLURLOption)
     IFLURLOptionTreatRequiredAsOptional = 1 << 0
 };
 
-typedef void (^IFLCallBack)(id obj, NSURLResponse* resp, NSError* error);
+typedef void (^IFLCallBack)(id obj, NSHTTPURLResponse* resp, NSError* error);
 
 
 
@@ -69,6 +69,7 @@ typedef void (^IFLCallBack)(id obj, NSURLResponse* resp, NSError* error);
  This method is fully implemented to construct the request URL and process the request on the calling thread.
  */
 -(void)main;
+-(void)start;
 
 
 /** A base url conforms the Interfacelift command format.
@@ -110,7 +111,7 @@ extern NSString* kIFLRequestSortByComments;
 @property(strong,nonatomic) NSNumber* iflId;
 @property(strong,nonatomic) NSNumber* limit;
 @property(strong,nonatomic) NSString* sort_order;
-@property(strong,nonatomic) NSNumber* start;
+@property(strong,nonatomic) NSNumber* iflstart;
 @property(strong,nonatomic) NSNumber* user_id;
 @property(strong,nonatomic) NSNumber* wallpaper_id;
 @property(strong,nonatomic) NSString* resolution;

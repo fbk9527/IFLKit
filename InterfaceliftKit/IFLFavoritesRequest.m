@@ -37,7 +37,7 @@
 
 -(NSArray*)optionalParameters
 {
-    return @[@"limit", @"resolution", @"sort_by", @"sort_order", @"start"];
+    return @[@"limit", @"resolution", @"sort_by", @"sort_order", @"iflstart"];
 }
 
 -(NSString*)command

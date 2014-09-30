@@ -101,7 +101,10 @@ NSString* kIFLRequestSortByComments  = @"comments";
 }
 
 
-
+-(void)start
+{
+    [self main];
+}
 
 #pragma mark - Abstract Methods
 -(NSString*)command
@@ -122,6 +125,7 @@ NSString* kIFLRequestSortByComments  = @"comments";
 #pragma mark - NSOperation Overloaded Methods
 -(void)main
 {
+    NSLog(@"Started...");
     // Construct requested URL
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc]initWithURL:[self generateRequestURL]];
     
@@ -151,5 +155,21 @@ NSString* kIFLRequestSortByComments  = @"comments";
             self.failureBlock(nil,response,error);
         }
     }
+}
+
+#pragma mark - Description
+-(NSString*)description
+{
+    NSString* descString = [super description];
+    descString = [descString stringByAppendingFormat:@"Command: %@", self.command];
+    descString = [descString stringByAppendingFormat:@"Required Params: %@",self.requiredParameters.description];
+    descString = [descString stringByAppendingFormat:@"Optional Params: %@",self.optionalParameters.description];
+    descString = [descString stringByAppendingFormat:@"RequestURL: %@", [self generateRequestURL]];
+    return descString;
+}
+
+-(NSString*)name
+{
+    return [self command];
 }
 @end

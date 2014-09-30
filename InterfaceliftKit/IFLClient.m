@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Frederick Kelch. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "IFLClient.h"
 
 IFLClient* sharedClient = nil;
@@ -51,12 +52,14 @@ IFLClient* sharedClient = nil;
 #pragma mark - Handle Request
 -(void)processRequest:(IFLRequest *)request
 {
-    
+    request.baseUrl = [self baseURL];
+    request.HTTPHeaders = self.HTTPAuthenticationHeader;
+    [self.operationQueue addOperation:request];
 }
 
--(NSURL*)baseURL
+-(NSString*)baseURL
 {
-    return [[NSURL alloc]initWithString:@"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1"];
+    return @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1";
 }
 
 #pragma mark - Shared Client
@@ -68,5 +71,16 @@ IFLClient* sharedClient = nil;
 +(IFLClient*)sharedClient
 {
     return sharedClient;
+}
+
+#pragma mark - Screen Helpers
++(NSString*)nativeResolution
+{
+    CGFloat scale = [[UIScreen mainScreen]scale];
+    CGRect bounds = [[UIScreen mainScreen]bounds];
+    
+    CGFloat width = bounds.size.width * scale;
+    CGFloat height = bounds.size.height * scale;
+    return [NSString stringWithFormat:@"%ix%i",(int)width,(int)height];
 }
 @end
