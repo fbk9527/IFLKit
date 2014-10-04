@@ -125,7 +125,9 @@ NSString* kIFLRequestSortByComments  = @"comments";
 #pragma mark - NSOperation Overloaded Methods
 -(void)main
 {
-    NSLog(@"Started...");
+    if (self.cancelled)
+        return;
+
     // Construct requested URL
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc]initWithURL:[self generateRequestURL]];
     
@@ -135,12 +137,24 @@ NSString* kIFLRequestSortByComments  = @"comments";
         [request addValue:self.HTTPHeaders[httpHeaderKey] forHTTPHeaderField:httpHeaderKey];
     }
     
+    
+    if (self.cancelled)
+        return;
+    
     // OBJects for callback
     NSError* error = nil;
     NSHTTPURLResponse* response = nil;
     NSData* data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
-    if (!error && request && response.statusCode == 200)
+    
+    if (self.cancelled)
+        return;
+    
+    id json = nil;
+    BOOL networkSuccess = !error && response && response.statusCode == 200;
+    BOOL requestSuccess = ( networkSuccess ? [(json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil]) objectForKey:@"error"] ==nil : NO);
+    
+    if (networkSuccess && requestSuccess)
     {
         id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         if (self.successBlock)
@@ -152,7 +166,7 @@ NSString* kIFLRequestSortByComments  = @"comments";
     {
         if (self.failureBlock)
         {
-            self.failureBlock(nil,response,error);
+            self.failureBlock(json,response,error);
         }
     }
 }
