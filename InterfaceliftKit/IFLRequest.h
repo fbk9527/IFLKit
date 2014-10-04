@@ -16,6 +16,9 @@
 #define DLog(X) ((void)0)
 #endif
 
+#define PARSEANDVALIDATE_JSON(X,Y) \
+ [(X = [NSJSONSerialization JSONObjectWithData:Y options:0 error:nil]) objectForKey:@"error"] ==nil
+
 typedef NS_ENUM(NSInteger, IFLRequestTagType){
     IFLRequestTagTypeColor,
     IFLRequestTagTypeScene,

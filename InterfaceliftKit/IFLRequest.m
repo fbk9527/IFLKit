@@ -125,6 +125,8 @@ NSString* kIFLRequestSortByComments  = @"comments";
 #pragma mark - NSOperation Overloaded Methods
 -(void)main
 {
+    MAIN_THREAD_WARNING([[NSThread currentThread]isMainThread]);
+    
     if (self.cancelled)
         return;
 
@@ -133,11 +135,9 @@ NSString* kIFLRequestSortByComments  = @"comments";
     
     // Add Authentication Headers
     for (NSString* httpHeaderKey in self.HTTPHeaders.allKeys)
-    {
         [request addValue:self.HTTPHeaders[httpHeaderKey] forHTTPHeaderField:httpHeaderKey];
-    }
     
-    
+    // Check cancellation before long network pull
     if (self.cancelled)
         return;
     
@@ -146,28 +146,25 @@ NSString* kIFLRequestSortByComments  = @"comments";
     NSHTTPURLResponse* response = nil;
     NSData* data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
-    
+    // Check cancellation before parsing json
     if (self.cancelled)
         return;
     
+    // Validate response
     id json = nil;
     BOOL networkSuccess = !error && response && response.statusCode == 200;
-    BOOL requestSuccess = ( networkSuccess ? [(json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil]) objectForKey:@"error"] ==nil : NO);
+    BOOL requestSuccess = ( networkSuccess ? PARSEANDVALIDATE_JSON(json, data) : NO);
     
     if (networkSuccess && requestSuccess)
     {
-        id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         if (self.successBlock)
-        {
             self.successBlock(json,response,error);
-        }
+        
     }
     else
     {
         if (self.failureBlock)
-        {
             self.failureBlock(json,response,error);
-        }
     }
 }
 
