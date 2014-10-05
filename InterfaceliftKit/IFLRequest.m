@@ -1,10 +1,19 @@
-//
-//  IFLRequest.m
-//  InterfaceliftKit
-//
-//  Created by Freddy kelch on 9/17/14.
-//  Copyright (c) 2014 Frederick Kelch. All rights reserved.
-//
+/// IFLKit - Objective-C wrapper to the Interfacelift.com API
+///
+/// Copyright (C) 2014  Fred Kelch <fred.kelch@gmail.com>
+///
+/// This program is free software: you can redistribute it and/or modify
+/// it under the terms of the GNU General Public License as published by
+/// the Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// This program is distributed in the hope that it will be useful,
+/// but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/// GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License
+/// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #import "IFLRequest.h"
 #import "IFLCameraLensRequest.h"
@@ -51,13 +60,7 @@ NSString* kIFLRequestSortByComments  = @"comments";
     for (NSString* var in self.requiredParameters)
     {
         id value = [self valueForKey:var];
-        
-        // Special case for resolution
-        //if ([var isEqualToString:@"resolution"] && [value isKindOfClass:[NSString class]])
-        //    value = [[NSString alloc]initWithFormat:@"'%@'",value];
-        
-    
-        
+
         // This is a programming error
         // The programmer didn't provide the required parameter
         if (!value)
@@ -146,15 +149,19 @@ NSString* kIFLRequestSortByComments  = @"comments";
     NSHTTPURLResponse* response = nil;
     NSData* data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
+    DLogDataString(data);
+    
     // Check cancellation before parsing json
     if (self.cancelled)
         return;
+    
     
     // Validate response
     id json = nil;
     BOOL networkSuccess = !error && response && response.statusCode == 200;
     BOOL requestSuccess = ( networkSuccess ? PARSEANDVALIDATE_JSON(json, data) : NO);
     
+    // Handle callback
     if (networkSuccess && requestSuccess)
     {
         if (self.successBlock)
