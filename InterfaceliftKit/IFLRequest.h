@@ -16,26 +16,6 @@
 
 #import <Foundation/Foundation.h>
 
-#ifdef DEBUG
-
-#define MAIN_THREAD_WARNING(X) \
-    (X ? @"IFLRequest should not be called on the main thread!" : @"")
-
-#define DLog(X) \
-    NSLog(@"%@",X)
-
-#define DLogDataString(X) \
-    NSLog(@"%@",[[NSString alloc]initWithData:X encoding:NSUTF8StringEncoding])
-
-#else
-#define MAIN_THREAD_WARNING(X) ((void)0)
-#define DLog(X) ((void)0)
-#define DLogDataString(X) ((void)0)
-#endif
-
-#define PARSEANDVALIDATE_JSON(X,Y) \
- (X = [NSJSONSerialization JSONObjectWithData:Y options:0 error:nil]) && ([X isKindOfClass:[NSArray class]] || ( [X isKindOfClass:[NSDictionary class]] && !X[@"error"]))
-
 typedef NS_ENUM(NSInteger, IFLRequestTagType){
     IFLRequestTagTypeColor,
     IFLRequestTagTypeScene,
@@ -58,7 +38,7 @@ typedef void (^IFLCallBack)(id obj, NSHTTPURLResponse* resp, NSError* error);
 /** The @code IFLRequest @endcode class is an abstract class you subclass to encapsulate code and data associated with a request.
     Subclass should override the following methods
  */
-@interface IFLRequest : NSOperation
+@interface IFLRequest : NSOperation <NSURLSessionTaskDelegate>
 
 /** Constructs the request URL used to sends commands to the IFL REST API.
  @pre The parameter <b>baseUrl</b> should be set.
@@ -82,14 +62,6 @@ typedef void (^IFLCallBack)(id obj, NSHTTPURLResponse* resp, NSError* error);
  @warning This is an abstract method. Subclasses should override this and <b>not</b> call super.
  */
 -(NSString*)command;
-
-
-/** The main operation to be performed.
- @warning Subclasses that override the @code main @endcode method should <b>not</b> call the superclass implementation.
- This method is fully implemented to construct the request URL and process the request on the calling thread.
- */
--(void)main;
--(void)start;
 
 
 /** A base url conforms the Interfacelift command format.
@@ -118,6 +90,11 @@ typedef void (^IFLCallBack)(id obj, NSHTTPURLResponse* resp, NSError* error);
 /** Control the construction of the request URL.
  */
 @property(assign,nonatomic) IFLURLOption options;
+
+
+/**
+ */
+@property(strong,nonatomic) NSURLSessionTask* networkTask;
 
 
 @property(strong,nonatomic) NSDictionary* HTTPHeaders;
