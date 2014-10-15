@@ -25,35 +25,23 @@ IFLClient* sharedClient = nil;
 @implementation IFLClient
 
 #pragma mark - Initalization
--(id)init
+-(instancetype)init
 {
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
+    return [self initWithPrivateKey:@""];
 }
 
--(id)initWithPrivateKey:(NSString *)privateKey
+-(instancetype)initWithPrivateKey:(NSString *)privateKey
 {
     self = [super init];
     if (self)
     {
         if(privateKey)
-            _HTTPAuthenticationHeader = @{ @"X-Mashape-Key" : privateKey };
+        _HTTPAuthenticationHeader = @{ @"X-Mashape-Key" : privateKey };
+        _operationQueue = [NSOperationQueue new];
+        _operationQueue.name = [[NSString alloc]initWithFormat:@"IFLClient.%@",[[NSBundle mainBundle]bundleIdentifier]];
+        _operationQueue.maxConcurrentOperationCount = 4;
     }
     return self;
-}
-
-#pragma mark - Lazy Load
--(NSOperationQueue*)operationQueue
-{
-    if (!_operationQueue) {
-        _operationQueue = [[NSOperationQueue alloc]init];
-        _operationQueue.name = @"IFLRequest Queue";
-        _operationQueue.maxConcurrentOperationCount = 2;
-    }
-    return _operationQueue;
 }
 
 
@@ -91,4 +79,22 @@ IFLClient* sharedClient = nil;
     CGFloat height = bounds.size.height * scale;
     return [NSString stringWithFormat:@"%ix%i",(int)width,(int)height];
 }
+
+#pragma mark - NSURLSession ‚Delegate Methods
+-(void)URLSession:(NSURLSession *)session didBecomeInvalidWithError:(NSError *)error
+{
+    
+}
+
+-(void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler
+{
+    
+}
+
+-(void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession *)session
+{
+    
+}
+
+
 @end

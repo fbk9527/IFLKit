@@ -18,8 +18,8 @@
 #import "IFLRequest.h"
 
 @interface IFLClient : NSObject <NSURLSessionDownloadDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate>
--(id)init;
--(id)initWithPrivateKey:(NSString*)privateKey;
+-(instancetype)init;
+-(instancetype)initWithPrivateKey:(NSString*)privateKey;
 
 
 /** Provding the client a request will process it on a background thread.
