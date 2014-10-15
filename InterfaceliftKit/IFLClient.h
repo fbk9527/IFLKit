@@ -17,7 +17,7 @@
 #import <Foundation/Foundation.h>
 #import "IFLRequest.h"
 
-@interface IFLClient : NSObject
+@interface IFLClient : NSObject <NSURLSessionDownloadDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate>
 -(id)init;
 -(id)initWithPrivateKey:(NSString*)privateKey;
 
@@ -39,6 +39,8 @@
 -(void)registerAsSharedClient;
 
 
+
+
 /** Request the sharedClient. Note that a client is not created
     automatically. An inital client must be created and registered
     before a sharedClient will return a non-nil value.
@@ -52,13 +54,14 @@
 +(IFLClient*)sharedClient;
 
 
+/** Request native resolution for device.
+ */
 +(NSString*)nativeResolution;
 
 /* 
  Handles concurent operations.
 */
 @property(strong,nonatomic) NSOperationQueue* operationQueue;
-
 
 
 /**
