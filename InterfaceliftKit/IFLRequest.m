@@ -47,71 +47,7 @@ NSString* kIFLRequestSortByDownloads = @"downloads";
 NSString* kIFLRequestSortByComments  = @"comments";
 
 
-#pragma mark - Generate URL Request
--(NSURL*)generateRequestURL
-{
 
-    NSURLComponents* comp = [[NSURLComponents alloc]initWithURL:[NSURL URLWithString:self.baseUrl]
-                                        resolvingAgainstBaseURL:YES];
-    
-    // Throw exception. Only support secure connections
-    if (![[comp scheme]isEqualToString:@"https"])
-        return nil;
-
-    
-    // Handle path construction
-    NSString* path = [comp path];
-    NSMutableArray* queryItems = [NSMutableArray new];
-    
-    if ([path characterAtIndex:(([path length])-1)] == '/')
-        path = [path substringWithRange:NSMakeRange(0, [path length]-1)];
-    
-    path = [path stringByAppendingPathComponent:[self command]];
-    for (NSString* var in self.requiredParameters)
-    {
-        id value = [self valueForKey:var];
-
-        // This is a programming error
-        // The programmer didn't provide the required parameter
-        if (!value)
-        {
-            NSException* exception = [NSException exceptionWithName:@"Missing Required Parameter"
-                                                             reason:[NSString stringWithFormat:@"Missing: %@",var]
-                                                           userInfo:nil];
-            @throw exception;
-        }
-        
-        if (self.options & IFLURLOptionTreatRequiredAsOptional)
-        {
-            [queryItems addObject:[NSURLQueryItem queryItemWithName:var value:[value description]]];
-        }
-        else
-        {
-            path = [path stringByAppendingPathComponent:[value description]];
-        }
-    }
-    
-    // Make sure the last required param ends with a forward slash
-    if (path && path.length > 0 && [path characterAtIndex:path.length-1] != '/')
-        path = [[NSString alloc]initWithFormat:@"%@/",path];
-    
-    comp.path = path;
-    
-    
-    
-    for (NSString* var in self.optionalParameters)
-    {
-        id value = [self valueForKey:var];
-        if (value)
-            [queryItems addObject:[NSURLQueryItem queryItemWithName:var value:[value description]]];
-    }
-    
-    
-    if (queryItems.count > 0)
-        comp.queryItems = queryItems;
-    
-    return comp.URL;
-}
 
 
 #pragma mark - NSOperation(Executing The Operation)
@@ -122,6 +58,13 @@ NSString* kIFLRequestSortByComments  = @"comments";
     if (self.cancelled) {
         _finished = YES;
         return;
+    }
+    
+    // Has the session been generated
+    if (!self.networkTask) {
+        NSLog(@"ISSUE");
+        self.executing = YES;
+        self.finished  = YES;
     }
     
     // Start background task
@@ -208,6 +151,8 @@ NSString* kIFLRequestSortByComments  = @"comments";
 }
 
 
+
+
 #pragma mark - Description
 -(NSString*)description
 {
@@ -218,4 +163,7 @@ NSString* kIFLRequestSortByComments  = @"comments";
     descString = [descString stringByAppendingFormat:@"RequestURL: %@", [self generateRequestURL]];
     return descString;
 }
+
+#pragma mark - Session Delegate
+
 @end

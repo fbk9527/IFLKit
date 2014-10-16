@@ -16,15 +16,6 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, IFLRequestTagType){
-    IFLRequestTagTypeColor,
-    IFLRequestTagTypeScene,
-    IFLRequestTagTypeLocation,
-    IFLRequestTagTypeEvent,
-    IFLRequestTagTypeSubject,
-    IFLRequestTagTypeEquipment,
-    IFLRequestTagTypeMedium
-};
 
 typedef NS_OPTIONS(NSUInteger, IFLURLOption)
 {
@@ -39,11 +30,6 @@ typedef void (^IFLCallBack)(id obj, NSHTTPURLResponse* resp, NSError* error);
     Subclass should override the following methods
  */
 @interface IFLRequest : NSOperation <NSURLSessionTaskDelegate>
-
-/** Constructs the request URL used to sends commands to the IFL REST API.
- @pre The parameter <b>baseUrl</b> should be set.
- */
--(NSURL*)generateRequestURL;
 
 
 /** Provides a list of the required parameters. Required and Optional parameters are used to construct the requesting URL.
@@ -64,21 +50,10 @@ typedef void (^IFLCallBack)(id obj, NSHTTPURLResponse* resp, NSError* error);
 -(NSString*)command;
 
 
-/** A base url conforms the Interfacelift command format.
- @code
- https://
- @endcode
- The base URL should always end with the API version number.
-*/
-@property(strong,nonatomic) NSString* baseUrl;
-
-
-
 /** The completion blocked that is called if the request was successfull.
  @warning Be mindful of retain cycles if your enclosing queue is strong referenced!
  */
 @property(copy,nonatomic) IFLCallBack successBlock;
-
 
 
 /** The completion blocked that is called if the request was failed.
@@ -94,10 +69,8 @@ typedef void (^IFLCallBack)(id obj, NSHTTPURLResponse* resp, NSError* error);
 
 /**
  */
-@property(strong,nonatomic) NSURLSessionTask* networkTask;
+@property(strong,nonatomic) NSURLSessionDownloadTask* networkTask;
 
-
-@property(strong,nonatomic) NSDictionary* HTTPHeaders;
 
 extern NSString* kIFLRequestSortByDate;
 extern NSString* kIFLRequestSortById;
