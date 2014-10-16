@@ -17,13 +17,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #import "IFLRequest.h"
-#import "IFLCameraLensRequest.h"
-#import "IFLSingleCommentRequest.h"
-#import "IFLCommentsRequest.h"
-#import "IFLFavoritesRequest.h"
-#import "IFLSingleSubmissionRequest.h"
-#import "IFLSubmissionsDownloadRequest.h"
-#import "NSArray+DGParameterizeArray.h"
+#import "IFLRequest+URL.h"
 
 @interface IFLRequest ()
 
@@ -160,10 +154,23 @@ NSString* kIFLRequestSortByComments  = @"comments";
     descString = [descString stringByAppendingFormat:@"Command: %@", self.command];
     descString = [descString stringByAppendingFormat:@"Required Params: %@",self.requiredParameters.description];
     descString = [descString stringByAppendingFormat:@"Optional Params: %@",self.optionalParameters.description];
-    descString = [descString stringByAppendingFormat:@"RequestURL: %@", [self generateRequestURL]];
+    descString = [descString stringByAppendingFormat:@"RequestURL: %@", self.networkTask.response.URL.path];
     return descString;
 }
 
 #pragma mark - Session Delegate
+-(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
+{
+    
+}
 
+-(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
+{
+    
+}
+
+-(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes
+{
+    
+}
 @end
