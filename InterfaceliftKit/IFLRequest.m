@@ -154,7 +154,7 @@ NSString* kIFLRequestSortByComments  = @"comments";
     descString = [descString stringByAppendingFormat:@"Command: %@", self.command];
     descString = [descString stringByAppendingFormat:@"Required Params: %@",self.requiredParameters.description];
     descString = [descString stringByAppendingFormat:@"Optional Params: %@",self.optionalParameters.description];
-    descString = [descString stringByAppendingFormat:@"RequestURL: %@", self.networkTask.response.URL.path];
+    descString = [descString stringByAppendingFormat:@"RequestURL: %@", [self generateRequestUrlWithBaseString:@"https://__BASE__"]];
     return descString;
 }
 #pragma mark - Session Task Delegate

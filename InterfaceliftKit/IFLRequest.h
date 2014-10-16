@@ -22,7 +22,21 @@ typedef NS_OPTIONS(NSUInteger, IFLURLOption)
     IFLURLOptionTreatRequiredAsOptional = 1 << 0
 };
 
+
 typedef void (^IFLCallBack)(id obj, NSHTTPURLResponse* resp, NSError* error);
+
+
+
+typedef void (^BytesWritten)(NSURLSession* session,
+                             NSURLSessionDownloadTask* downloadTask,
+                             int64_t bytesWritten,
+                             int64_t totalBytesWritten,
+                             int64_t totalExpectedBytesToWrite);
+
+
+typedef void (^DownloadFinished)(NSURLSession* session,
+                                 NSURLSessionDownloadTask* downloadTask,
+                                 NSURL* locationOfDownload);
 
 
 

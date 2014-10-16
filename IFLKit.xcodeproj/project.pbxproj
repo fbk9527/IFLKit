@@ -99,6 +99,7 @@
 		B6B246C519CBCB2A00020CD6 /* IFLWallpaperDownloadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246C419CBCB2A00020CD6 /* IFLWallpaperDownloadRequest.m */; };
 		B6B246C819CBCB3900020CD6 /* IFLWallpapersRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246C719CBCB3900020CD6 /* IFLWallpapersRequest.m */; };
 		B6B246CB19CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246CA19CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.m */; };
+		B6DCE9BE19EECFBA00FFC204 /* IFLRequest+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DCE9BD19EECFBA00FFC204 /* IFLRequest+URL.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -244,6 +245,8 @@
 		B6B246C719CBCB3900020CD6 /* IFLWallpapersRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLWallpapersRequest.m; sourceTree = "<group>"; };
 		B6B246C919CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLWallpaperByTimestampRequest.h; sourceTree = "<group>"; };
 		B6B246CA19CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLWallpaperByTimestampRequest.m; sourceTree = "<group>"; };
+		B6DCE9BC19EECFBA00FFC204 /* IFLRequest+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IFLRequest+URL.h"; sourceTree = "<group>"; };
+		B6DCE9BD19EECFBA00FFC204 /* IFLRequest+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IFLRequest+URL.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -420,6 +423,8 @@
 			children = (
 				B6B2469819CA821100020CD6 /* IFLRequest.h */,
 				B6B2469919CA821100020CD6 /* IFLRequest.m */,
+				B6DCE9BC19EECFBA00FFC204 /* IFLRequest+URL.h */,
+				B6DCE9BD19EECFBA00FFC204 /* IFLRequest+URL.m */,
 				B6B246A219CBCA6600020CD6 /* IFLCameraBodyRequest.h */,
 				B6B246A319CBCA6600020CD6 /* IFLCameraBodyRequest.m */,
 				B6B246A519CBCA7C00020CD6 /* IFLCameraLensRequest.h */,
@@ -593,6 +598,7 @@
 				B64F029219CE651D00FE6755 /* IFLComment.m in Sources */,
 				B6B246A719CBCA7C00020CD6 /* IFLCameraLensRequest.m in Sources */,
 				B691DD9F19D5CC9F00911394 /* NSArray+DGParameterizeArray.m in Sources */,
+				B6DCE9BE19EECFBA00FFC204 /* IFLRequest+URL.m in Sources */,
 				B6B246BC19CBCAF800020CD6 /* IFLTagsRequest.m in Sources */,
 				B6B2469A19CA821100020CD6 /* IFLRequest.m in Sources */,
 				B6B246AA19CBCA8D00020CD6 /* IFLSingleCommentRequest.m in Sources */,
