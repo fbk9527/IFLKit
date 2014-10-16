@@ -157,8 +157,13 @@ NSString* kIFLRequestSortByComments  = @"comments";
     descString = [descString stringByAppendingFormat:@"RequestURL: %@", self.networkTask.response.URL.path];
     return descString;
 }
+#pragma mark - Session Task Delegate
+-(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
+{
+    
+}
 
-#pragma mark - Session Delegate
+#pragma mark - Session Data Delegate
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
 {
     
@@ -166,7 +171,12 @@ NSString* kIFLRequestSortByComments  = @"comments";
 
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
 {
+    // Do something
     
+    // close out task
+    // Use Getters & Setters to inform KVO observers
+    self.executing = NO;
+    self.finished = YES;
 }
 
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes

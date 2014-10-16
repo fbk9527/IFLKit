@@ -29,7 +29,7 @@ typedef void (^IFLCallBack)(id obj, NSHTTPURLResponse* resp, NSError* error);
 /** The @code IFLRequest @endcode class is an abstract class you subclass to encapsulate code and data associated with a request.
     Subclass should override the following methods
  */
-@interface IFLRequest : NSOperation <NSURLSessionDownloadDelegate>
+@interface IFLRequest : NSOperation <NSURLSessionTaskDelegate, NSURLSessionDownloadDelegate>
 
 
 /** Provides a list of the required parameters. Required and Optional parameters are used to construct the requesting URL.
