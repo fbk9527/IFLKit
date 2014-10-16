@@ -162,6 +162,9 @@ IFLClient* sharedClient = nil;
         if ([request respondsToSelector:@selector(URLSession:downloadTask:didFinishDownloadingToURL:)]) {
             [request URLSession:session downloadTask:downloadTask didFinishDownloadingToURL:location];
         }
+        
+        // Remove object from dictionary
+        [self.requestDictionary removeObjectForKey:@(downloadTask.taskIdentifier)];
     }
 }
 @end
