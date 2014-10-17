@@ -64,6 +64,15 @@ typedef void (^DownloadFinished)(NSURLSession* session,
 -(NSString*)command;
 
 
+/** Generate the request url
+ */
+-(NSURL*)generateRequestUrlWithBaseString:(NSString*)base;
+
+/** Generate the request url
+ */
+-(NSURL*)generateRequestUrlWithBaseUrl:(NSURL*)base;
+
+
 /** The completion blocked that is called if the request was successfull.
  @warning Be mindful of retain cycles if your enclosing queue is strong referenced!
  */
@@ -84,6 +93,9 @@ typedef void (^DownloadFinished)(NSURLSession* session,
 /**
  */
 @property(strong,nonatomic) NSURLSessionDownloadTask* networkTask;
+
+
+
 
 
 extern NSString* kIFLRequestSortByDate;
