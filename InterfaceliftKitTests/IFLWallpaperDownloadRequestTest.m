@@ -36,8 +36,7 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/wallpaper_download/3001/1920x1080/";
     IFLWallpaperDownloadRequest* req = [[IFLWallpaperDownloadRequest alloc]initWithWallpaperId:self.wallpaper_id withResolution:self.resolution];
-    req.baseUrl = self.base_url;
-    NSURL* url = [req generateRequestURL];
+    NSURL* url = [req generateRequestUrlWithBaseString:self.base_url];
     XCTAssert([expecting isEqualToString:[url description]],@"The URL is incorrectly formatted! %@",[url description]);
 }
 

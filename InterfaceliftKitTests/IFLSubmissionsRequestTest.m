@@ -36,8 +36,7 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/submissions/";
     IFLSubmissionsRequest* req = [[IFLSubmissionsRequest alloc]init];
-    req.baseUrl = self.base_url;
-    NSURL* url = [req generateRequestURL];
+    NSURL* url = [req generateRequestUrlWithBaseString:self.base_url];
     XCTAssert([expecting isEqualToString:[url description]],@"The URL is incorrectly formatted! %@",[url description]);
 }
 
@@ -45,11 +44,10 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/submissions/?limit=10&start=0&user_id=312";
     IFLSubmissionsRequest* req = [[IFLSubmissionsRequest alloc]init];
-    req.baseUrl = self.base_url;
     req.limit = self.limit;
-    req.start = self.start;
+    req.iflstart = self.start;
     req.user_id = self.user_id;
-    NSURL* url = [req generateRequestURL];
+    NSURL* url = [req generateRequestUrlWithBaseString:self.base_url];
     
     NSURLComponents* good_comp = [NSURLComponents componentsWithURL:[NSURL URLWithString:expecting] resolvingAgainstBaseURL:YES];
     NSURLComponents* test_comp = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
@@ -75,10 +73,9 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/submissions/?limit=10&start=0";
     IFLSubmissionsRequest* req = [[IFLSubmissionsRequest alloc]init];
-    req.baseUrl = self.base_url;
     req.limit = self.limit;
-    req.start = self.start;
-    NSURL* url = [req generateRequestURL];
+    req.iflstart = self.start;
+    NSURL* url = [req generateRequestUrlWithBaseString:self.base_url];
     
     NSURLComponents* good_comp = [NSURLComponents componentsWithURL:[NSURL URLWithString:expecting] resolvingAgainstBaseURL:YES];
     NSURLComponents* test_comp = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
@@ -104,9 +101,8 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/submissions/?limit=10";
     IFLSubmissionsRequest* req = [[IFLSubmissionsRequest alloc]init];
-    req.baseUrl = self.base_url;
     req.limit = self.limit;
-    NSURL* url = [req generateRequestURL];
+    NSURL* url = [req generateRequestUrlWithBaseString:self.base_url];
     
     NSURLComponents* good_comp = [NSURLComponents componentsWithURL:[NSURL URLWithString:expecting] resolvingAgainstBaseURL:YES];
     NSURLComponents* test_comp = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];

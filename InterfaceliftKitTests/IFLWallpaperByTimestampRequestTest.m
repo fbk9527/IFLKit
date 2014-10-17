@@ -54,8 +54,8 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/wallpapersByTimestamp/?timestamp=1346808341";
     IFLWallpaperByTimestampRequest* req = [[IFLWallpaperByTimestampRequest alloc]initWithTimestamp:self.timestamp];
-    req.baseUrl = self.base_url;
-    NSURL* url = [req generateRequestURL];
+     
+    NSURL* url = [req generateRequestUrlWithBaseString:self.base_url];
     XCTAssert([expecting isEqualToString:[url description]],@"The URL is incorrectly formatted! %@",[url description]);
 }
 
@@ -63,9 +63,9 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/wallpapersByTimestamp/?direction=newer&timestamp=1346808341";
     IFLWallpaperByTimestampRequest* req = [[IFLWallpaperByTimestampRequest alloc]initWithTimestamp:self.timestamp];
-    req.baseUrl = self.base_url;
+     
     req.direction = self.direction;
-    NSURL* url = [req generateRequestURL];
+    NSURL* url = [req generateRequestUrlWithBaseString:self.base_url];
     
     NSURLComponents* good_comp = [NSURLComponents componentsWithURL:[NSURL URLWithString:expecting] resolvingAgainstBaseURL:YES];
     NSURLComponents* test_comp = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
@@ -91,10 +91,10 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/wallpapersByTimestamp/?direction=newer&limit=10&timestamp=1346808341";
     IFLWallpaperByTimestampRequest* req = [[IFLWallpaperByTimestampRequest alloc]initWithTimestamp:self.timestamp];
-    req.baseUrl = self.base_url;
+     
     req.direction = self.direction;
     req.limit = self.limit;
-    NSURL* url = [req generateRequestURL];
+    NSURL* url = [req generateRequestUrlWithBaseString:self.base_url];
     
     NSURLComponents* good_comp = [NSURLComponents componentsWithURL:[NSURL URLWithString:expecting] resolvingAgainstBaseURL:YES];
     NSURLComponents* test_comp = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
@@ -119,11 +119,11 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/wallpapersByTimestamp/?direction=newer&limit=10&resolution=1920x1200&timestamp=1346808341";
     IFLWallpaperByTimestampRequest* req = [[IFLWallpaperByTimestampRequest alloc]initWithTimestamp:self.timestamp];
-    req.baseUrl = self.base_url;
+     
     req.direction = self.direction;
     req.limit = self.limit;
     req.resolution = self.resolution;
-    NSURL* url = [req generateRequestURL];
+    NSURL* url = [req generateRequestUrlWithBaseString:self.base_url];
 
     NSURLComponents* good_comp = [NSURLComponents componentsWithURL:[NSURL URLWithString:expecting] resolvingAgainstBaseURL:YES];
     NSURLComponents* test_comp = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
@@ -148,12 +148,12 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/wallpapersByTimestamp/?direction=newer&limit=10&resolution=1920x1200&tag_id=300&timestamp=1346808341";
     IFLWallpaperByTimestampRequest* req = [[IFLWallpaperByTimestampRequest alloc]initWithTimestamp:self.timestamp];
-    req.baseUrl = self.base_url;
+     
     req.direction = self.direction;
     req.limit = self.limit;
     req.resolution = self.resolution;
     req.tag_id = self.tag_id;
-    NSURL* url = [req generateRequestURL];
+    NSURL* url = [req generateRequestUrlWithBaseString:self.base_url];
 
     NSURLComponents* good_comp = [NSURLComponents componentsWithURL:[NSURL URLWithString:expecting] resolvingAgainstBaseURL:YES];
     NSURLComponents* test_comp = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];

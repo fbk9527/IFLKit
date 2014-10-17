@@ -42,8 +42,8 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/favorites/312/";
     IFLFavoritesRequest* req = [[IFLFavoritesRequest alloc]initWithUserId:self.user_id];
-    req.baseUrl = self.base_url;
-    NSURL* url = [req generateRequestURL];
+    
+    NSURL* url =  [req generateRequestUrlWithBaseString:self.base_url];
     XCTAssert([expecting isEqualToString:[url description]],@"The URL is incorrectly formatted! %@",[url description]);
 }
 
@@ -51,10 +51,10 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/favorites/312/?limit=10";
     IFLFavoritesRequest* req = [[IFLFavoritesRequest alloc]initWithUserId:self.user_id];
-    req.baseUrl = self.base_url;
+    
     req.limit = self.limit;
 
-    NSURL* url = [req generateRequestURL];
+    NSURL* url =  [req generateRequestUrlWithBaseString:self.base_url];
     
     NSURLComponents* good_comp = [NSURLComponents componentsWithURL:[NSURL URLWithString:expecting] resolvingAgainstBaseURL:YES];
     NSURLComponents* test_comp = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
@@ -80,11 +80,11 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/favorites/312/?limit=10&resolution=1920x1080";
     IFLFavoritesRequest* req = [[IFLFavoritesRequest alloc]initWithUserId:self.user_id];
-    req.baseUrl = self.base_url;
+    
     req.limit = self.limit;
     req.resolution = self.resolution;
 
-    NSURL* url = [req generateRequestURL];
+    NSURL* url =  [req generateRequestUrlWithBaseString:self.base_url];
     
     NSURLComponents* good_comp = [NSURLComponents componentsWithURL:[NSURL URLWithString:expecting] resolvingAgainstBaseURL:YES];
     NSURLComponents* test_comp = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
@@ -109,12 +109,12 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/favorites/312/?limit=10&resolution=1920x1080&sort_by=date";
     IFLFavoritesRequest* req = [[IFLFavoritesRequest alloc]initWithUserId:self.user_id];
-    req.baseUrl = self.base_url;
+    
     req.limit = self.limit;
     req.resolution = self.resolution;
     req.sort_by  = self.sort_by;
 
-    NSURL* url = [req generateRequestURL];
+    NSURL* url =[req generateRequestUrlWithBaseString:self.base_url];
     
     NSURLComponents* good_comp = [NSURLComponents componentsWithURL:[NSURL URLWithString:expecting] resolvingAgainstBaseURL:YES];
     NSURLComponents* test_comp = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
@@ -139,13 +139,13 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/favorites/312/?limit=10&resolution=1920x1080&sort_by=date&sort_order=desc";
     IFLFavoritesRequest* req = [[IFLFavoritesRequest alloc]initWithUserId:self.user_id];
-    req.baseUrl = self.base_url;
+    
     req.limit = self.limit;
     req.resolution = self.resolution;
     req.sort_by  = self.sort_by;
     req.sort_order = self.sort_order;
 
-    NSURL* url = [req generateRequestURL];
+    NSURL* url =  [req generateRequestUrlWithBaseString:self.base_url];
     
     NSURLComponents* good_comp = [NSURLComponents componentsWithURL:[NSURL URLWithString:expecting] resolvingAgainstBaseURL:YES];
     NSURLComponents* test_comp = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
@@ -170,14 +170,14 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/favorites/312/?limit=10&resolution=1920x1080&sort_by=date&sort_order=desc&start=0";
     IFLFavoritesRequest* req = [[IFLFavoritesRequest alloc]initWithUserId:self.user_id];
-    req.baseUrl = self.base_url;
+    
     req.limit = self.limit;
     req.resolution = self.resolution;
     req.sort_by  = self.sort_by;
     req.sort_order = self.sort_order;
     req.start = self.start;
 
-    NSURL* url = [req generateRequestURL];
+    NSURL* url =  [req generateRequestUrlWithBaseString:self.base_url];
     
     NSURLComponents* good_comp = [NSURLComponents componentsWithURL:[NSURL URLWithString:expecting] resolvingAgainstBaseURL:YES];
     NSURLComponents* test_comp = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];

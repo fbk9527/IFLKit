@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <XCTest/XCTest.h>
+#import <XCTest/XCTest.h>s
 #import "IFLSingleWallpaperRequest.h"
 
 @interface IFLSingleWallpaperRequestTest : XCTestCase
@@ -31,8 +31,7 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/wallpaper/3029/";
     IFLSingleWallpaperRequest* req = [[IFLSingleWallpaperRequest alloc]initWithId:self.iflId];
-    req.baseUrl = self.base_url;
-    NSURL* url = [req generateRequestURL];
+    NSURL* url = [req generateRequestUrlWithBaseString:self.base_url];
     XCTAssert([expecting isEqualToString:[url description]],@"The URL is incorrectly formatted! %@",[url description]);
 }
 

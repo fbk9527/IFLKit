@@ -35,8 +35,8 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/tags/";
     IFLTagsRequest* req = [[IFLTagsRequest alloc]init];
-    req.baseUrl = self.base_url;
-    NSURL* url = [req generateRequestURL];
+    
+    NSURL* url = [req generateRequestUrlWithBaseString:self.base_url];
     XCTAssert([expecting isEqualToString:[url description]],@"The URL is incorrectly formatted! %@",[url description]);
 }
 
@@ -44,10 +44,10 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/tags/?search=Blue";
     IFLTagsRequest* req = [[IFLTagsRequest alloc]init];
-    req.baseUrl = self.base_url;
+    
     req.search = self.search;
     
-    NSURL* url = [req generateRequestURL];
+    NSURL* url = [req generateRequestUrlWithBaseString:self.base_url];
     
     NSURLComponents* good_comp = [NSURLComponents componentsWithURL:[NSURL URLWithString:expecting] resolvingAgainstBaseURL:YES];
     NSURLComponents* test_comp = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
@@ -73,10 +73,10 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/tags/?search=Blue&type=Color";
     IFLTagsRequest* req = [[IFLTagsRequest alloc]init];
-    req.baseUrl = self.base_url;
+    
     req.search = self.search;
     req.type = self.type;
-    NSURL* url = [req generateRequestURL];
+    NSURL* url = [req generateRequestUrlWithBaseString:self.base_url];
     
     NSURLComponents* good_comp = [NSURLComponents componentsWithURL:[NSURL URLWithString:expecting] resolvingAgainstBaseURL:YES];
     NSURLComponents* test_comp = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
