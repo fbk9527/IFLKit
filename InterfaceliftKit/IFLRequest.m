@@ -173,6 +173,16 @@ NSString* kIFLRequestSortByComments  = @"comments";
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
 {
     // Do something
+    NSError* error = downloadTask.error;
+    NSURLResponse* response = downloadTask.response;
+    NSData* data = nil;
+    if (location) {
+        data = [NSData dataWithContentsOfURL:location];
+    }
+    
+    if (self.successBlock) {
+        self.successBlock(data,response,error);
+    }
     
     // close out task
     // Use Getters & Setters to inform KVO observers
@@ -184,6 +194,7 @@ NSString* kIFLRequestSortByComments  = @"comments";
 {
     
 }
+
 
 
 #pragma mark - Generate URL Request

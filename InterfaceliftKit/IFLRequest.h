@@ -1,18 +1,18 @@
-/// IFLKit - Objective-C wrapper to the Interfacelift.com API
-/// Copyright (C) 2014  Fred Kelch <fred.kelch@gmail.com>
-///
-/// This program is free software: you can redistribute it and/or modify
-/// it under the terms of the GNU General Public License as published by
-/// the Free Software Foundation, either version 3 of the License, or
-/// (at your option) any later version.
-///
-/// This program is distributed in the hope that it will be useful,
+// IFLKit - Objective-C wrapper to the Interfacelift.com API
+// Copyright (C) 2014  Fred Kelch <fred.kelch@gmail.com>
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
 /// but WITHOUT ANY WARRANTY; without even the implied warranty of
-/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-/// GNU General Public License for more details.
-///
-/// You should have received a copy of the GNU General Public License
-/// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #import <Foundation/Foundation.h>
 
@@ -23,7 +23,7 @@ typedef NS_OPTIONS(NSUInteger, IFLURLOption)
 };
 
 
-typedef void (^IFLCallBack)(id obj, NSHTTPURLResponse* resp, NSError* error);
+typedef void (^IFLCallBack)(id obj, NSURLResponse* resp, NSError* error);
 
 
 
@@ -34,9 +34,10 @@ typedef void (^BytesWritten)(NSURLSession* session,
                              int64_t totalExpectedBytesToWrite);
 
 
-typedef void (^DownloadFinished)(NSURLSession* session,
-                                 NSURLSessionDownloadTask* downloadTask,
-                                 NSURL* locationOfDownload);
+typedef void (^ResumeDownload)(NSURLSession* session,
+                               NSURLSessionDownloadTask* downloadTask,
+                               int64_t fileOffset,
+                               int64_t expectedTotalBytes);
 
 
 
@@ -71,7 +72,6 @@ typedef void (^DownloadFinished)(NSURLSession* session,
 /** Generate the request url
  */
 -(NSURL*)generateRequestUrlWithBaseUrl:(NSURL*)base;
-
 
 /** The completion blocked that is called if the request was successfull.
  @warning Be mindful of retain cycles if your enclosing queue is strong referenced!
