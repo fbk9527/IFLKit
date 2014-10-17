@@ -18,7 +18,6 @@
 #import <UIKit/UIKit.h>
 #import "IFLClient.h"
 #import "IFLRequest.h"
-#import "IFLRequest+URL.h"
 
 IFLClient* sharedClient = nil;
 
