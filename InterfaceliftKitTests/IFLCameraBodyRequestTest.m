@@ -31,8 +31,7 @@
 {
     NSString* expecting = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1/camera/1/";
     IFLCameraBodyRequest* req = [[IFLCameraBodyRequest alloc]initWithId:self.iflId];
-    req.baseUrl = self.base_url;
-    NSURL* url = [req generateRequestURL];
+    NSURL* url = [req generateRequestUrlWithBaseString:self.base_url];
     XCTAssert([expecting isEqualToString:[url description]],@"The URL is incorrectly formatted! %@",[url description]);
 }
 @end
