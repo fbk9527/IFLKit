@@ -156,6 +156,8 @@ NSString* kIFLRequestSortByComments  = @"comments";
     descString = [descString stringByAppendingFormat:@"RequestURL: %@", [self generateRequestUrlWithBaseString:@"https://__BASE__"]];
     return descString;
 }
+
+
 #pragma mark - Session Task Delegate
 -(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
 {
@@ -183,7 +185,7 @@ NSString* kIFLRequestSortByComments  = @"comments";
     
 }
 
-#pragma mark - Generate Request URL
+
 #pragma mark - Generate URL Request
 -(NSURL*)generateRequestUrlWithBaseString:(NSString *)base
 {

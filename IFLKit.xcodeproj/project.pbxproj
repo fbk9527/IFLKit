@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B609773D19D3A255003F8264 /* IFLClientTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609773C19D3A255003F8264 /* IFLClientTest.m */; };
 		B609774119D3AED6003F8264 /* IFLRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609774019D3AED6003F8264 /* IFLRequestTest.m */; };
 		B609774319D3AEE2003F8264 /* IFLCameraBodyRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609774219D3AEE2003F8264 /* IFLCameraBodyRequestTest.m */; };
 		B609774519D3AEF3003F8264 /* FILCameraLensRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B609774419D3AEF3003F8264 /* FILCameraLensRequestTest.m */; };
@@ -77,6 +76,7 @@
 		B691DDAF19D64B4A00911394 /* camera_body.json in Resources */ = {isa = PBXBuildFile; fileRef = B691DDA819D64B4A00911394 /* camera_body.json */; };
 		B691DDB019D64B4A00911394 /* camera_object.json in Resources */ = {isa = PBXBuildFile; fileRef = B691DDA919D64B4A00911394 /* camera_object.json */; };
 		B691DDB219D64CA800911394 /* IFLCameraModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B691DDB119D64CA800911394 /* IFLCameraModelTest.m */; };
+		B69B453E19F0D32F00CE4916 /* WallpaperRequestJSONDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = B69B453D19F0D32F00CE4916 /* WallpaperRequestJSONDownload.m */; };
 		B6B2467219CA81B600020CD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2467119CA81B600020CD6 /* Foundation.framework */; };
 		B6B2468019CA81B600020CD6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2467F19CA81B600020CD6 /* XCTest.framework */; };
 		B6B2468119CA81B600020CD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2467119CA81B600020CD6 /* Foundation.framework */; };
@@ -99,7 +99,6 @@
 		B6B246C519CBCB2A00020CD6 /* IFLWallpaperDownloadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246C419CBCB2A00020CD6 /* IFLWallpaperDownloadRequest.m */; };
 		B6B246C819CBCB3900020CD6 /* IFLWallpapersRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246C719CBCB3900020CD6 /* IFLWallpapersRequest.m */; };
 		B6B246CB19CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B246CA19CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.m */; };
-		B6DCE9BE19EECFBA00FFC204 /* IFLRequest+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DCE9BD19EECFBA00FFC204 /* IFLRequest+URL.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,7 +148,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B609773C19D3A255003F8264 /* IFLClientTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLClientTest.m; sourceTree = "<group>"; };
 		B609774019D3AED6003F8264 /* IFLRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLRequestTest.m; sourceTree = "<group>"; };
 		B609774219D3AEE2003F8264 /* IFLCameraBodyRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLCameraBodyRequestTest.m; sourceTree = "<group>"; };
 		B609774419D3AEF3003F8264 /* FILCameraLensRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FILCameraLensRequestTest.m; sourceTree = "<group>"; };
@@ -205,6 +203,7 @@
 		B691DDA819D64B4A00911394 /* camera_body.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = camera_body.json; sourceTree = "<group>"; };
 		B691DDA919D64B4A00911394 /* camera_object.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = camera_object.json; sourceTree = "<group>"; };
 		B691DDB119D64CA800911394 /* IFLCameraModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLCameraModelTest.m; sourceTree = "<group>"; };
+		B69B453D19F0D32F00CE4916 /* WallpaperRequestJSONDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallpaperRequestJSONDownload.m; sourceTree = "<group>"; };
 		B6B2466E19CA81B600020CD6 /* libIFLKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIFLKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B2467119CA81B600020CD6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B6B2467519CA81B600020CD6 /* IFLKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IFLKit-Prefix.pch"; sourceTree = "<group>"; };
@@ -245,8 +244,6 @@
 		B6B246C719CBCB3900020CD6 /* IFLWallpapersRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLWallpapersRequest.m; sourceTree = "<group>"; };
 		B6B246C919CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLWallpaperByTimestampRequest.h; sourceTree = "<group>"; };
 		B6B246CA19CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLWallpaperByTimestampRequest.m; sourceTree = "<group>"; };
-		B6DCE9BC19EECFBA00FFC204 /* IFLRequest+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IFLRequest+URL.h"; sourceTree = "<group>"; };
-		B6DCE9BD19EECFBA00FFC204 /* IFLRequest+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IFLRequest+URL.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,14 +269,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B609773B19D3A234003F8264 /* ClientTest */ = {
-			isa = PBXGroup;
-			children = (
-				B609773C19D3A255003F8264 /* IFLClientTest.m */,
-			);
-			name = ClientTest;
-			sourceTree = "<group>";
-		};
 		B64F028719CDCE3100FE6755 /* ModelTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +334,14 @@
 			name = TestingFiles;
 			sourceTree = "<group>";
 		};
+		B69B453C19F0D2D000CE4916 /* NetworkTest_Private */ = {
+			isa = PBXGroup;
+			children = (
+				B69B453D19F0D32F00CE4916 /* WallpaperRequestJSONDownload.m */,
+			);
+			name = NetworkTest_Private;
+			sourceTree = "<group>";
+		};
 		B6B2466519CA81B600020CD6 = {
 			isa = PBXGroup;
 			children = (
@@ -399,8 +396,8 @@
 		B6B2468719CA81B600020CD6 /* IFLKitTest */ = {
 			isa = PBXGroup;
 			children = (
+				B69B453C19F0D2D000CE4916 /* NetworkTest_Private */,
 				B691DDA219D64B3800911394 /* TestingFiles */,
-				B609773B19D3A234003F8264 /* ClientTest */,
 				B64F028819CDCE3F00FE6755 /* RequestTest */,
 				B64F028719CDCE3100FE6755 /* ModelTest */,
 				B6B2468819CA81B600020CD6 /* Supporting Files */,
@@ -423,8 +420,6 @@
 			children = (
 				B6B2469819CA821100020CD6 /* IFLRequest.h */,
 				B6B2469919CA821100020CD6 /* IFLRequest.m */,
-				B6DCE9BC19EECFBA00FFC204 /* IFLRequest+URL.h */,
-				B6DCE9BD19EECFBA00FFC204 /* IFLRequest+URL.m */,
 				B6B246A219CBCA6600020CD6 /* IFLCameraBodyRequest.h */,
 				B6B246A319CBCA6600020CD6 /* IFLCameraBodyRequest.m */,
 				B6B246A519CBCA7C00020CD6 /* IFLCameraLensRequest.h */,
@@ -598,7 +593,6 @@
 				B64F029219CE651D00FE6755 /* IFLComment.m in Sources */,
 				B6B246A719CBCA7C00020CD6 /* IFLCameraLensRequest.m in Sources */,
 				B691DD9F19D5CC9F00911394 /* NSArray+DGParameterizeArray.m in Sources */,
-				B6DCE9BE19EECFBA00FFC204 /* IFLRequest+URL.m in Sources */,
 				B6B246BC19CBCAF800020CD6 /* IFLTagsRequest.m in Sources */,
 				B6B2469A19CA821100020CD6 /* IFLRequest.m in Sources */,
 				B6B246AA19CBCA8D00020CD6 /* IFLSingleCommentRequest.m in Sources */,
@@ -615,7 +609,6 @@
 				B609775119D3AF83003F8264 /* IFLSubmissionsDownloadRequestTest.m in Sources */,
 				B62B8D6D19D7B5F100553C0B /* IFLTagModelTest.m in Sources */,
 				B62B8D6119D769F500553C0B /* IFLSubmissionDownloadModelTest.m in Sources */,
-				B609773D19D3A255003F8264 /* IFLClientTest.m in Sources */,
 				B62B8D6319D76D8E00553C0B /* IFLWallpaperDownloadModelTest.m in Sources */,
 				B609774F19D3AF5D003F8264 /* IFLSubmissionsRequestTest.m in Sources */,
 				B609775519D3AF9A003F8264 /* IFLSingleTagRequestTest.m in Sources */,
@@ -630,6 +623,7 @@
 				B62B8D5919D75A4F00553C0B /* IFLCommenModelTest.m in Sources */,
 				B609774319D3AEE2003F8264 /* IFLCameraBodyRequestTest.m in Sources */,
 				B609774119D3AED6003F8264 /* IFLRequestTest.m in Sources */,
+				B69B453E19F0D32F00CE4916 /* WallpaperRequestJSONDownload.m in Sources */,
 				B609774B19D3AF44003F8264 /* IFLFavoritesRequestTest.m in Sources */,
 				B691DDB219D64CA800911394 /* IFLCameraModelTest.m in Sources */,
 				B609775319D3AF8E003F8264 /* IFLTagsRequestTest.m in Sources */,
