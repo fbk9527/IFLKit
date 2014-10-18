@@ -180,9 +180,10 @@ NSString* kIFLRequestSortByComments  = @"comments";
         data = [NSData dataWithContentsOfURL:location];
     }
     
-    if (self.successBlock) {
+    if (!error && self.successBlock)
         self.successBlock(data,response,error);
-    }
+    else if(self.failureBlock)
+        self.failureBlock(data,response,error);
     
     // close out task
     // Use Getters & Setters to inform KVO observers
