@@ -65,6 +65,7 @@
 		B64F029E19CE6FB700FE6755 /* IFLWallpaperDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F029D19CE6FB700FE6755 /* IFLWallpaperDownload.m */; };
 		B64F02A119CE700D00FE6755 /* IFLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F02A019CE700D00FE6755 /* IFLUser.m */; };
 		B64F02A419CE746500FE6755 /* IFLTag.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F02A319CE746500FE6755 /* IFLTag.m */; };
+		B65978F719F5ECAA002D42CF /* Mashape.key in Resources */ = {isa = PBXBuildFile; fileRef = B65978F619F5ECAA002D42CF /* Mashape.key */; };
 		B67CDD9919CD50B20038CEF2 /* IFLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B67CDD9819CD50B20038CEF2 /* IFLCamera.m */; };
 		B691DD9F19D5CC9F00911394 /* NSArray+DGParameterizeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B691DD9E19D5CC9F00911394 /* NSArray+DGParameterizeArray.m */; };
 		B691DDA119D5E82600911394 /* IFLSingleWallpaperRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B691DDA019D5E82600911394 /* IFLSingleWallpaperRequestTest.m */; };
@@ -190,6 +191,7 @@
 		B64F02A019CE700D00FE6755 /* IFLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLUser.m; sourceTree = "<group>"; };
 		B64F02A219CE746500FE6755 /* IFLTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLTag.h; sourceTree = "<group>"; };
 		B64F02A319CE746500FE6755 /* IFLTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLTag.m; sourceTree = "<group>"; };
+		B65978F619F5ECAA002D42CF /* Mashape.key */ = {isa = PBXFileReference; lastKnownFileType = text; path = Mashape.key; sourceTree = "<group>"; };
 		B67CDD9719CD50B20038CEF2 /* IFLCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLCamera.h; sourceTree = "<group>"; };
 		B67CDD9819CD50B20038CEF2 /* IFLCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLCamera.m; sourceTree = "<group>"; };
 		B691DD9D19D5CC9F00911394 /* NSArray+DGParameterizeArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+DGParameterizeArray.h"; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 		B6B2466519CA81B600020CD6 = {
 			isa = PBXGroup;
 			children = (
+				B65978F619F5ECAA002D42CF /* Mashape.key */,
 				B6B2467319CA81B600020CD6 /* IFLKit */,
 				B6B2468719CA81B600020CD6 /* IFLKitTest */,
 				B6B2467019CA81B600020CD6 /* Frameworks */,
@@ -551,6 +554,7 @@
 				B691DDB019D64B4A00911394 /* camera_object.json in Resources */,
 				B691DDAE19D64B4A00911394 /* camera_lens.json in Resources */,
 				B691DDAD19D64B4A00911394 /* comment.json in Resources */,
+				B65978F719F5ECAA002D42CF /* Mashape.key in Resources */,
 				B6B2468C19CA81B600020CD6 /* InfoPlist.strings in Resources */,
 				B62B8D6519D7B39A00553C0B /* wallpaper_download.json in Resources */,
 				B62B8D5F19D769E400553C0B /* submission_download.json in Resources */,

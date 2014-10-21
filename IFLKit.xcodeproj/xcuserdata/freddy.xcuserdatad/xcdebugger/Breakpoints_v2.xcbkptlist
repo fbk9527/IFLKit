@@ -1238,8 +1238,8 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[IFLCommentsRequestTest testCommandRequestURLWithOptionals_LimitSortOrderStartUserId]"
                   moduleName = "IFLKitTests"
-                  urlString = "file:///Users/freddy/Desktop/InterfaceliftKit/InterfaceliftKitTests/IFLCommentsRequestTest.m"
-                  timestampString = "435211853.655701"
+                  urlString = "file:///Users/freddy/Documents/Projects/IFLKit/InterfaceliftKitTests/IFLCommentsRequestTest.m"
+                  timestampString = "435594616.631526"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "159"
@@ -1252,8 +1252,8 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[IFLCommentsRequestTest testCommandRequestURLWithOptionals_LimitSortOrderStartUserId]"
                   moduleName = "IFLKitTests"
-                  urlString = "file:///Users/freddy/Desktop/InterfaceliftKit/InterfaceliftKitTests/IFLCommentsRequestTest.m"
-                  timestampString = "435211853.656082"
+                  urlString = "file:///Users/freddy/Documents/Projects/IFLKit/InterfaceliftKitTests/IFLCommentsRequestTest.m"
+                  timestampString = "435594616.631784"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "159"
@@ -1266,8 +1266,8 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[IFLCommentsRequestTest testCommandRequestURLWithOptionals_LimitSortOrderStartUserId]"
                   moduleName = "IFLKitTests"
-                  urlString = "file:///Users/freddy/Desktop/InterfaceliftKit/InterfaceliftKitTests/IFLCommentsRequestTest.m"
-                  timestampString = "435211853.65642"
+                  urlString = "file:///Users/freddy/Documents/Projects/IFLKit/InterfaceliftKitTests/IFLCommentsRequestTest.m"
+                  timestampString = "435594616.632026"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "159"
@@ -1280,8 +1280,8 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[IFLCommentsRequestTest testCommandRequestURLWithOptionals_LimitSortOrderStartUserId]"
                   moduleName = "IFLKitTests"
-                  urlString = "file:///Users/freddy/Desktop/InterfaceliftKit/InterfaceliftKitTests/IFLCommentsRequestTest.m"
-                  timestampString = "435211853.656821"
+                  urlString = "file:///Users/freddy/Documents/Projects/IFLKit/InterfaceliftKitTests/IFLCommentsRequestTest.m"
+                  timestampString = "435594616.632308"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "159"
@@ -1289,6 +1289,78 @@
                   offsetFromSymbolStart = "8527">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "Yes"
+            filePath = "InterfaceliftKitTests/WallpaperRequestJSONDownload.m"
+            timestampString = "435594478.250112"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "-testValidConnection"
+            landmarkType = "5">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po data">
+                  </ActionContent>
+               </BreakpointActionProxy>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po resp">
+                  </ActionContent>
+               </BreakpointActionProxy>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po error">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "Yes"
+            filePath = "InterfaceliftKitTests/WallpaperRequestJSONDownload.m"
+            timestampString = "435594539.284531"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-testValidConnection"
+            landmarkType = "5">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po data">
+                  </ActionContent>
+               </BreakpointActionProxy>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po resp">
+                  </ActionContent>
+               </BreakpointActionProxy>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po error">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
