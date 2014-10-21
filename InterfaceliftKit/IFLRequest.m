@@ -167,18 +167,20 @@ NSString* kIFLRequestSortByComments  = @"comments";
 #pragma mark - Session Data Delegate
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
 {
-    
+    if (self.statusBlock) {
+        self.statusBlock(session,downloadTask,bytesWritten,totalBytesWritten,totalBytesExpectedToWrite);
+    }
 }
 
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
 {
     // Do something
+    NSData* data = nil;
     NSError* error = downloadTask.error;
     NSURLResponse* response = downloadTask.response;
-    NSData* data = nil;
-    if (location) {
+    
+    if (location)
         data = [NSData dataWithContentsOfURL:location];
-    }
     
     if (!error && self.successBlock)
         self.successBlock(data,response,error);

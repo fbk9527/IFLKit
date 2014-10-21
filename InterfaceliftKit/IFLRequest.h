@@ -73,6 +73,25 @@ typedef void (^ResumeDownload)(NSURLSession* session,
  */
 -(NSURL*)generateRequestUrlWithBaseUrl:(NSURL*)base;
 
+
+
+
+
+
+
+/** Control the construction of the request URL.
+ */
+@property(assign,nonatomic) IFLURLOption options;
+
+
+
+
+//==========================================================================================================================
+// Blocks
+//==========================================================================================================================
+
+
+
 /** The completion blocked that is called if the request was successfull.
  @warning Be mindful of retain cycles if your enclosing queue is strong referenced!
  */
@@ -85,9 +104,14 @@ typedef void (^ResumeDownload)(NSURLSession* session,
 @property(copy,nonatomic) IFLCallBack failureBlock;
 
 
-/** Control the construction of the request URL.
+/** The status block used to inform when data is downloaded.
  */
-@property(assign,nonatomic) IFLURLOption options;
+@property(assign,nonatomic) BytesWritten statusBlock;
+
+
+/** The block called when the download is resumed.
+ */
+@property(assign,nonatomic) ResumeDownload resumeBlock;
 
 
 /**
