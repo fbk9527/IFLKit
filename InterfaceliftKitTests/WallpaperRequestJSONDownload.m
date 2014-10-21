@@ -11,11 +11,13 @@
 #import "IFLClient.h"
 #import "IFLWallpaperByTimestampRequest.h"
 
-@interface WallpaperRequestJSONDownload : XCTestCase
+@interface WallpaperRequestJSONDownload : XCTestCase <NSURLSessionDownloadDelegate>
 @property(strong,nonatomic) NSURLSession* session;
 @property(strong,nonatomic) NSOperationQueue* operationQueue;
 @property(strong,nonatomic) NSString* authenticationKey;
 @property(strong,nonatomic) NSString* baseUrl;
+@property(strong) NSMutableDictionary* semephoreDictionary;
+@property(strong,nonatomic) NSMutableDictionary* operationDictionary;
 @end
 
 @implementation WallpaperRequestJSONDownload
@@ -41,6 +43,10 @@
     
     // Base URL
     self.baseUrl = @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1";
+    
+    // Semephore Dictonary
+    self.semephoreDictionary = [NSMutableDictionary new];
+    self.operationDictionary = [NSMutableDictionary new];
 }
 
 - (void)tearDown
@@ -62,33 +68,74 @@
     req.iflstart = @0;
     req.resolution = [IFLClient nativeResolution];
     
-    // Build request
-    
     // Encapsolated request
-    NSURLSessionDownloadTask* dT =
-    [self.session downloadTaskWithURL:[req generateRequestUrlWithBaseString:self.baseUrl]
-                    completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-        
-                        // Print out data
-                        NSLog(@"Location of file: %@",location.path);
-                        NSLog(@"Response: %@",[response description]);
-                        NSLog(@"Error: %@",[error description]);
-                        
-                        // Print out file if we have it
-                        if(location)
-                        {
-                            NSString* respText = [NSString stringWithContentsOfURL:location encoding:NSUTF8StringEncoding error:nil];
-                            NSLog(@"%@",respText);
-                        }
-                        
-                        // Release lock
-                        dispatch_semaphore_signal(semephore);
-    }];
+    NSURLSessionDownloadTask* dT =[self.session downloadTaskWithURL:[req generateRequestUrlWithBaseString:self.baseUrl]];
+    
     req.networkTask = dT;
+    
+    // Status block
+    [req setStatusBlock:^( NSURLSession* session, NSURLSessionDownloadTask* downloadTask, int64_t bytesWritten, int64_t totalBytesWritten, int64_t totalExpectedBytesToWrite){
+        NSLog(@"Bytes %lli of %lli",totalBytesWritten, totalExpectedBytesToWrite);
+    }];
+    
+    
+    // Success block
+    [req setSuccessBlock:^(NSData* data, NSURLResponse* resp, NSError* error){
+        NSLog(@"Success");
+        XCTAssert(error==nil, @"Success block is only called when an error is not incurred");
+        XCTAssert(true,@"Success Block Encountered");
+        
+        // release lock
+        dispatch_semaphore_signal(semephore);
+    }];
+    
+    // Failure block
+    [req setFailureBlock:^(NSData* data, NSURLResponse* resp, NSError* error){
+        NSLog(@"Failure");
+        XCTAssert(false,@"Failure Block Returned");
+        
+        // Rlease Lock
+        dispatch_semaphore_signal(semephore);
+    }];
+    
+    
+    // Add semephore
+    [self.semephoreDictionary setObject:semephore forKey:@(dT.taskIdentifier)];
+    [self.operationDictionary setObject:req forKey:@(dT.taskIdentifier)];
     [self.operationQueue addOperation:req];
 
     // Block Queue
     dispatch_semaphore_wait(semephore, DISPATCH_TIME_FOREVER);
-    XCTAssert(true, @"Returned back!!");
+}
+
+#pragma mark - Download Delegate
+-(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
+{
+    IFLWallpaperByTimestampRequest* req = [self.operationDictionary objectForKey:@(downloadTask.taskIdentifier)];
+    if(req){
+        if ([req respondsToSelector:@selector(URLSession:downloadTask:didFinishDownloadingToURL:)]) {
+            [req URLSession:session downloadTask:downloadTask didFinishDownloadingToURL:location];
+        }
+    }
+}
+
+-(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
+{
+    IFLWallpaperByTimestampRequest* req = [self.operationDictionary objectForKey:@(downloadTask.taskIdentifier)];
+    if(req){
+        if ([req respondsToSelector:@selector(URLSession:downloadTask:didWriteData:totalBytesWritten:totalBytesExpectedToWrite:)]) {
+            [req URLSession:session downloadTask:downloadTask didWriteData:bytesWritten totalBytesWritten:totalBytesWritten totalBytesExpectedToWrite:totalBytesExpectedToWrite];
+        }
+    }
+}
+
+-(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes
+{
+    IFLWallpaperByTimestampRequest* req = [self.operationDictionary objectForKey:@(downloadTask.taskIdentifier)];
+    if(req){
+        if ([req respondsToSelector:@selector(URLSession:downloadTask:didResumeAtOffset:expectedTotalBytes:)]) {
+            [req URLSession:session downloadTask:downloadTask didResumeAtOffset:fileOffset expectedTotalBytes:expectedTotalBytes];
+        }
+    }
 }
 @end
