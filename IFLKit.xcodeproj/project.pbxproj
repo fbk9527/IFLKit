@@ -92,7 +92,6 @@
 		B659793219F73CD7002D42CF /* IFLTag.h in Headers */ = {isa = PBXBuildFile; fileRef = B64F02A219CE746500FE6755 /* IFLTag.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B659793319F73CDF002D42CF /* IFLClient.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B2469F19CA9C2600020CD6 /* IFLClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B67CDD9919CD50B20038CEF2 /* IFLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B67CDD9819CD50B20038CEF2 /* IFLCamera.m */; };
-		B691DD9F19D5CC9F00911394 /* NSArray+DGParameterizeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B691DD9E19D5CC9F00911394 /* NSArray+DGParameterizeArray.m */; };
 		B691DDA119D5E82600911394 /* IFLSingleWallpaperRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B691DDA019D5E82600911394 /* IFLSingleWallpaperRequestTest.m */; };
 		B691DDAA19D64B4A00911394 /* submission_wallpaper.json in Resources */ = {isa = PBXBuildFile; fileRef = B691DDA319D64B4A00911394 /* submission_wallpaper.json */; };
 		B691DDAB19D64B4A00911394 /* favorites_wallpaper_array.json in Resources */ = {isa = PBXBuildFile; fileRef = B691DDA419D64B4A00911394 /* favorites_wallpaper_array.json */; };
@@ -219,8 +218,6 @@
 		B65978F619F5ECAA002D42CF /* Mashape.key */ = {isa = PBXFileReference; lastKnownFileType = text; path = Mashape.key; sourceTree = "<group>"; };
 		B67CDD9719CD50B20038CEF2 /* IFLCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFLCamera.h; sourceTree = "<group>"; };
 		B67CDD9819CD50B20038CEF2 /* IFLCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLCamera.m; sourceTree = "<group>"; };
-		B691DD9D19D5CC9F00911394 /* NSArray+DGParameterizeArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+DGParameterizeArray.h"; sourceTree = "<group>"; };
-		B691DD9E19D5CC9F00911394 /* NSArray+DGParameterizeArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+DGParameterizeArray.m"; sourceTree = "<group>"; };
 		B691DDA019D5E82600911394 /* IFLSingleWallpaperRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFLSingleWallpaperRequestTest.m; sourceTree = "<group>"; };
 		B691DDA319D64B4A00911394 /* submission_wallpaper.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = submission_wallpaper.json; sourceTree = "<group>"; };
 		B691DDA419D64B4A00911394 /* favorites_wallpaper_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = favorites_wallpaper_array.json; sourceTree = "<group>"; };
@@ -333,15 +330,6 @@
 			name = RequestTest;
 			sourceTree = "<group>";
 		};
-		B691DD9C19D5CC6900911394 /* Catagories */ = {
-			isa = PBXGroup;
-			children = (
-				B691DD9D19D5CC9F00911394 /* NSArray+DGParameterizeArray.h */,
-				B691DD9E19D5CC9F00911394 /* NSArray+DGParameterizeArray.m */,
-			);
-			name = Catagories;
-			sourceTree = "<group>";
-		};
 		B691DDA219D64B3800911394 /* TestingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,7 +390,6 @@
 		B6B2467319CA81B600020CD6 /* IFLKit */ = {
 			isa = PBXGroup;
 			children = (
-				B691DD9C19D5CC6900911394 /* Catagories */,
 				B6B2469B19CA837000020CD6 /* Model */,
 				B6B2469719CA81F500020CD6 /* Request */,
 				B6B2469F19CA9C2600020CD6 /* IFLClient.h */,
@@ -657,7 +644,6 @@
 				B64F029B19CE6D5A00FE6755 /* IFLSubmissionDownload.m in Sources */,
 				B64F029219CE651D00FE6755 /* IFLComment.m in Sources */,
 				B6B246A719CBCA7C00020CD6 /* IFLCameraLensRequest.m in Sources */,
-				B691DD9F19D5CC9F00911394 /* NSArray+DGParameterizeArray.m in Sources */,
 				B6B246BC19CBCAF800020CD6 /* IFLTagsRequest.m in Sources */,
 				B6B2469A19CA821100020CD6 /* IFLRequest.m in Sources */,
 				B6B246AA19CBCA8D00020CD6 /* IFLSingleCommentRequest.m in Sources */,
