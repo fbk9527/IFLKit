@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <XCTest/XCTest.h>s
+#import <XCTest/XCTest.h>
 #import "IFLSingleWallpaperRequest.h"
 
 @interface IFLSingleWallpaperRequestTest : XCTestCase
