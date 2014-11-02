@@ -66,6 +66,31 @@
 		B64F02A119CE700D00FE6755 /* IFLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F02A019CE700D00FE6755 /* IFLUser.m */; };
 		B64F02A419CE746500FE6755 /* IFLTag.m in Sources */ = {isa = PBXBuildFile; fileRef = B64F02A319CE746500FE6755 /* IFLTag.m */; };
 		B65978F719F5ECAA002D42CF /* Mashape.key in Resources */ = {isa = PBXBuildFile; fileRef = B65978F619F5ECAA002D42CF /* Mashape.key */; };
+		B659791B19F73CC5002D42CF /* IFLRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B2469819CA821100020CD6 /* IFLRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659791C19F73CC5002D42CF /* IFLCameraBodyRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B246A219CBCA6600020CD6 /* IFLCameraBodyRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659791D19F73CC5002D42CF /* IFLCameraLensRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B246A519CBCA7C00020CD6 /* IFLCameraLensRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659791E19F73CC5002D42CF /* IFLSingleCommentRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B246A819CBCA8D00020CD6 /* IFLSingleCommentRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659791F19F73CC5002D42CF /* IFLCommentsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B246AB19CBCAA300020CD6 /* IFLCommentsRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659792019F73CC5002D42CF /* IFLFavoritesRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B246AE19CBCAB900020CD6 /* IFLFavoritesRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659792119F73CC5002D42CF /* IFLSingleSubmissionRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B246B119CBCAC900020CD6 /* IFLSingleSubmissionRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659792219F73CC5002D42CF /* IFLSubmissionsDownloadRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B246B719CBCAE700020CD6 /* IFLSubmissionsDownloadRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659792319F73CC5002D42CF /* IFLSubmissionsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B246B419CBCAD700020CD6 /* IFLSubmissionsRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659792419F73CC5002D42CF /* IFLTagsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B246BA19CBCAF800020CD6 /* IFLTagsRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659792519F73CC5002D42CF /* IFLSingleTagRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B246BD19CBCB0B00020CD6 /* IFLSingleTagRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659792619F73CC5002D42CF /* IFLSingleWallpaperRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B246C019CBCB1C00020CD6 /* IFLSingleWallpaperRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659792719F73CC5002D42CF /* IFLWallpaperDownloadRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B246C319CBCB2A00020CD6 /* IFLWallpaperDownloadRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659792819F73CC5002D42CF /* IFLWallpapersRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B246C619CBCB3900020CD6 /* IFLWallpapersRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659792919F73CC5002D42CF /* IFLWallpaperByTimestampRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B246C919CBCB4800020CD6 /* IFLWallpaperByTimestampRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659792A19F73CD6002D42CF /* IFLWallpaper.h in Headers */ = {isa = PBXBuildFile; fileRef = B636132019E23C610091CA5B /* IFLWallpaper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659792B19F73CD6002D42CF /* IFLModel.h in Headers */ = {isa = PBXBuildFile; fileRef = B64F028419CDCB6200FE6755 /* IFLModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659792C19F73CD6002D42CF /* IFLCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = B67CDD9719CD50B20038CEF2 /* IFLCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659792D19F73CD7002D42CF /* IFLLens.h in Headers */ = {isa = PBXBuildFile; fileRef = B64F028D19CE631500FE6755 /* IFLLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659792E19F73CD7002D42CF /* IFLComment.h in Headers */ = {isa = PBXBuildFile; fileRef = B64F029019CE651D00FE6755 /* IFLComment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659792F19F73CD7002D42CF /* IFLSubmissionDownload.h in Headers */ = {isa = PBXBuildFile; fileRef = B64F029919CE6D5A00FE6755 /* IFLSubmissionDownload.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659793019F73CD7002D42CF /* IFLWallpaperDownload.h in Headers */ = {isa = PBXBuildFile; fileRef = B64F029C19CE6FB700FE6755 /* IFLWallpaperDownload.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659793119F73CD7002D42CF /* IFLUser.h in Headers */ = {isa = PBXBuildFile; fileRef = B64F029F19CE700D00FE6755 /* IFLUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659793219F73CD7002D42CF /* IFLTag.h in Headers */ = {isa = PBXBuildFile; fileRef = B64F02A219CE746500FE6755 /* IFLTag.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B659793319F73CDF002D42CF /* IFLClient.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B2469F19CA9C2600020CD6 /* IFLClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B67CDD9919CD50B20038CEF2 /* IFLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B67CDD9819CD50B20038CEF2 /* IFLCamera.m */; };
 		B691DD9F19D5CC9F00911394 /* NSArray+DGParameterizeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B691DD9E19D5CC9F00911394 /* NSArray+DGParameterizeArray.m */; };
 		B691DDA119D5E82600911394 /* IFLSingleWallpaperRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B691DDA019D5E82600911394 /* IFLSingleWallpaperRequestTest.m */; };
@@ -482,6 +507,41 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		B659791A19F73C8B002D42CF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B659791B19F73CC5002D42CF /* IFLRequest.h in Headers */,
+				B659791C19F73CC5002D42CF /* IFLCameraBodyRequest.h in Headers */,
+				B659791D19F73CC5002D42CF /* IFLCameraLensRequest.h in Headers */,
+				B659791E19F73CC5002D42CF /* IFLSingleCommentRequest.h in Headers */,
+				B659791F19F73CC5002D42CF /* IFLCommentsRequest.h in Headers */,
+				B659792019F73CC5002D42CF /* IFLFavoritesRequest.h in Headers */,
+				B659792119F73CC5002D42CF /* IFLSingleSubmissionRequest.h in Headers */,
+				B659792219F73CC5002D42CF /* IFLSubmissionsDownloadRequest.h in Headers */,
+				B659792319F73CC5002D42CF /* IFLSubmissionsRequest.h in Headers */,
+				B659792419F73CC5002D42CF /* IFLTagsRequest.h in Headers */,
+				B659792519F73CC5002D42CF /* IFLSingleTagRequest.h in Headers */,
+				B659792619F73CC5002D42CF /* IFLSingleWallpaperRequest.h in Headers */,
+				B659792719F73CC5002D42CF /* IFLWallpaperDownloadRequest.h in Headers */,
+				B659792819F73CC5002D42CF /* IFLWallpapersRequest.h in Headers */,
+				B659792919F73CC5002D42CF /* IFLWallpaperByTimestampRequest.h in Headers */,
+				B659792A19F73CD6002D42CF /* IFLWallpaper.h in Headers */,
+				B659793319F73CDF002D42CF /* IFLClient.h in Headers */,
+				B659792B19F73CD6002D42CF /* IFLModel.h in Headers */,
+				B659792C19F73CD6002D42CF /* IFLCamera.h in Headers */,
+				B659792D19F73CD7002D42CF /* IFLLens.h in Headers */,
+				B659792E19F73CD7002D42CF /* IFLComment.h in Headers */,
+				B659792F19F73CD7002D42CF /* IFLSubmissionDownload.h in Headers */,
+				B659793019F73CD7002D42CF /* IFLWallpaperDownload.h in Headers */,
+				B659793119F73CD7002D42CF /* IFLUser.h in Headers */,
+				B659793219F73CD7002D42CF /* IFLTag.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		B6B2466D19CA81B600020CD6 /* IFLKit */ = {
 			isa = PBXNativeTarget;
@@ -490,6 +550,7 @@
 				B6B2466A19CA81B600020CD6 /* Sources */,
 				B6B2466B19CA81B600020CD6 /* Frameworks */,
 				B6B2466C19CA81B600020CD6 /* CopyFiles */,
+				B659791A19F73C8B002D42CF /* Headers */,
 			);
 			buildRules = (
 			);
