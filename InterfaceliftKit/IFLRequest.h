@@ -1,32 +1,47 @@
-// IFLKit - Objective-C wrapper to the Interfacelift.com API
-// Copyright (C) 2014  Fred Kelch <fred.kelch@gmail.com>
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-/// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+/*
+     IFLKit - Objective-C wrapper to the Interfacelift.com API
+     Copyright (C) 2014  Fred Kelch <fred.kelch@gmail.com>
 
+     This program is free software: you can redistribute it and/or modify
+     it under the terms of the GNU General Public License as published by
+     the Free Software Foundation, either version 3 of the License, or
+     (at your option) any later version.
+
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
 #import <Foundation/Foundation.h>
 
 
+/*!
+ * @brief Options that alter the construction of the IFLRequest URL
+ *
+ * @constant IFLURLOptionTreatRequredAsOptional Handle all required parameters as if they were optional in the URL construction.
+ *
+ * @discussion The Interfacelift API hosted at mashape.com is inconsistent at best. Normally, request that have required parameters
+ * are added to the URL path and optional are added to the parameter string. However, there are two commands where required parameters
+ * are handled in the URL construction as optionals. This flag can be used to alter how they are added to the URL.
+ */
 typedef NS_OPTIONS(NSUInteger, IFLURLOption)
 {
     IFLURLOptionTreatRequiredAsOptional = 1 << 0
 };
 
 
+/*!
+ *
+ */
 typedef void (^IFLCallBack)(id obj, NSURLResponse* resp, NSError* error);
 
 
-
+/*!
+ *
+ */
 typedef void (^BytesWritten)(NSURLSession* session,
                              NSURLSessionDownloadTask* downloadTask,
                              int64_t bytesWritten,
@@ -34,6 +49,9 @@ typedef void (^BytesWritten)(NSURLSession* session,
                              int64_t totalExpectedBytesToWrite);
 
 
+/*!
+ *
+ */
 typedef void (^ResumeDownload)(NSURLSession* session,
                                NSURLSessionDownloadTask* downloadTask,
                                int64_t fileOffset,
@@ -49,46 +67,65 @@ typedef void (^ResumeDownload)(NSURLSession* session,
 @interface IFLRequest : NSOperation <NSURLSessionTaskDelegate, NSURLSessionDownloadDelegate>
 
 
-/** Provides a list of the required parameters. Required and Optional parameters are used to construct the requesting URL.
- @warning This is an abstract method. Subclass should override this and <b>not</b> call super.
+/*!
+ * @brief Returns an array of required parameters
+ *
+ * @discussion An abstract method that all children should implement. The base implementation returns nil since IFLRequest has no required parameters.
  */
 -(NSArray*)requiredParameters;
 
 
-/** Provides a list of the required parameters. Required and Optional parameters are used to construct the requesting URL.
- @warning This is an abstract method. Subclass should override this and <b>not</b> call super.
+/*!
+ * @brief Returns an array of optional paramaters
+ *
+ * @discussion An abstract method that all children should implement. The base implementation returns nil since IFLRequest has no optional parameters.
  */
 -(NSArray*)optionalParameters;
 
 
-/** The command string. Each IFLRequest has a unique command string which is used to construct the requesting URL
- @warning This is an abstract method. Subclasses should override this and <b>not</b> call super.
+/*!
+ * @brief The command for the specific request
+ *
+ * @discussion An abstract method that all children should implement. The base implementation returns nil since IFLRequest has no required parameters.
  */
 -(NSString*)command;
 
 
-/** Generate the request url
- */
--(NSURL*)generateRequestUrlWithBaseString:(NSString*)base;
-
-/** Generate the request url
- */
--(NSURL*)generateRequestUrlWithBaseUrl:(NSURL*)base;
-
-
-
-
 
 //==========================================================================================================================
-// Options
+// URL Generation
 //==========================================================================================================================
 
 /*!
- * @brief The options to be set for the specific request.
+ * @brief Constructs the request URL used to communicate with the API provider.
+ *
+ * @throw An NSException is thrown if the protocol is not https (secure)
+ * 
+ * @throw An NSException is thrown if the request is missing a required parameter
+ *
+ * @var base
+ * The base URL used for the request. https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1
+ *
+ * @return Returns a successfully constructed URL, otherwise nil is returend
+ *
  */
-@property(assign,nonatomic) IFLURLOption options;
+-(NSURL*)generateRequestUrlWithBaseString:(NSString*)base;
 
 
+/*!
+ * @brief Constructs the request URL used to communicate with the API provider.
+ *
+ * @throw An NSException is thrown if the protocol is not https (secure)
+ *
+ * @throw An NSException is thrown if the request is missing a required parameter
+ *
+ * @var base
+ * The base URL used for the request. https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1
+ *
+ * @return Returns a successfully constructed URL, otherwise nil is returend
+ *
+ */
+-(NSURL*)generateRequestUrlWithBaseUrl:(NSURL*)base;
 
 
 //==========================================================================================================================
@@ -241,6 +278,12 @@ typedef void (^ResumeDownload)(NSURLSession* session,
  * @brief The UNIX timestamp of the wallpaper submission
  */
 @property(strong,nonatomic) NSNumber* timestamp;
+
+
+/*!
+ * @brief The options to be set for the specific request.
+ */
+@property(assign,nonatomic) IFLURLOption options;
 
 
 //==========================================================================================================================
