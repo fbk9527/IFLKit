@@ -195,7 +195,9 @@ NSString* kIFLRequestSortByComments  = @"comments";
 
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes
 {
-    
+    if (self.resumeBlock) {
+        self.resumeBlock(session,downloadTask,fileOffset,expectedTotalBytes);
+    }
 }
 
 
