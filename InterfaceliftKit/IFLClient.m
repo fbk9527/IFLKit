@@ -72,12 +72,12 @@ IFLClient* sharedClient = nil;
 #pragma mark - Private Key mgmt
 -(void)setPrivateKey:(NSString *)privateKey
 {
-    _urlSession.configuration.HTTPAdditionalHeaders =  @{ @"X-Mashape-Key" : privateKey };
+    self.urlSession.configuration.HTTPAdditionalHeaders =  @{ @"X-Mashape-Key" : privateKey };
 }
 
 -(NSString*)privateKey
 {
-    return [_urlSession.configuration.HTTPAdditionalHeaders objectForKey:@"X-Mashape-Key"];
+    return [self.urlSession.configuration.HTTPAdditionalHeaders objectForKey:@"X-Mashape-Key"];
 }
 
 

@@ -90,25 +90,20 @@
  */
 -(NSString*)privateKey;
 
-/** Request native resolution for device.
+/*!
+ * @brief Request native resolution for device.
  */
-#warning deprecated
 +(NSString*)nativeResolution;
 
-
-/** The base API URL.
+/*!
+ * @brief The base API URL.
  */
-#warning deprecated
 -(NSString*)baseURL;
-
-
-
-
 
 @end
 
 
-/*
- Class variable.
+/*!
+ * @brief Class variable.
  */
 extern IFLClient* sharedClient;
