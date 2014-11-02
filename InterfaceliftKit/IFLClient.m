@@ -57,6 +57,8 @@ IFLClient* sharedClient = nil;
         _requestDictionary = [NSMutableDictionary new];
         
         // Authentication
+        self.privateKey = privateKey;
+        
         if(privateKey)
             _urlSession.configuration.HTTPAdditionalHeaders = @{ @"X-Mashape-Key" : privateKey };
     }
