@@ -62,7 +62,7 @@ typedef void (^ResumeDownload)(NSURLSession* session,
 /*!
  * @class IFLRequest
  *
- * @discussion IFLRequest is the paretn class for all request managed by the IFLClient.
+ * @discussion IFLRequest is the base class for all request managed by the IFLClient.
  */
 @interface IFLRequest : NSOperation <NSURLSessionTaskDelegate, NSURLSessionDownloadDelegate>
 
@@ -148,7 +148,6 @@ typedef void (^ResumeDownload)(NSURLSession* session,
 /*!
  * @brief Called when the IFLRequest failes to complete successfully
  *
- *
  * @code [req setSuccessBlock:^(NSData* data,NSURLResponse* resp, NSURLError*error){
  *
  * }];
@@ -161,6 +160,14 @@ typedef void (^ResumeDownload)(NSURLSession* session,
 /*!
  * @brief Called throughout the download process, informing the block fo the download progress.
  *
+ * @code [req setStatusBlock:^(  NSURLSession* session,
+ *                               NSURLSessionDownloadTask* downloadTask,
+ *                               int64_t bytesWritten,
+ *                               int64_t totalBytesWritten,
+ *                               int64_t totalExpectedBytesToWrite)
+ *
+ * }];
+ * @endcode
  */
 @property(assign,nonatomic) BytesWritten statusBlock;
 
@@ -168,6 +175,13 @@ typedef void (^ResumeDownload)(NSURLSession* session,
 /*!
  * @brief Called when the IFLRequest resumes downloading its current payload.
  *
+ * @code [req setStatusBlock:^(  NSURLSession* session,
+ *                               NSURLSessionDownloadTask* downloadTask,
+ *                               int64_t fileOffset,
+ *                               int64_t expectedTotalBytes
+ *
+ * }];
+ * @endcode
  */
 @property(assign,nonatomic) ResumeDownload resumeBlock;
 
