@@ -78,12 +78,11 @@
         NSLog(@"Bytes %lli of %lli",totalBytesWritten, totalExpectedBytesToWrite);
     }];
     
-    
     // Success block
     [req setSuccessBlock:^(NSData* data, NSURLResponse* resp, NSError* error){
         NSLog(@"Success");
-        XCTAssert(error==nil, @"Success block is only called when an error is not incurred");
-        XCTAssert(true,@"Success Block Encountered");
+        XCTAssert(!error, @"Success block is only called when an error is not incurred");
+        XCTAssert(true  , @"Success Block Encountered");
         
         // release lock
         dispatch_semaphore_signal(semephore);
