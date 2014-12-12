@@ -1,10 +1,18 @@
+#Provider Change#
+On December 10th, 2014 Interfacelift informed their customers that they will
+no longer be supporting the mashape platform. On January 15th, 2015 the mashape
+API will no longer be available.
+
+I am working on updating IFLKit as I type this and will inform everyone once the work
+has been completed.
+
 #IFLKit#
 <HL/>
 IFLKit is a [Interfacelift.com](www.interfacelift.com) warapper, written in Objective-C.
 <HL/>
 #Getting Started#
 
-IFLKit is free for both commercial and public use. However, the feed provided by [Interfacelift.com](www.interfacelift.com) is not. Before IFLKit can be used a developer will need to register and subscribe to one of the pricing models at [mashape.com](www.mashape.com) to obtain a private key.
+IFLKit is free for both commercial and public use. However, the feed provided by [Interfacelift.com](http://www.interfacelift.com) is not. Before IFLKit can be used a developer will need to register and subscribe to one of the pricing models at [mashape.com](http://www.mashape.com) to obtain a private key.
 
 ### IFLKit Client ###
 
