@@ -12,7 +12,7 @@ IFLKit is a [Interfacelift.com](www.interfacelift.com) warapper, written in Obje
 <HL/>
 #Getting Started#
 
-IFLKit is free for both commercial and public use. However, the feed provided by [Interfacelift.com](http://www.interfacelift.com) is not. Before IFLKit can be used a developer will need to register and subscribe to one of the pricing models at [mashape.com](http://www.mashape.com) to obtain a private key.
+IFLKit is free for both commercial and public use. However, the feed provided by [Interfacelift.com](http://www.interfacelift.com) is not. ~~Before IFLKit can be used a developer will need to register and subscribe to one of the pricing models at [mashape.com](http://www.mashape.com) to obtain a private key.~~
 
 ### IFLKit Client ###
 
