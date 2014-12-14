@@ -182,6 +182,18 @@ NSString* kIFLRequestSortByComments  = @"comments";
     if (location)
         data = [NSData dataWithContentsOfURL:location];
     
+    if (data) {
+        NSString* payload = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        if(payload.length >= 8 && [[payload substringWithRange:NSMakeRange(0, 10)]containsString:@"errors"]){
+            if (self.failureBlock) {
+                self.failureBlock(data,response,error);
+                self.executing = NO;
+                self.finished = YES;
+                return;
+            }
+        }
+    }
+    
     if (!error && self.successBlock)
         self.successBlock(data,response,error);
     else if(self.failureBlock)
