@@ -25,6 +25,7 @@ IFLClient* sharedClient = nil;
 @property(strong,nonatomic) NSMutableDictionary* requestDictionary;
 @property(strong,nonatomic) NSURLSession* urlSession;
 @property(strong,nonatomic) NSOperationQueue* operationQueue;
+@property(strong,nonatomic) NSString *baseUrl;
 @end
 
 @implementation IFLClient
@@ -34,11 +35,16 @@ IFLClient* sharedClient = nil;
 #pragma mark - Initalization
 -(instancetype)init
 {
-    return [self initWithPrivateKey:@""];
+    return [self initWithPrivateKey:@"" forProvider:IFLKitApiProviderInterfacelift];
+}
+
+-(instancetype)initWithPrivateKey:(NSString *)privateKey
+{
+    return [self initWithPrivateKey:privateKey forProvider:IFLKitApiProviderInterfacelift];
 }
 
 
--(instancetype)initWithPrivateKey:(NSString *)privateKey
+-(instancetype)initWithPrivateKey:(NSString *)privateKey forProvider:(IFLKitApiProvider)provider
 {
     self = [super init];
     if (self)
@@ -56,31 +62,16 @@ IFLClient* sharedClient = nil;
         // Reuest dictionary
         _requestDictionary = [NSMutableDictionary new];
         
-        // Authentication
-        self.privateKey = privateKey;
-        
+        // API Authentication
+        NSString *authHeaderKey = ( provider == IFLKitApiProviderMashape ? @"X-Mashape-Key" : @"X-IFL-API-Key");
         if(privateKey)
-            _urlSession.configuration.HTTPAdditionalHeaders = @{ @"X-Mashape-Key" : privateKey };
+            _urlSession.configuration.HTTPAdditionalHeaders = @{ authHeaderKey: privateKey };
+        
+        // Basse URL
+        _baseUrl = ( IFLKitApiProviderMashape ? @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1" : @"https://api.ifl.cc/v1");
     }
     return self;
 }
-
-
-
-
-
-#pragma mark - Private Key mgmt
--(void)setPrivateKey:(NSString *)privateKey
-{
-    self.urlSession.configuration.HTTPAdditionalHeaders =  @{ @"X-Mashape-Key" : privateKey };
-}
-
--(NSString*)privateKey
-{
-    return [self.urlSession.configuration.HTTPAdditionalHeaders objectForKey:@"X-Mashape-Key"];
-}
-
-
 
 
 #pragma mark - Handle Request
@@ -101,7 +92,7 @@ IFLClient* sharedClient = nil;
 
 -(NSString*)baseURL
 {
-    return @"https://interfacelift-interfacelift-wallpapers.p.mashape.com/v1";
+    return self.baseUrl;
 }
 
 

@@ -19,6 +19,12 @@
 #import <Foundation/Foundation.h>
 #import "IFLRequest.h"
 
+typedef NS_ENUM(NSUInteger, IFLKitApiProvider)
+{
+     IFLKitApiProviderMashape
+    ,IFLKitApiProviderInterfacelift
+};
+
 @interface IFLClient : NSObject <NSURLSessionDownloadDelegate>
 
 //==========================================================================================================================
@@ -37,6 +43,17 @@
  * A private key used to authenticate request with the provider
  */
 -(instancetype)initWithPrivateKey:(NSString*)privateKey;
+
+/*!
+ * @brief Initalize the client with an authentication key and specific provider
+ *
+ * @var privateKey
+ * A private key used to authenticate request with the provider
+ *
+ * @var provider
+ * One of two providers available. Note that mashape will no longer be a valid option after 1/15/2015
+ */
+-(instancetype)initWithPrivateKey:(NSString *)privateKey forProvider:(IFLKitApiProvider)provider;
 
 
 //==========================================================================================================================
@@ -75,20 +92,6 @@
  */
 -(void)registerAsSharedClient;
 
-
-//==========================================================================================================================
-// Mashape Authentication Key
-//==========================================================================================================================
-
-/*!
- * @brief Returns a copy of the private key.
- */
--(void)setPrivateKey:(NSString*)privateKey;
-
-/*!
- * @brief Returns a copy of the private key.
- */
--(NSString*)privateKey;
 
 /*!
  * @brief Request native resolution for device.
