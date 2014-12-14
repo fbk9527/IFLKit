@@ -196,7 +196,7 @@ NSString* kIFLRequestSortByComments  = @"comments";
     
     if (!error && self.successBlock)
         self.successBlock(data,response,error);
-    else if(self.failureBlock)
+    else if(error && self.failureBlock)
         self.failureBlock(data,response,error);
     
     // close out task
