@@ -29,6 +29,16 @@
     return self;
 }
 
+-(id)initWithSearchString:(NSString *)search forType:(NSString *)type
+{
+    self = [super init];
+    if (self) {
+        [super setSearch:search];
+        self.type = type;
+    }
+    return self;
+}
+
 #pragma mark - Abstract Methods
 -(NSArray*)requiredParameters
 {
