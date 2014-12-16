@@ -5,20 +5,29 @@ IFLKit is a [Interfacelift.com](http://www.interfacelift.com) wrapper, written i
 
 #Getting Started#
 
-IFLKit is free for both commercial and public use. Before you can use IFLKit you will need to obtain a private key from interfacelift. You can register for an account at [interfacelift.com](https://interfacelift.com/account/signup/) and obtain a private key at their API site [api.ifl.cc](https://api.ifl.cc/developer/keys/).
+IFLKit requires a private key provided by [Interfacelift.com](http://www.interfacelift.com). To obtain a private key you will need to register for an account at [Interfacelift.com](https://interfacelift.com/account/signup/) and request a private key at [api.ifl.cc](https://api.ifl.cc/developer/keys/).
 
 ### IFLKit Client ###
 
-IFLKit is structured around the ```IFLClient``` class. The ```IFLClient``` class manages both authentication and communication with the provider. The ```IFLClient``` is not a singleton class allowing users the ability to distribute request between multiple keys, but does provide a class level instance that can be shared throughout your application.
+IFLKit is structured around the ```IFLClient``` class. The ```IFLClient``` class manages both authentication and communication with the provider. To create an instance of ```IFLClient``` call the ```initWithPrivateKey``` initalizer.
 
 ```Objective-C
 // Create instance
 IFLClient* client = [[IFLClient alloc]initWithPrivateKey:@"YOUR-PRIVATE-KEY"];
-
-// Register client
-[client registerAsSharedClient]
 ```
 
+```IFLClient``` is not a singleton class, but does provide a class level instance that can be shared throughout your application.
+
+```Objective-C
+// Register instance
+[client registerAsSharedClient];
+```
+Once you have registered your shared client you can easily access your shared instance by calling the ```IFLClient``` ```sharedClient``` method.
+
+```Objective-C
+// Access shared Instance
+[IFLClient sharedClient];
+```
 
 
 ### IFLRequest ###
